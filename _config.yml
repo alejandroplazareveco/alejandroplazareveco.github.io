@@ -3,7 +3,7 @@ description: "Sociólogo | Análisis de Redes | Consultoría Internacional"
 baseurl: ""
 url: "https://alejandroplazareveco.github.io"
 
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes"
 
 author:
   name: "Alejandro Plaza Reveco"
