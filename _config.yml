@@ -1,0 +1,20 @@
+title: "Alejandro Plaza Reveco"
+description: "Sociólogo | Análisis de Redes | Consultoría Internacional"
+baseurl: ""
+url: "https://alejandroplazareveco.github.io"
+
+theme: minimal-mistakes-jekyll
+
+author:
+  name: "Alejandro Plaza Reveco"
+  avatar: "/assets/images/profile.jpg" # Agrega tu foto de perfil aquí
+  bio: "Investigador en análisis de redes y sociología cuantitativa."
+  location: "Chile / Alemania"
+  email: "tuemail@ejemplo.com"
+  links:
+    - label: "Google Scholar"
+      url: "https://scholar.google.com/"
+    - label: "LinkedIn"
+      url: "https://linkedin.com/in/alejandroplaza"
+    - label: "Twitter"
+      url: "https://twitter.com/tuusuario"
