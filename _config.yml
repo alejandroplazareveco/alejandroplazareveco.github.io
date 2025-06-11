@@ -6,7 +6,6 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-remote_theme: "mmistakes/minimal-mistakes"
 locale                   : "en-US"
 title                    : "Alejandro Plaza Reveco"
 title_separator          : "-"
