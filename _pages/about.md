@@ -12,7 +12,7 @@ I am a Doctoral Researcher at the [RTG DYNAMICS](https://www.sowi.hu-berlin.de/e
 
 I hold a Master's and Bachelor's degree in Sociology from the [Pontifical Catholic University of Chile](https://www.uc.cl/) and the [University of Chile](https://www.uchile.cl/) respectively. Prior to my doctoral studies, I was Technical Coordinator of the Chilean Longitudinal Social Survey (ELSOC) at the Center for Social Conflict and Cohesion Studies (COES), where I specialized in survey design, panel data, and network analysis.
 
-My academic work lies at the intersection of inequality, political behavior, and social networks. I use quantitative and computational methods—including multilevel models, social network analysis, and experiments—to study social cohesion, distributive justice, and political attitudes in Latin America and beyond.
+My academic work lies at the intersection of social stratification, social networks, and political behavior. I use quantitative and computational methods—including multilevel models, social network analysis, and experiments—to study social cohesion, distributive justice, and political attitudes in Latin America and beyond.
 
 On this website, you can find my [publications](/publications/), download my [CV](/cv/), and explore my [research](/research/) and [teaching](/teaching/) experience. Feel free to [get in touch](mailto:alejandro.plaza.reveco@hu-berlin.de) if you'd like to connect or collaborate.
 
