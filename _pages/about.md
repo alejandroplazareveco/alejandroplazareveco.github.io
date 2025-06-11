@@ -14,7 +14,7 @@ I hold a Master's and Bachelor's degree in Sociology from the [Pontifical Cathol
 
 My academic work lies at the intersection of social stratification, social networks, and political behavior. I use quantitative and computational methods—including multilevel models, social network analysis, and experiments—to study social cohesion, distributive justice, and political attitudes in Latin America and beyond.
 
-On this website, you can find my [publications](/publications/), download my [CV](/cv/), and explore my [research](/research/) and [teaching](/teaching/) experience. Feel free to [get in touch](mailto:alejandro.plaza.reveco@hu-berlin.de) if you'd like to connect or collaborate.
+On this website, you can find my [publications](/publications/), download my [CV](/files/CV_2025_PlazaReveco.pdf), and explore my [research](/research/) and [teaching](/teaching/) experience. Feel free to [get in touch](mailto:alejandro.plaza.reveco@hu-berlin.de) if you'd like to connect or collaborate.
 
 <p>&nbsp;</p>
 
