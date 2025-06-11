@@ -4,8 +4,8 @@
 locale                   : "en-US"
 title                    : "Alejandro Plaza Reveco"
 title_separator          : "-"
-#theme                    : "minimal-mistakes-jekyll"  # ✅ agregado
-remote_theme: "mmistakes/minimal-mistakes"
+theme                    : "minimal-mistakes-jekyll"  # ✅ agregado
+#remote_theme: "mmistakes/minimal-mistakes"
 name                     : &name "Alejandro Plaza Reveco"
 description              : &description "Doctoral Researcher at RTG DYNAMICS, Humboldt-Universität zu Berlin"
 url                      : "https://alejandroplazareveco.github.io"
