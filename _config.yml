@@ -79,14 +79,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Violeta Haas"
-  avatar           : "Dynamics_Haas_Violeta.jpg"
-  bio              : "Research Fellow in Political Science at IAST, Toulouse School of Economics."
-  location         : "Toulouse, France"
+  name             : "Alejandro Plaza Reveco"
+  avatar           : "foto_alejandro.jpg"
+  bio              : "Doctoral Researcher at RTG DYNAMICS, Humboldt-Universität zu Berlin."
+  location         : "Berlin, Germany"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.de/citations?user=zbiC8-oAAAAJ&hl=de&oi=ao"
-  email            : "violeta.haas@iast.fr"
+  email            : "alejandro.plaza.reveco@hu-berlin.de"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -102,7 +102,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "https://orcid.org/0000-0001-7761-1975"
+  orcid            : "https://orcid.org/0000-0002-8930-1824"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
