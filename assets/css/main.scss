@@ -1,0 +1,6 @@
+---
+# Only the main Sass file needs front matter (the triple dash)
+---
+
+@import "minimal-mistakes/skins/default"; // estilo visual (puede ser otro: air, neon, etc.)
+@import "minimal-mistakes"; // importa todos los estilos base
