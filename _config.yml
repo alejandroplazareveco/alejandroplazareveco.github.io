@@ -8,13 +8,13 @@
 # Site Settings
 remote_theme: "mmistakes/minimal-mistakes"
 locale                   : "en-US"
-title                    : "Violeta Haas"
+title                    : "Alejandro Plaza Reveco"
 title_separator          : "-"
-name                     : &name "Violeta Haas"
-description              : &description "Research Fellow in Political Science at IAST-TSE."
-url                      : https://violeta-haas.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "violeta-haas/violeta-haas.github.io"
+name                     : &name "Alejandro Plaza Reveco"
+description              : &description "Doctoral Researcher at RTG DYNAMICS, Humboldt-Universität zu Berlin"
+url                      : "https://alejandroplazareveco.github.io"
+baseurl                  : "" 
+repository               : "alejandroplazareveco/alejandroplazareveco.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
