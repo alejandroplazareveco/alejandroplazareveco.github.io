@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alejandro Plaza Reveco</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--oxford:#002147;--bone:#f5f2ec;--bone-dark:#ede8de;--gold:#b8923a;--gold-light:#d4a853;--text-dark:#1a1a1a;--text-muted:#6b7280;--border:rgba(0,33,71,0.1);--serif:'EB Garamond',Georgia,serif;--sans:'DM Sans',sans-serif;--nav-h:60px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bone);color:var(--text-dark);line-height:1.7}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);background:rgba(0,33,71,0.98);border-bottom:1px solid rgba(184,146,58,0.2);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:var(--bone);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.72rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,242,236,0.6);text-decoration:none;transition:color 0.2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-light)}
+.nav-cv{border:1px solid rgba(184,146,58,0.4)!important;padding:0.28rem 0.8rem!important;border-radius:2px;color:var(--gold-light)!important}
+section{display:none;min-height:100vh;padding-top:var(--nav-h)}
+section.active{display:block}
+
+/* HOME */
+#home{background:var(--oxford);display:flex;align-items:center}
+.home-layout{max-width:980px;margin:0 auto;padding:5rem 2.5rem;display:grid;grid-template-columns:210px 1fr;gap:4rem;align-items:start;width:100%}
+.profile-card{display:flex;flex-direction:column;align-items:center}
+.photo-ring{width:172px;height:172px;border-radius:50%;border:2px solid rgba(184,146,58,0.4);overflow:hidden;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;flex-shrink:0}
+.photo-ring img{width:100%;height:100%;object-fit:cover}
+.p-name{font-family:var(--serif);font-size:1.1rem;color:var(--bone);text-align:center;margin-bottom:0.25rem}
+.p-role{font-size:0.72rem;color:rgba(245,242,236,0.38);text-align:center;line-height:1.55;margin-bottom:1.4rem;padding:0 0.25rem}
+.socials{display:flex;flex-direction:column;gap:0.4rem;width:100%}
+.soc{display:flex;align-items:center;gap:0.6rem;font-size:0.76rem;color:rgba(245,242,236,0.45);text-decoration:none;padding:0.35rem 0.5rem;border-radius:3px;transition:color 0.2s,background 0.2s}
+.soc:hover{color:var(--gold-light);background:rgba(184,146,58,0.08)}
+.soc svg{width:13px;height:13px;flex-shrink:0;opacity:0.55;stroke:currentColor;fill:none;stroke-width:1.5}
+.soc:hover svg{opacity:1}
+.home-bio{padding-top:0.25rem}
+.eyebrow{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.7rem}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--gold);display:inline-block}
+.bio-p{font-family:var(--serif);font-size:1.08rem;line-height:1.88;color:rgba(245,242,236,0.8);margin-bottom:1.1rem}
+.bio-p a{color:rgba(245,242,236,0.8);border-bottom:1px solid rgba(184,146,58,0.4);text-decoration:none;transition:color 0.2s,border-color 0.2s}
+.bio-p a:hover{color:var(--gold-light);border-color:var(--gold-light)}
+.bio-footer{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:0.7rem}
+.bio-lnk{font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;color:rgba(245,242,236,0.45);text-decoration:none;cursor:pointer;border-bottom:1px solid rgba(184,146,58,0.25);padding-bottom:1px;transition:color 0.2s,border-color 0.2s}
+.bio-lnk:hover{color:var(--gold-light);border-color:var(--gold-light)}
+
+/* SHARED */
+.sw{max-width:880px;margin:0 auto;padding:4.5rem 2.5rem}
+.sh{margin-bottom:2.75rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:1rem}
+.st{font-family:var(--serif);font-size:1.9rem;font-weight:500;color:var(--oxford)}
+.sn{font-size:0.65rem;letter-spacing:0.2em;color:var(--gold);font-weight:500}
+
+/* RESEARCH */
+#research{background:var(--bone)}
+.axis{margin-bottom:2.25rem}
+.ax-h{display:flex;align-items:center;gap:0.8rem;padding:0.8rem 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.ax-n{font-family:var(--serif);font-size:1.5rem;color:var(--bone-dark);min-width:1.6rem;line-height:1}
+.ax-t{font-family:var(--serif);font-size:1.05rem;color:var(--oxford);font-style:italic}
+.ax-tog{margin-left:auto;color:var(--gold);font-size:1rem;transition:transform 0.3s}
+.ax-h.open .ax-tog{transform:rotate(45deg)}
+.pub-list{display:none;padding:0.2rem 0 0 2.4rem}
+.pub-list.open{display:block}
+.pi{padding:0.8rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:36px 1fr;gap:0 0.7rem}
+.py{font-size:0.7rem;color:var(--gold);font-weight:500;padding-top:0.18rem}
+.pt{font-family:var(--serif);font-size:0.97rem;color:var(--oxford);font-style:italic;margin-bottom:0.18rem}
+.pm{font-size:0.76rem;color:var(--text-muted)}
+.pb{display:inline-block;font-size:0.61rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.13rem 0.48rem;border-radius:2px;margin-right:0.3rem;font-weight:500}
+.pub{background:rgba(0,33,71,0.07);color:var(--oxford)}
+.wip{background:rgba(184,146,58,0.1);color:#7a5c1a}
+
+/* TEACHING */
+#teaching{background:var(--bone-dark)}
+.t-block{margin-bottom:2.25rem}
+.t-role{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.85rem;display:flex;align-items:center;gap:0.7rem}
+.t-role::after{content:'';flex:1;height:1px;background:var(--border)}
+.ci{display:grid;grid-template-columns:1fr auto;gap:0.4rem 1.25rem;padding:0.8rem 0;border-bottom:1px solid var(--border);align-items:baseline}
+.ctit{font-family:var(--serif);font-size:0.97rem;color:var(--oxford)}
+.csub{font-size:0.76rem;color:var(--text-muted);margin-top:0.12rem}
+.cyr{font-size:0.7rem;color:var(--gold);white-space:nowrap;font-weight:500}
+
+/* CONSULTING */
+#consulting{background:var(--oxford)}
+#consulting .st{color:var(--bone)}
+#consulting .sn{color:var(--gold)}
+#consulting .sh{border-color:rgba(184,146,58,0.15)}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:3rem}
+.sc{background:rgba(255,255,255,0.04);border:1px solid rgba(184,146,58,0.17);border-radius:3px;padding:1.6rem 1.4rem;transition:background 0.2s,border-color 0.2s}
+.sc:hover{background:rgba(255,255,255,0.06);border-color:rgba(184,146,58,0.32)}
+.sct{font-family:var(--serif);font-size:1.05rem;color:var(--bone);margin-bottom:0.6rem}
+.scd{font-size:0.8rem;color:rgba(245,242,236,0.48);line-height:1.72;margin-bottom:1rem}
+.scs{display:flex;flex-wrap:wrap;gap:0.3rem}
+.sk{font-size:0.63rem;letter-spacing:0.06em;padding:0.16rem 0.5rem;border:1px solid rgba(184,146,58,0.2);color:var(--gold-light);border-radius:2px}
+.ps{border-top:1px solid rgba(184,146,58,0.12);padding-top:1.75rem}
+.pl{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(245,242,236,0.28);margin-bottom:1.1rem}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem}
+.pgi{background:rgba(255,255,255,0.03);border:1px solid rgba(184,146,58,0.09);border-radius:3px;padding:1rem}
+.pgit{font-size:0.8rem;color:rgba(245,242,236,0.65);margin-bottom:0.25rem}
+.pgio{font-size:0.68rem;color:rgba(245,242,236,0.28)}
+
+/* WRITING */
+#writing{background:var(--bone)}
+.wt{display:flex;gap:0;margin-bottom:1.75rem;border-bottom:1px solid var(--border)}
+.wtb{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1.1rem;cursor:pointer;color:var(--text-muted);border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.2s,border-color 0.2s}
+.wtb.active,.wtb:hover{color:var(--oxford);border-bottom-color:var(--gold)}
+.wtc{display:none}
+.wtc.active{display:block}
+.wi{padding:1.1rem 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;align-items:start;gap:0.85rem}
+.wit{font-family:var(--serif);font-size:1rem;color:var(--oxford);margin-bottom:0.25rem}
+.wim{font-size:0.76rem;color:var(--text-muted)}
+.wio{font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);font-weight:500;text-align:right;white-space:nowrap;padding-top:0.18rem}
+
+/* FOOTER */
+footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid rgba(184,146,58,0.1)}
+.fh{font-family:var(--serif);font-size:1.2rem;font-style:italic;color:rgba(245,242,236,0.62);margin-bottom:0.4rem}
+.fh em{color:var(--gold);font-style:normal}
+.fa{font-size:0.68rem;color:rgba(245,242,236,0.18);letter-spacing:0.06em;margin-bottom:1.2rem}
+.fc{font-size:0.68rem;color:rgba(245,242,236,0.16)}
+
+@media(max-width:768px){
+  .home-layout{grid-template-columns:1fr;gap:2.5rem;padding:3rem 1.5rem}
+  .sg,.pg{grid-template-columns:1fr}
+  .sw{padding:3rem 1.5rem}
+  nav{padding:0 1.25rem}
+  .nav-links{gap:0.85rem}
+  .nav-links a{font-size:0.65rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#" onclick="go('home');return false">Alejandro Plaza Reveco</a>
+  <ul class="nav-links">
+    <li><a id="n-home" class="active" onclick="go('home')">Home</a></li>
+    <li><a id="n-research" onclick="go('research')">Research</a></li>
+    <li><a id="n-teaching" onclick="go('teaching')">Teaching</a></li>
+    <li><a id="n-consulting" onclick="go('consulting')">Consulting</a></li>
+    <li><a id="n-writing" onclick="go('writing')">Writing</a></li>
+    <li><a href="files/cv-plaza-2026.pdf" target="_blank" class="nav-cv">CV</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+<div class="home-layout">
+  <div class="profile-card">
+    <div class="photo-ring">
+      <img src="images/foto_alejandro.jpg" alt="Alejandro Plaza Reveco">
+    </div>
+    <div class="p-name">Alejandro Plaza Reveco</div>
+    <div class="p-role">Doctoral Researcher<br>Humboldt-Universität zu Berlin<br>RTG Dynamics</div>
+    <div class="socials">
+      <a class="soc" href="mailto:alejandro.plaza.reveco@hu-berlin.de">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        Email
+      </a>
+      <a class="soc" href="https://scholar.google.cl/citations?user=ZnlCXecAAAAJ&hl=es&oi=ao" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Google Scholar
+      </a>
+      <a class="soc" href="https://orcid.org/0000-0002-8930-1824" target="_blank">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+        ORCID
+      </a>
+      <a class="soc" href="https://github.com/alejandroplazareveco" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a class="soc" href="https://www.linkedin.com/in/alejandro-plaza-reveco" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="soc" href="https://x.com/aplazareveco" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></svg>
+        Twitter / X
+      </a>
+    </div>
+  </div>
+
+  <div class="home-bio">
+    <div class="eyebrow">Berlin, Germany</div>
+    <p class="bio-p">I am a Doctoral Researcher at the <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> graduate program at <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, jointly coordinated with the <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. My research investigates how social networks mediate the relationship between institutions, civil society, life events, and political attitudes. Using comparative and longitudinal data, I explore how inequality and welfare regimes shape the structure and composition of individuals' personal networks—and, in turn, how these networks influence interpersonal trust and broader political orientations.</p>
+    <p class="bio-p">Between March and May 2025, I was a visiting researcher at the <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Swedish Institute for Social Research (SOFI)</a> at Stockholm University, within the Social Policy Unit.</p>
+    <p class="bio-p">I hold a Master's in Sociology from the <a href="https://www.uc.cl/" target="_blank">Pontifical Catholic University of Chile</a> and a Bachelor's from the <a href="https://www.uchile.cl/" target="_blank">University of Chile</a>. Prior to my doctoral studies, I was Technical Coordinator of <a href="https://coes.cl/" target="_blank">ELSOC — COES</a>, specialising in survey design, panel data, and network analysis.</p>
+    <div class="bio-footer">
+      <a class="bio-lnk" onclick="go('research')">Publications</a>
+      <a class="bio-lnk" onclick="go('teaching')">Teaching</a>
+      <a class="bio-lnk" onclick="go('consulting')">Consulting</a>
+      <a class="bio-lnk" href="files/cv-plaza-2026.pdf" target="_blank">Download CV</a>
+      <a class="bio-lnk" href="mailto:alejandro.plaza.reveco@hu-berlin.de">Get in touch</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+<div class="sw">
+  <div class="sh"><span class="sn">02 ——</span><h2 class="st">Research</h2></div>
+
+  <div class="axis">
+    <div class="ax-h open" onclick="tgl(this)">
+      <div class="ax-n">I</div>
+      <div class="ax-t">Cohesion, Conflict &amp; Social Movements</div>
+      <div class="ax-tog">+</div>
+    </div>
+    <div class="pub-list open">
+      <div class="pi"><div class="py">2026</div><div><div class="pt">Networked inequality: The role of changes in network size in attitudes towards inequality</div><div class="pm"><span class="pb pub">Published</span>Plaza, Beck, Iturra-Sanhueza &amp; Otero — <em>Journal of Social Networks</em>, 84, 27–45</div></div></div>
+      <div class="pi"><div class="py">2025</div><div><div class="pt">Does intergroup contact affect political attitudes and behaviours? A longitudinal mediation analysis</div><div class="pm"><span class="pb pub">Published</span>Friehs, Plaza et al. — <em>Journal of Community and Applied Social Psychology</em>, 35:e70105</div></div></div>
+      <div class="pi"><div class="py">2025</div><div><div class="pt">From Cohesion to Division: Macrostructural Factors Driving Class Homogeneity</div><div class="pm"><span class="pb wip">Working paper</span>Plaza — Draft version</div></div></div>
+      <div class="pi"><div class="py">2025</div><div><div class="pt">Collective action in Chile prior and after the 2019 social outbreak</div><div class="pm"><span class="pb pub">Book chapter</span>González, Chayinska, Plaza &amp; Carozzi — <em>Social Unrest in Latin America</em></div></div></div>
+      <div class="pi"><div class="py">2022</div><div><div class="pt">A longitudinal examination of factors facilitating and hindering support for conservative and progressive social movements</div><div class="pm"><span class="pb pub">Published</span>González, Chayinska, Plaza et al. — <em>European Journal of Social Psychology</em>, 52, 1031–1046</div></div></div>
+      <div class="pi"><div class="py">2022</div><div><div class="pt">Where does social mobilization grow? New protesters of the Chilean social mobilization of October 2019</div><div class="pm"><span class="pb pub">Published</span>Rozas-Bugueño, Plaza et al. — <em>Revista Chilena de Derecho y Ciencia Política</em>, 13(2)</div></div></div>
+    </div>
+  </div>
+
+  <div class="axis">
+    <div class="ax-h open" onclick="tgl(this)">
+      <div class="ax-n">II</div>
+      <div class="ax-t">Networks, Homophily &amp; Inequality</div>
+      <div class="ax-tog">+</div>
+    </div>
+    <div class="pub-list open">
+      <div class="pi"><div class="py">2025</div><div><div class="pt">Stability and Evolution of the Size of Acquaintance Networks: A Longitudinal Analysis</div><div class="pm"><span class="pb wip">Under review</span>Muñoz, Plaza &amp; Espinoza — <em>Journal of Social Networks</em></div></div></div>
+      <div class="pi"><div class="py">2024</div><div><div class="pt">Multilevel analysis for the study of egocentric networks: applications in the study of homophily in Chile</div><div class="pm"><span class="pb pub">Book chapter</span>Plaza, Cantillan &amp; Muñoz — <em>Social Networks: Theory, Methods and Applications in Latin America</em></div></div></div>
+      <div class="pi"><div class="py">2022</div><div><div class="pt">Together, but not mixed: Homophily in mapuche and non-mapuche intergroup relations</div><div class="pm"><span class="pb pub">Published</span>Plaza, Cantillan, Beck &amp; Espinoza — <em>Revista de Sociología</em>, 37(1)</div></div></div>
+      <div class="pi"><div class="py">2020</div><div><div class="pt">Patterns of Homophily in Chile</div><div class="pm"><span class="pb pub">Published</span>Bargsted, Espinoza &amp; Plaza — <em>Papers. Revista de Sociologia</em>, 105(4), 583–612</div></div></div>
+    </div>
+  </div>
+
+  <div class="axis">
+    <div class="ax-h open" onclick="tgl(this)">
+      <div class="ax-n">III</div>
+      <div class="ax-t">Social Mobility &amp; Social Capital</div>
+      <div class="ax-tog">+</div>
+    </div>
+    <div class="pub-list open">
+      <div class="pi"><div class="py">2026</div><div><div class="pt">Social Mobility and Class Segregation in Personal Networks: Longitudinal Evidence from Chile</div><div class="pm"><span class="pb wip">Under review</span>Otero, Zavala &amp; Plaza — <em>Frontiers in Sociology</em></div></div></div>
+      <div class="pi"><div class="py">2026</div><div><div class="pt">Examining the Relevance of Social Capital and Class-Based Network Segregation in the Status Attainment Process</div><div class="pm"><span class="pb wip">Working paper</span>Otero &amp; Plaza</div></div></div>
+      <div class="pi"><div class="py">2026</div><div><div class="pt">Timing and Conditions of Sexual Initiation in Chile: A Life-Course Analysis</div><div class="pm"><span class="pb wip">Working paper</span>Plaza — National Sexuality and Affectivity Survey</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+<div class="sw">
+  <div class="sh"><span class="sn">03 ——</span><h2 class="st">Teaching</h2></div>
+
+  <div class="t-block">
+    <div class="t-role">Instructor of record</div>
+    <div class="ci"><div><div class="ctit">Sociology of Public Opinion and Social Media</div><div class="csub">Sociology undergraduate · School of Social Science, Andrés Bello University</div></div><div class="cyr">Winter 2022</div></div>
+    <div class="ci"><div><div class="ctit">Analysis of Networks and Social Media</div><div class="csub">Master in Information Processing and Management · School of Engineering, PUC Chile</div></div><div class="cyr">Summer 2020</div></div>
+    <div class="ci"><div><div class="ctit">Multivariate Statistics</div><div class="csub">Sociology undergraduate · Faculty of Social Sciences, University of Chile</div></div><div class="cyr">Winter 2019</div></div>
+  </div>
+
+  <div class="t-block">
+    <div class="t-role">Graduate Teaching Assistant</div>
+    <div class="ci"><div><div class="ctit">Statistics I</div><div class="csub">MPP and MIA · Hertie School of Governance — Prof. Maria Uttenthal</div></div><div class="cyr">Winter 2024</div></div>
+    <div class="ci"><div><div class="ctit">Multilevel Data Analysis</div><div class="csub">Master in Sociology · PUC Chile — Prof. Juan Carlos Castillo</div></div><div class="cyr">Summer 2017</div></div>
+    <div class="ci"><div><div class="ctit">Advanced Statistical Techniques (SEM)</div><div class="csub">Master in Social Research Methods · Diego Portales University — Prof. Mónica Gerber</div></div><div class="cyr">2015–2016</div></div>
+    <div class="ci"><div><div class="ctit">Linear Regression Analysis</div><div class="csub">Diploma in Statistics for Social Research · Diego Portales University — Prof. Mauricio Morales</div></div><div class="cyr">Winter 2015</div></div>
+  </div>
+
+  <div class="t-block">
+    <div class="t-role">Undergraduate Teaching Assistant</div>
+    <div class="ci"><div><div class="ctit">Multivariate Statistics</div><div class="csub">Faculty of Social Sciences, University of Chile — Prof. Giorgio Boccardo</div></div><div class="cyr">Summer 2017</div></div>
+    <div class="ci"><div><div class="ctit">Introduction to Economic and Political Thought</div><div class="csub">Faculty of Economics and Business, University of Chile — Prof. Oscar Landerretche</div></div><div class="cyr">2013–2014</div></div>
+    <div class="ci"><div><div class="ctit">Social Stratification in Latin America</div><div class="csub">Faculty of Social Sciences, University of Chile — Prof. Carlos Ruiz Encina &amp; Giorgio Boccardo</div></div><div class="cyr">Summer 2013</div></div>
+    <div class="ci"><div><div class="ctit">Social History of Latin America</div><div class="csub">Faculty of Social Sciences, University of Chile — Prof. Carlos Ruiz Encina</div></div><div class="cyr">Winter 2013</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CONSULTING -->
+<section id="consulting">
+<div class="sw">
+  <div class="sh"><span class="sn">04 ——</span><h2 class="st">Consulting</h2></div>
+  <div class="sg">
+    <div class="sc"><div class="sct">Social Network Analysis</div><div class="scd">Ego-network modelling, position generators, homophily measures, and longitudinal network dynamics — from survey design through final reporting.</div><div class="scs"><span class="sk">R / igraph</span><span class="sk">Stata</span><span class="sk">Multilevel</span></div></div>
+    <div class="sc"><div class="sct">Longitudinal Data Management</div><div class="scd">Design and coordination of panel studies, database assembly, inconsistency analysis, and technical documentation — modelled on 4 years coordinating ELSOC (n≈3,000, 5 waves).</div><div class="scs"><span class="sk">R</span><span class="sk">SQL</span><span class="sk">Stata</span><span class="sk">SPSS</span></div></div>
+    <div class="sc"><div class="sct">Quantitative Methods Advisory</div><div class="scd">Sampling design, questionnaire validation, SEM / CFA, multilevel modelling, and policy-ready reporting for NGOs, public agencies, and academic teams.</div><div class="scs"><span class="sk">SEM / AMOS</span><span class="sk">Python</span><span class="sk">LaTeX</span></div></div>
+  </div>
+  <div class="ps">
+    <div class="pl">Selected engagements</div>
+    <div class="pg">
+      <div class="pgi"><div class="pgit">Longitudinal Dataset Scoping</div><div class="pgio">British Council · 2023</div></div>
+      <div class="pgi"><div class="pgit">ELRI Longitudinal Database Management</div><div class="pgio">Centre for Intercultural &amp; Indigenous Research · 2020</div></div>
+      <div class="pgi"><div class="pgit">QoL &amp; Caregiver Burden Analysis</div><div class="pgio">Andrés Bello University · 2018</div></div>
+      <div class="pgi"><div class="pgit">Citizen Education Policy</div><div class="pgio">Diego Portales University · 2017</div></div>
+      <div class="pgi"><div class="pgit">User Satisfaction Study</div><div class="pgio">Ministry of Labour, Chile · 2016</div></div>
+      <div class="pgi"><div class="pgit">Reading Motivation Research (Fondart)</div><div class="pgio">Project 434996 · 2019–2020</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+<div class="sw">
+  <div class="sh"><span class="sn">05 ——</span><h2 class="st">Writing</h2></div>
+  <div class="wt">
+    <button class="wtb active" onclick="wtab(this,'op')">Opinion</button>
+    <button class="wtb" onclick="wtab(this,'es')">Essays</button>
+    <button class="wtb" onclick="wtab(this,'fi')">Fiction</button>
+  </div>
+  <div id="tab-op" class="wtc active">
+    <div class="wi"><div><div class="wit">A 5 años del 18-O: ¿Quiénes son y dónde están los nuevos manifestantes del Estallido Social?</div><div class="wim">Co-authored with Joaquín Rozas</div></div><div class="wio">CIPER Chile</div></div>
+    <div class="wi"><div><div class="wit">Pensar la política científica más allá de Becas Chile</div><div class="wim">Co-authored with Salvador Vargas</div></div><div class="wio">CIPER Chile</div></div>
+    <div class="wi"><div><div class="wit">Rotonda Atenas y Cohesión Social</div><div class="wim">On urban space and social cohesion in Santiago</div></div><div class="wio">La Segunda</div></div>
+  </div>
+  <div id="tab-es" class="wtc">
+    <div class="wi"><div><div class="wit">Governing in the name of reason: towards a theoretical delimitation of technocracy from Latin America</div><div class="wim">In Ipar &amp; Tonkonoff (Eds.) — Theory, Politics and Society · 2018</div></div><div class="wio">Book chapter</div></div>
+    <div class="wi"><div><div class="wit">Conceptual elements for the analysis of Technocracy: Towards a theoretical definition</div><div class="wim">Revista Némesis, 11 · 2015</div></div><div class="wio">Revista Némesis</div></div>
+    <div class="wi"><div><div class="wit">Social stratification in Latin America and educational inequality — Interview with Florencia Torche</div><div class="wim">Revista Némesis, 13 · 2016</div></div><div class="wio">Interview</div></div>
+  </div>
+  <div id="tab-fi" class="wtc">
+    <p style="font-family:var(--serif);font-style:italic;color:var(--text-muted);font-size:1rem;padding:2rem 0;line-height:1.9">Stories forthcoming. This space is reserved for narrative work — fiction that orbits the same questions as the research: class, networks, and the texture of social life.</p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <div class="fh"><em>'</em>Wir müssen wissen. Wir werden wissen.<em>'</em></div>
+  <div class="fa">— David Hilbert, Königsberg, 1930</div>
+  <div class="fc">© 2026 Alejandro Plaza Reveco · Berlin, Germany</div>
+</footer>
+
+<script>
+function go(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-links a[id^="n-"]').forEach(a=>a.classList.remove('active'));
+  const el=document.getElementById('n-'+id);
+  if(el)el.classList.add('active');
+  window.scrollTo(0,0);
+}
+function tgl(h){h.classList.toggle('open');h.nextElementSibling.classList.toggle('open')}
+function wtab(btn,id){
+  document.querySelectorAll('.wtb').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.wtc').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+</script>
+</body>
+</html>
