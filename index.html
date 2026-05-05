@@ -36,7 +36,11 @@ section.active{display:block}
 .home-bio{padding-top:0.25rem}
 .eyebrow{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.7rem}
 .eyebrow::before{content:'';width:22px;height:1px;background:var(--gold);display:inline-block}
-.bio-p{font-family:var(--serif);font-size:1.08rem;line-height:1.88;color:rgba(245,242,236,0.8);margin-bottom:1.1rem}
+.bio-p{font-family:var(--serif);font-size:1.08rem;line-height:1.88;color:rgba(245,242,236,0.8);margin-bottom:1.1rem;text-align:justify}
+.lang-sw{display:flex;gap:0;border:1px solid rgba(184,146,58,0.3);border-radius:2px;overflow:hidden}
+.lang-btn{font-size:0.65rem;letter-spacing:0.1em;font-weight:500;padding:0.22rem 0.6rem;background:transparent;color:rgba(245,242,236,0.4);border:none;cursor:pointer;transition:background 0.2s,color 0.2s}
+.lang-btn.active{background:rgba(184,146,58,0.25);color:var(--gold-light)}
+.lang-btn:hover{color:var(--gold-light)}
 .bio-p a{color:rgba(245,242,236,0.8);border-bottom:1px solid rgba(184,146,58,0.4);text-decoration:none;transition:color 0.2s,border-color 0.2s}
 .bio-p a:hover{color:var(--gold-light);border-color:var(--gold-light)}
 .bio-footer{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:0.7rem}
@@ -132,12 +136,13 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <nav>
   <a class="nav-brand" href="#" onclick="go('home');return false">Alejandro Plaza Reveco</a>
   <ul class="nav-links">
-    <li><a id="n-home" class="active" onclick="go('home')">Home</a></li>
-    <li><a id="n-research" onclick="go('research')">Research</a></li>
-    <li><a id="n-teaching" onclick="go('teaching')">Teaching</a></li>
-    <li><a id="n-consulting" onclick="go('consulting')">Consulting</a></li>
-    <li><a id="n-writing" onclick="go('writing')">Writing</a></li>
+    <li><a id="n-home" class="active" onclick="go('home')" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a id="n-research" onclick="go('research')" data-en="Research" data-es="Investigación">Research</a></li>
+    <li><a id="n-teaching" onclick="go('teaching')" data-en="Teaching" data-es="Docencia">Teaching</a></li>
+    <li><a id="n-consulting" onclick="go('consulting')" data-en="Consulting" data-es="Consultoría">Consulting</a></li>
+    <li><a id="n-writing" onclick="go('writing')" data-en="Writing" data-es="Escritura">Writing</a></li>
     <li><a href="files/cv-plaza-2026.pdf" target="_blank" class="nav-cv">CV</a></li>
+    <li><div class="lang-sw"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('es')">ES</button></div></li>
   </ul>
 </nav>
 
@@ -179,16 +184,16 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
   </div>
 
   <div class="home-bio">
-    <div class="eyebrow">Berlin, Germany</div>
-    <p class="bio-p">I am a Doctoral Researcher at the <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> graduate program at <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, jointly coordinated with the <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. My research investigates how social networks mediate the relationship between institutions, civil society, life events, and political attitudes. Using comparative and longitudinal data, I explore how inequality and welfare regimes shape the structure and composition of individuals' personal networks—and, in turn, how these networks influence interpersonal trust and broader political orientations.</p>
-    <p class="bio-p">Between March and May 2025, I was a visiting researcher at the <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Swedish Institute for Social Research (SOFI)</a> at Stockholm University, within the Social Policy Unit.</p>
-    <p class="bio-p">I hold a Master's in Sociology from the <a href="https://www.uc.cl/" target="_blank">Pontifical Catholic University of Chile</a> and a Bachelor's from the <a href="https://www.uchile.cl/" target="_blank">University of Chile</a>. Prior to my doctoral studies, I was Technical Coordinator of <a href="https://coes.cl/" target="_blank">ELSOC — COES</a>, specialising in survey design, panel data, and network analysis.</p>
+    <div class="eyebrow" id="bio-eyebrow">Berlin, Germany</div>
+    <p class="bio-p" id="bio-p1">I am a Doctoral Researcher at the <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> graduate program at <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, jointly coordinated with the <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. My research investigates how social networks mediate the relationship between institutions, civil society, life events, and political attitudes. Using comparative and longitudinal data, I explore how inequality and welfare regimes shape the structure and composition of individuals' personal networks—and, in turn, how these networks influence interpersonal trust and broader political orientations.</p>
+    <p class="bio-p" id="bio-p2">Between March and May 2025, I was a visiting researcher at the <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Swedish Institute for Social Research (SOFI)</a> at Stockholm University, within the Social Policy Unit.</p>
+    <p class="bio-p" id="bio-p3">I hold a Master's in Sociology from the <a href="https://www.uc.cl/" target="_blank">Pontifical Catholic University of Chile</a> and a Bachelor's from the <a href="https://www.uchile.cl/" target="_blank">University of Chile</a>. Prior to my doctoral studies, I was Technical Coordinator of <a href="https://coes.cl/" target="_blank">ELSOC — COES</a>, specialising in survey design, panel data, and network analysis.</p>
     <div class="bio-footer">
-      <a class="bio-lnk" onclick="go('research')">Publications</a>
-      <a class="bio-lnk" onclick="go('teaching')">Teaching</a>
-      <a class="bio-lnk" onclick="go('consulting')">Consulting</a>
-      <a class="bio-lnk" href="files/cv-plaza-2026.pdf" target="_blank">Download CV</a>
-      <a class="bio-lnk" href="mailto:alejandro.plaza.reveco@hu-berlin.de">Get in touch</a>
+      <a class="bio-lnk" onclick="go('research')" data-en="Publications" data-es="Publicaciones">Publications</a>
+      <a class="bio-lnk" onclick="go('teaching')" data-en="Teaching" data-es="Docencia">Teaching</a>
+      <a class="bio-lnk" onclick="go('consulting')" data-en="Consulting" data-es="Consultoría">Consulting</a>
+      <a class="bio-lnk" href="files/cv-plaza-2026.pdf" target="_blank" data-en="Download CV" data-es="Descargar CV">Download CV</a>
+      <a class="bio-lnk" href="mailto:alejandro.plaza.reveco@hu-berlin.de" data-en="Get in touch" data-es="Contacto">Get in touch</a>
     </div>
   </div>
 </div>
@@ -197,13 +202,13 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <!-- RESEARCH -->
 <section id="research">
 <div class="sw">
-  <div class="sh"><span class="sn">02 ——</span><h2 class="st">Research</h2></div>
+  <div class="sh"><span class="sn">02 ——</span><h2 class="st" id="sec-research">Research</h2></div>
 
   <!-- AXIS I -->
   <div class="axis">
     <div class="ax-h open" onclick="tgl(this)">
       <div class="ax-n">I</div>
-      <div class="ax-t">Networks, Inequality &amp; Social Stratification</div>
+      <div class="ax-t" id="ax1-title">Networks, Inequality &amp; Social Stratification</div>
       <div class="ax-tog">+</div>
     </div>
     <div class="pub-list open">
@@ -246,7 +251,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
   <div class="axis">
     <div class="ax-h open" onclick="tgl(this)">
       <div class="ax-n">II</div>
-      <div class="ax-t">Welfare States, Policy &amp; Redistribution</div>
+      <div class="ax-t" id="ax2-title">Welfare States, Policy &amp; Redistribution</div>
       <div class="ax-tog">+</div>
     </div>
     <div class="pub-list open">
@@ -261,7 +266,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
   <div class="axis">
     <div class="ax-h open" onclick="tgl(this)">
       <div class="ax-n">III</div>
-      <div class="ax-t">Social Cohesion &amp; Collective Action</div>
+      <div class="ax-t" id="ax3-title">Social Cohesion &amp; Collective Action</div>
       <div class="ax-tog">+</div>
     </div>
     <div class="pub-list open">
@@ -289,17 +294,17 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <!-- TEACHING -->
 <section id="teaching">
 <div class="sw">
-  <div class="sh"><span class="sn">03 ——</span><h2 class="st">Teaching</h2></div>
+  <div class="sh"><span class="sn">03 ——</span><h2 class="st" id="sec-teaching">Teaching</h2></div>
 
   <div class="t-block">
-    <div class="t-role">Instructor of record</div>
+    <div class="t-role" id="role-instructor">Instructor of record</div>
     <div class="ci"><div><div class="ctit">Sociology of Public Opinion and Social Media</div><div class="csub">Sociology undergraduate · School of Social Science, Andrés Bello University</div></div><div class="cyr">Winter 2022</div></div>
     <div class="ci"><div><div class="ctit">Analysis of Networks and Social Media</div><div class="csub">Master in Information Processing and Management · School of Engineering, PUC Chile</div></div><div class="cyr">Summer 2020</div></div>
     <div class="ci"><div><div class="ctit">Multivariate Statistics</div><div class="csub">Sociology undergraduate · Faculty of Social Sciences, University of Chile</div></div><div class="cyr">Winter 2019</div></div>
   </div>
 
   <div class="t-block">
-    <div class="t-role">Graduate Teaching Assistant</div>
+    <div class="t-role" id="role-grad">Graduate Teaching Assistant</div>
     <div class="ci"><div><div class="ctit">Statistics I</div><div class="csub">MPP and MIA · Hertie School of Governance — Prof. Maria Uttenthal</div></div><div class="cyr">Winter 2024</div></div>
     <div class="ci"><div><div class="ctit">Multilevel Data Analysis</div><div class="csub">Master in Sociology · PUC Chile — Prof. Juan Carlos Castillo</div></div><div class="cyr">Summer 2017</div></div>
     <div class="ci"><div><div class="ctit">Advanced Statistical Techniques (SEM)</div><div class="csub">Master in Social Research Methods · Diego Portales University — Prof. Mónica Gerber</div></div><div class="cyr">2015–2016</div></div>
@@ -307,7 +312,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
   </div>
 
   <div class="t-block">
-    <div class="t-role">Undergraduate Teaching Assistant</div>
+    <div class="t-role" id="role-undergrad">Undergraduate Teaching Assistant</div>
     <div class="ci"><div><div class="ctit">Multivariate Statistics</div><div class="csub">Faculty of Social Sciences, University of Chile — Prof. Giorgio Boccardo</div></div><div class="cyr">Summer 2017</div></div>
     <div class="ci"><div><div class="ctit">Introduction to Economic and Political Thought</div><div class="csub">Faculty of Economics and Business, University of Chile — Prof. Oscar Landerretche</div></div><div class="cyr">2013–2014</div></div>
     <div class="ci"><div><div class="ctit">Social Stratification in Latin America</div><div class="csub">Faculty of Social Sciences, University of Chile — Prof. Carlos Ruiz Encina &amp; Giorgio Boccardo</div></div><div class="cyr">Summer 2013</div></div>
@@ -319,14 +324,14 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <!-- CONSULTING -->
 <section id="consulting">
 <div class="sw">
-  <div class="sh"><span class="sn">04 ——</span><h2 class="st">Consulting</h2></div>
+  <div class="sh"><span class="sn">04 ——</span><h2 class="st" id="sec-consulting">Consulting</h2></div>
   <div class="sg">
     <div class="sc"><div class="sct">Social Network Analysis</div><div class="scd">Ego-network modelling, position generators, homophily measures, and longitudinal network dynamics — from survey design through final reporting.</div><div class="scs"><span class="sk">R / igraph</span><span class="sk">Stata</span><span class="sk">Multilevel</span></div></div>
     <div class="sc"><div class="sct">Longitudinal Data Management</div><div class="scd">Design and coordination of panel studies, database assembly, inconsistency analysis, and technical documentation — modelled on 4 years coordinating ELSOC (n≈3,000, 5 waves).</div><div class="scs"><span class="sk">R</span><span class="sk">SQL</span><span class="sk">Stata</span><span class="sk">SPSS</span></div></div>
     <div class="sc"><div class="sct">Quantitative Methods Advisory</div><div class="scd">Sampling design, questionnaire validation, SEM / CFA, multilevel modelling, and policy-ready reporting for NGOs, public agencies, and academic teams.</div><div class="scs"><span class="sk">SEM / AMOS</span><span class="sk">Python</span><span class="sk">LaTeX</span></div></div>
   </div>
   <div class="ps">
-    <div class="pl">Selected engagements</div>
+    <div class="pl" id="con-engagements">Selected engagements</div>
     <div class="pg">
       <div class="pgi"><div class="pgit">Longitudinal Dataset Scoping</div><div class="pgio">British Council · 2023</div></div>
       <div class="pgi"><div class="pgit">ELRI Longitudinal Database Management</div><div class="pgio">Centre for Intercultural &amp; Indigenous Research · 2020</div></div>
@@ -342,11 +347,11 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <!-- WRITING -->
 <section id="writing">
 <div class="sw">
-  <div class="sh"><span class="sn">05 ——</span><h2 class="st">Writing</h2></div>
+  <div class="sh"><span class="sn">05 ——</span><h2 class="st" id="sec-writing">Writing</h2></div>
   <div class="wt">
-    <button class="wtb active" onclick="wtab(this,'op')">Opinion</button>
-    <button class="wtb" onclick="wtab(this,'es')">Essays</button>
-    <button class="wtb" onclick="wtab(this,'fi')">Fiction</button>
+    <button class="wtb active" id="wtab-op" onclick="wtab(this,'op')">Opinion</button>
+    <button class="wtb" id="wtab-es" onclick="wtab(this,'es')">Essays</button>
+    <button class="wtb" id="wtab-fi" onclick="wtab(this,'fi')">Fiction</button>
   </div>
   <div id="tab-op" class="wtc active">
     <div class="wi"><div><div class="wit">A 5 años del 18-O: ¿Quiénes son y dónde están los nuevos manifestantes del Estallido Social?</div><div class="wim">Co-authored with Joaquín Rozas</div></div><div class="wio">CIPER Chile</div></div>
@@ -359,7 +364,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
     <div class="wi"><div><div class="wit">Social stratification in Latin America and educational inequality — Interview with Florencia Torche</div><div class="wim">Revista Némesis, 13 · 2016</div></div><div class="wio">Interview</div></div>
   </div>
   <div id="tab-fi" class="wtc">
-    <p style="font-family:var(--serif);font-style:italic;color:var(--text-muted);font-size:1rem;padding:2rem 0;line-height:1.9">Stories forthcoming. This space is reserved for narrative work — fiction that orbits the same questions as the research: class, networks, and the texture of social life.</p>
+    <p id="fiction-ph" style="font-family:var(--serif);font-style:italic;color:var(--text-muted);font-size:1rem;padding:2rem 0;line-height:1.9">Stories forthcoming. This space is reserved for narrative work — fiction that orbits the same questions as the research: class, networks, and the texture of social life.</p>
   </div>
 </div>
 </section>
@@ -367,10 +372,103 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 <footer>
   <div class="fh"><em>'</em>Wir müssen wissen. Wir werden wissen.<em>'</em></div>
   <div class="fa">— David Hilbert, Königsberg, 1930</div>
-  <div class="fc">© 2026 Alejandro Plaza Reveco · Berlin, Germany</div>
+  <div class="fc" id="footer-copy">© 2026 Alejandro Plaza Reveco · Berlin, Germany</div>
 </footer>
 
 <script>
+const translations = {
+  en: {
+    'bio-eyebrow': 'Berlin, Germany',
+    'bio-p1': `I am a Doctoral Researcher at the <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> graduate program at <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, jointly coordinated with the <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. My research investigates how social networks mediate the relationship between institutions, civil society, life events, and political attitudes. Using comparative and longitudinal data, I explore how inequality and welfare regimes shape the structure and composition of individuals' personal networks—and, in turn, how these networks influence interpersonal trust and broader political orientations.`,
+    'bio-p2': `Between March and May 2025, I was a visiting researcher at the <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Swedish Institute for Social Research (SOFI)</a> at Stockholm University, within the Social Policy Unit.`,
+    'bio-p3': `I hold a Master's in Sociology from the <a href="https://www.uc.cl/" target="_blank">Pontifical Catholic University of Chile</a> and a Bachelor's from the <a href="https://www.uchile.cl/" target="_blank">University of Chile</a>. Prior to my doctoral studies, I was Technical Coordinator of <a href="https://coes.cl/" target="_blank">ELSOC — COES</a>, specialising in survey design, panel data, and network analysis.`,
+    'sec-research': 'Research',
+    'sec-teaching': 'Teaching',
+    'sec-consulting': 'Consulting',
+    'sec-writing': 'Writing',
+    'ax1-title': 'Networks, Inequality &amp; Social Stratification',
+    'ax2-title': 'Welfare States, Policy &amp; Redistribution',
+    'ax3-title': 'Social Cohesion &amp; Collective Action',
+    'role-instructor': 'Instructor of record',
+    'role-grad': 'Graduate Teaching Assistant',
+    'role-undergrad': 'Undergraduate Teaching Assistant',
+    'con-engagements': 'Selected engagements',
+    'wtab-op': 'Opinion', 'wtab-es': 'Essays', 'wtab-fi': 'Fiction',
+    'fiction-placeholder': 'Stories forthcoming. This space is reserved for narrative work — fiction that orbits the same questions as the research: class, networks, and the texture of social life.',
+    'footer-copy': '© 2026 Alejandro Plaza Reveco · Berlin, Germany'
+  },
+  es: {
+    'bio-eyebrow': 'Berlín, Alemania',
+    'bio-p1': `Soy investigador doctoral en el programa de posgrado <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> de la <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, coordinado conjuntamente con la <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. Mi investigación examina cómo las redes sociales median la relación entre instituciones, sociedad civil, eventos de vida y actitudes políticas. A través de datos comparativos y longitudinales, exploro cómo la desigualdad y los regímenes de bienestar configuran la estructura y composición de las redes personales —y, a su vez, cómo estas redes influyen en la confianza interpersonal y las orientaciones políticas.`,
+    'bio-p2': `Entre marzo y mayo de 2025, fui investigador visitante en el <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Instituto Sueco de Investigación Social (SOFI)</a> de la Universidad de Estocolmo, en la Unidad de Política Social.`,
+    'bio-p3': `Tengo un Magíster en Sociología de la <a href="https://www.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile</a> y una Licenciatura de la <a href="https://www.uchile.cl/" target="_blank">Universidad de Chile</a>. Antes de mi doctorado, fui Coordinador Técnico del Estudio Longitudinal Social de Chile (<a href="https://coes.cl/" target="_blank">ELSOC — COES</a>), especializándome en diseño de encuestas, datos de panel y análisis de redes.`,
+    'sec-research': 'Investigación',
+    'sec-teaching': 'Docencia',
+    'sec-consulting': 'Consultoría',
+    'sec-writing': 'Escritura',
+    'ax1-title': 'Redes, Desigualdad y Estratificación Social',
+    'ax2-title': 'Estados de Bienestar, Política y Redistribución',
+    'ax3-title': 'Cohesión Social y Acción Colectiva',
+    'role-instructor': 'Profesor titular',
+    'role-grad': 'Ayudante de posgrado',
+    'role-undergrad': 'Ayudante de pregrado',
+    'con-engagements': 'Proyectos seleccionados',
+    'wtab-op': 'Opinión', 'wtab-es': 'Ensayos', 'wtab-fi': 'Ficción',
+    'fiction-placeholder': 'Próximamente. Este espacio está reservado para narrativa — ficción que orbita las mismas preguntas que la investigación: clase, redes y la textura de la vida social.',
+    'footer-copy': '© 2026 Alejandro Plaza Reveco · Berlín, Alemania'
+  }
+};
+
+let currentLang = 'en';
+
+function setLang(lang) {
+  currentLang = lang;
+  const t = translations[lang];
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
+  // Bio
+  ['bio-eyebrow','bio-p1','bio-p2','bio-p3'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = t[id];
+  });
+  // Nav & bio-footer links with data attributes
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = t[el.getAttribute('data-en').toLowerCase().replace(/ /g,'-')] || el.getAttribute('data-'+lang) || el.getAttribute('data-en');
+  });
+  // Section titles
+  document.getElementById('sec-research').textContent = t['sec-research'];
+  document.getElementById('sec-teaching').textContent = t['sec-teaching'];
+  document.getElementById('sec-consulting').textContent = t['sec-consulting'];
+  document.getElementById('sec-writing').textContent = t['sec-writing'];
+  // Axis titles
+  document.getElementById('ax1-title').innerHTML = t['ax1-title'];
+  document.getElementById('ax2-title').innerHTML = t['ax2-title'];
+  document.getElementById('ax3-title').innerHTML = t['ax3-title'];
+  // Teaching roles
+  document.getElementById('role-instructor').textContent = t['role-instructor'];
+  document.getElementById('role-grad').textContent = t['role-grad'];
+  document.getElementById('role-undergrad').textContent = t['role-undergrad'];
+  // Consulting
+  document.getElementById('con-engagements').textContent = t['con-engagements'];
+  // Writing tabs
+  document.getElementById('wtab-op').textContent = t['wtab-op'];
+  document.getElementById('wtab-es').textContent = t['wtab-es'];
+  document.getElementById('wtab-fi').textContent = t['wtab-fi'];
+  // Fiction placeholder
+  document.getElementById('fiction-ph').textContent = t['fiction-placeholder'];
+  // Footer
+  document.getElementById('footer-copy').textContent = t['footer-copy'];
+  // Nav links
+  document.querySelectorAll('.nav-links a[data-en]').forEach(el => {
+    el.textContent = el.getAttribute('data-'+lang);
+  });
+  document.querySelector('.bio-lnk[data-en="Publications"]').textContent = lang==='es'?'Publicaciones':'Publications';
+  document.querySelector('.bio-lnk[data-en="Teaching"]').textContent = lang==='es'?'Docencia':'Teaching';
+  document.querySelector('.bio-lnk[data-en="Consulting"]').textContent = lang==='es'?'Consultoría':'Consulting';
+  document.querySelector('.bio-lnk[data-en="Download CV"]').textContent = lang==='es'?'Descargar CV':'Download CV';
+  document.querySelector('.bio-lnk[data-en="Get in touch"]').textContent = lang==='es'?'Contacto':'Get in touch';
+  document.querySelector('.p-role').innerHTML = lang==='es'?'Investigador Doctoral<br>Humboldt-Universität zu Berlin<br>RTG Dynamics':'Doctoral Researcher<br>Humboldt-Universität zu Berlin<br>RTG Dynamics';
+}
+
 function go(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
