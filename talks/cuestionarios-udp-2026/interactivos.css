@@ -1,0 +1,164 @@
+/* =============================================================
+   Diagramas SVG y laboratorios interactivos
+   (complemento de theme-marino.scss; misma paleta)
+   ============================================================= */
+
+/* --- Diagramas ----------------------------------------------- */
+svg.dg { width: 100%; height: auto; display: block; overflow: visible; }
+svg.dg text { font-family: Inter, Helvetica Neue, Arial, sans-serif; dominant-baseline: middle; }
+svg.dg .nd text { text-anchor: middle; }
+svg.dg .nd rect { stroke-width: 2; }
+svg.dg .obs rect { fill: #17243C; stroke: #3E5578; }
+svg.dg .obs text { fill: #E8E3D9; }
+svg.dg .lat rect { fill: #132A44; stroke: #4E7FB0; }
+svg.dg .lat text { fill: #BFD8F0; }
+svg.dg .err rect { fill: #2A2416; stroke: #C9A84C; }
+svg.dg .err text { fill: #F0D588; }
+svg.dg .ok  rect { fill: #1C2A18; stroke: #7E9C64; }
+svg.dg .ok  text { fill: #BBD19E; }
+svg.dg .bad rect { fill: #2A1614; stroke: #E08C81; }
+svg.dg .bad text { fill: #EBB3AC; }
+svg.dg .ar { fill: none; stroke-width: 2.5; }
+svg.dg .ar.g { stroke: #8FA3C0; }
+svg.dg .ar.a { stroke: #D9BC66; }
+svg.dg .ar.r { stroke: #E08C81; }
+svg.dg .ar.v { stroke: #A3BE86; }
+svg.dg .ar.dash { stroke-dasharray: 9 7; }
+svg.dg .lbl { fill: #9BA9BF; }
+svg.dg .lbl.claro { fill: #E8E3D9; }
+svg.dg .lbl.oro { fill: #F0D588; }
+svg.dg .lbl.rojo { fill: #E08C81; }
+svg.dg .lbl.azul { fill: #7FB0DC; }
+svg.dg .lbl.verde { fill: #A3BE86; }
+
+/* Columnas con diagrama más angosto */
+.dg-medio { max-width: 62%; margin: 0 auto; }
+.dg-chico { max-width: 46%; margin: 0 auto; }
+
+/* --- Laboratorios -------------------------------------------- */
+.lab { display: grid; grid-template-columns: 1.05fr 1fr; gap: 1.1em; align-items: start; }
+.lab.lab-ancho { grid-template-columns: 1.55fr 1fr; }
+.lab > svg {
+  width: 100%; height: auto; display: block;
+  background: #0B1424; border: 1px solid #2B3D5C; border-radius: 6px;
+}
+.lab svg text { font-family: Inter, Helvetica Neue, Arial, sans-serif; }
+.panel { font-size: .56em; line-height: 1.4; }
+.panel label { display: block; color: #9BA9BF; margin: .55em 0 .15em; }
+.panel label b { color: #F0D588; }
+.panel input[type=range] { width: 100%; accent-color: #D9BC66; height: 1.4em; cursor: pointer; }
+.btn {
+  font: inherit; font-size: .95em; font-weight: 600;
+  background: #2A2416; color: #F0D588;
+  border: 1px solid #C9A84C; border-radius: 4px;
+  padding: .3em .8em; margin: .3em .35em .2em 0; cursor: pointer;
+}
+.btn:hover { background: #3A3018; }
+.btn.sec { background: #17243C; color: #E8E3D9; border-color: #3E5578; }
+.btn.sec:hover { background: #1F3152; }
+.btn.chico { font-size: .82em; padding: .2em .6em; }
+.presets { margin-top: .2em; }
+.lectura { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; margin-top: .7em; }
+.lectura > div { background: #17243C; border-radius: 5px; padding: .45em .6em; }
+.lectura .k { display: block; color: #9BA9BF; font-size: .86em; line-height: 1.25; }
+.lectura .v { display: block; font-size: 1.75em; font-weight: 700; color: #F0D588; margin-top: .1em; }
+.glosa { color: #9BA9BF; font-size: .92em; margin-top: .8em; }
+
+/* --- Tarjetas que se dan vuelta ------------------------------- */
+.tarjetas { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .55em; }
+.tarjeta {
+  position: relative;
+  background: #17243C; border: 1px solid #3E5578; border-radius: 6px;
+  padding: .6em .75em .6em 2.2em; font-size: .58em; line-height: 1.35;
+  cursor: pointer; min-height: 4.6em; transition: border-color .2s, background .2s;
+}
+.tarjeta:hover { border-color: #C9A84C; }
+.tarjeta .num {
+  position: absolute; left: .6em; top: .55em;
+  color: #D9BC66; font-weight: 700; font-size: 1.1em;
+}
+.tarjeta .resp { display: none; margin-top: .45em; padding-top: .45em; border-top: 1px solid #2B3D5C; }
+.tarjeta .resp b { display: block; color: #F0D588; font-size: 1.12em; }
+.tarjeta .resp span { color: #BBD19E; }
+.tarjeta.abierta { border-color: #C9A84C; background: #1B2232; }
+.tarjeta.abierta .resp { display: block; }
+.tarjeta.larga { min-height: 6.2em; }
+.print-pdf .tarjeta .resp { display: block; }
+
+/* --- Mapa del error total ------------------------------------- */
+#lab-tse .clic { cursor: pointer; }
+#lab-tse .clic rect { transition: fill .15s, stroke-width .15s; }
+#lab-tse .clic:hover rect { stroke-width: 4; }
+#lab-tse .clic.activo rect { fill: #4A3C14; stroke-width: 4; }
+.tse-panel {
+  margin-top: .5em; min-height: 4.2em;
+  background: #17243C; border-left: 4px solid #C9A84C; border-radius: 0 5px 5px 0;
+  padding: .5em .8em; font-size: .62em; line-height: 1.4;
+}
+.tse-panel .t { display: block; color: #F0D588; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: .9em; }
+.tse-panel .def { display: block; }
+.tse-panel .ej { display: block; color: #BBD19E; margin-top: .2em; }
+
+/* --- Conjoint --------------------------------------------------- */
+.lab.lab-cj { grid-template-columns: 1.1fr 1fr; }
+.cj-pantalla {
+  background: #F4F1EA; color: #1B2D4F; border-radius: 6px; padding: .7em .9em;
+  font-size: .56em; box-shadow: 0 6px 24px rgba(0,0,0,.35);
+}
+.cj-top { margin-bottom: .5em; }
+.reveal .cj-pantalla table.cj-tabla { font-size: 1em; color: #1B2D4F; }
+.reveal .cj-pantalla table.cj-tabla th { color: #1B2D4F; border-bottom: 2px solid #1B2D4F; text-align: center; }
+.reveal .cj-pantalla table.cj-tabla td { border-bottom: 1px solid #D8D1C2; text-align: center; }
+.reveal .cj-pantalla table.cj-tabla td:first-child { text-align: left; font-weight: 600; }
+.reveal .cj-pantalla table.cj-tabla tbody tr:nth-child(odd) { background: #EDE8DF; }
+.cj-botones { margin-top: .5em; }
+.cj-pantalla .btn.sec { background: #fff; color: #1B2D4F; border-color: #A9B4C6; }
+.cj-res-t { color: #F0D588; font-weight: 700; margin-bottom: .3em; }
+.cj-k { color: #9BA9BF; font-weight: 700; text-transform: uppercase; font-size: .8em; letter-spacing: .05em; margin-top: .35em; }
+.cj-fila { display: grid; grid-template-columns: 9em 1fr 3em; gap: .5em; align-items: center; font-size: .9em; }
+.cj-barra { position: relative; height: .75em; background: #17243C; border-radius: 3px; overflow: hidden; }
+.cj-barra span { position: absolute; left: 0; top: 0; bottom: 0; background: #C9A84C; }
+.cj-barra i { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 2px; background: #E8E3D9; opacity: .6; }
+.cj-p { text-align: right; color: #F0D588; font-weight: 700; }
+
+/* --- Imágenes ---------------------------------------------------- */
+.reveal img.foto { border-radius: 4px; border: 1px solid #2B3D5C; }
+.fila-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: .6em; }
+
+/* --- Ecuación central -------------------------------------------- */
+.ecuacion {
+  font-family: Georgia, 'Times New Roman', serif; font-style: italic;
+  font-size: 2.2em; color: #F0D588; text-align: center;
+  border: 1px solid rgba(217,188,102,.75); border-radius: 6px;
+  background: rgba(217,188,102,.08); padding: .15em .6em; margin: .2em auto .4em; width: fit-content;
+}
+
+/* --- Referencias --------------------------------------------------- */
+.refs { font-size: .44em; line-height: 1.35; columns: 2; column-gap: 2em; }
+.refs p { margin: 0 0 .45em; padding-left: 1.4em; text-indent: -1.4em; break-inside: avoid; }
+
+/* Tablas un poco más grandes en esta clase */
+.reveal table.grande { font-size: .7em; }
+
+/* =============================================================
+   Ajustes de escala para esta clase (legibilidad en sala)
+   ============================================================= */
+.reveal table { font-size: .72em; }
+.panel { font-size: .7em; }
+.tarjeta { font-size: .74em; }
+.tse-panel { font-size: .82em; min-height: 4.6em; }
+.cajas .caja { font-size: .78em; padding: .65em .4em; }
+.sintesis ul li { font-size: 1.04em; margin-bottom: .75em; }
+.cj-pantalla { font-size: .74em; }
+.lab.lab-cj .panel { font-size: .66em; }
+.lectura .v { font-size: 1.6em; }
+.reveal img.foto { max-width: 100%; max-height: 520px; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
+.nota { font-size: .62em; }
+
+/* Conjoint: conteo de manos */
+.reveal .cj-pantalla table.cj-tabla tfoot td { border-top: 2px solid #1B2D4F; border-bottom: none; background: #F4F1EA; font-weight: 700; }
+.cj-voto {
+  font: inherit; font-size: 1.3em; font-weight: 700; width: 4.2em; text-align: center;
+  color: #1B2D4F; background: #fff; border: 2px solid #C9A84C; border-radius: 4px; padding: .1em .2em;
+}
+.cj-hist { margin-top: .4em; font-size: .85em; color: #4A5568; min-height: 1.2em; }

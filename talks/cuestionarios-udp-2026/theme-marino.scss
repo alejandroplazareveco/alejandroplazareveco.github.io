@@ -1,0 +1,383 @@
+/*-- scss:defaults --*/
+
+// ============================================================
+//  ARTESANIA INTELECTUAL — tema "marino oscuro"
+//  La paleta de Alejandro, invertida para pantalla.
+// ============================================================
+
+// --- Paleta -------------------------------------------------
+$marino:        #0F1A2E;   // fondo
+$marino-alto:   #17243C;   // superficies elevadas (bloques, tablas)
+$marino-borde:  #2B3D5C;   // bordes tenues
+$crema:         #E8E3D9;   // texto
+$crema-tenue:   #9BA9BF;   // texto secundario
+$oro:           #D9BC66;   // acento principal (aclarado para fondo oscuro)
+$oro-fuerte:    #F0D588;   // acento en titulares
+$acero:         #7FB0DC;   // azul claro — bloques de alerta
+$salvia:        #A3BE86;   // verde — bloques de ejemplo / "delego"
+$ladrillo:      #E08C81;   // rojo apagado — modos de falla
+
+// --- Variables de reveal ------------------------------------
+$body-bg:            $marino;
+$body-color:         $crema;
+$link-color:         $oro;
+$selection-bg:       rgba($oro, .3);
+$selection-color:    $crema;
+
+$font-family-sans-serif: Inter, Helvetica Neue, Arial, sans-serif;
+$font-family-monospace:  JetBrains Mono, Fira Mono, Consolas, monospace;
+
+$presentation-font-size-root: 31px;
+$presentation-line-height: 1.42;
+
+$presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-color: $crema;
+$presentation-heading-font-weight: 650;
+$presentation-h1-font-size: 2.0em;
+$presentation-h2-font-size: 1.08em;
+$presentation-h3-font-size: 0.95em;
+
+$code-block-bg:      #0A1322;
+$code-color:         $oro;
+$code-block-font-size: 0.52em;
+
+/*-- scss:rules --*/
+
+// ============================================================
+//  Base
+// ============================================================
+.reveal {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .002em;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+// --- Barra de título de cada slide --------------------------
+.reveal .slides section > h2:first-child,
+.reveal .slides section > h1:first-child {
+  background: linear-gradient(90deg, #16253F 0%, #101B2E 100%);
+  border-left: 4px solid $oro;
+  color: $crema;
+  font-weight: 650;
+  padding: .34em .7em .38em;
+  margin: -.15em 0 .75em -.05em;
+  line-height: 1.25;
+  letter-spacing: .004em;
+}
+
+// La slide de portada y las divisorias no llevan barra
+.reveal section.portada > h1:first-child,
+.reveal section.portada > h2:first-child,
+.reveal section.divisoria > h2:first-child {
+  background: none;
+  border-left: none;
+  padding: 0;
+  margin: 0;
+}
+
+// ============================================================
+//  El juego tipográfico: la IA dentro de artesanía
+// ============================================================
+.ia {
+  font-family: $font-family-monospace;
+  font-weight: 700;
+  color: $oro-fuerte;
+  border-bottom: 2px solid $oro;
+  padding-bottom: .04em;
+  letter-spacing: -.01em;
+}
+
+.cursor {
+  display: inline-block;
+  width: .42em;
+  height: .82em;
+  background: $oro;
+  vertical-align: -.06em;
+  margin-left: .16em;
+  animation: parpadeo 1.15s step-end infinite;
+}
+@keyframes parpadeo { 50% { opacity: 0; } }
+
+// Sin animación cuando se exporta a PDF
+.print-pdf .cursor { animation: none; opacity: 1; }
+
+// ============================================================
+//  Énfasis en línea (equivalentes de \hl \hlr \hld \hlx)
+// ============================================================
+.hl  { color: $oro-fuerte; font-weight: 600; }
+.hlr { color: $acero;      font-weight: 600; }
+.hld { color: $salvia;     font-weight: 600; }
+.hlx { color: $ladrillo;   font-weight: 600; }
+.tenue { color: $crema-tenue; }
+
+.reveal code {
+  font-family: $font-family-monospace;
+  color: $oro;
+  background: rgba(#000, .28);
+  padding: .06em .3em;
+  border-radius: 3px;
+  font-size: .88em;
+}
+
+// ============================================================
+//  Bloques (equivalentes de block / alertblock / exampleblock)
+// ============================================================
+.bloque, .alerta, .ejemplo, .falla {
+  background: $marino-alto;
+  border-left: 4px solid $marino-borde;
+  border-radius: 0 5px 5px 0;
+  padding: .5em .75em .55em;
+  margin: .5em 0;
+  font-size: .82em;
+  line-height: 1.4;
+}
+.bloque  { border-left-color: $oro; }
+.alerta  { border-left-color: $acero;    background: rgba($acero, .10); }
+.ejemplo { border-left-color: $salvia;   background: rgba($salvia, .10); }
+.falla   { border-left-color: $ladrillo; background: rgba($ladrillo, .10); }
+
+.bloque .t, .alerta .t, .ejemplo .t, .falla .t {
+  display: block;
+  font-weight: 700;
+  font-size: .88em;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  margin-bottom: .3em;
+}
+.bloque  .t { color: $oro; }
+.alerta  .t { color: $acero; }
+.ejemplo .t { color: $salvia; }
+.falla   .t { color: $ladrillo; }
+
+.bloque p:last-child, .alerta p:last-child,
+.ejemplo p:last-child, .falla p:last-child { margin-bottom: 0; }
+
+// Caja destacada centrada (los \fcolorbox del deck)
+.destacado {
+  border: 1px solid rgba($oro, .75);
+  background: linear-gradient(180deg, rgba($oro,.14) 0%, rgba($oro,.07) 100%);
+  border-radius: 5px;
+  padding: .6em .9em;
+  margin: .6em auto;
+  text-align: center;
+  font-size: .84em;
+  max-width: 88%;
+}
+.destacado .grande { font-size: 1.35em; font-weight: 650; color: $oro-fuerte; }
+
+// ============================================================
+//  LA FRANJA — delego / no delego / cómo verifico
+// ============================================================
+.franja {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.3em;
+  background: #0B1424;
+  border-top: 2px solid $oro;
+  padding: .55em .8em .6em;
+  font-size: .42em;
+  line-height: 1.35;
+}
+.franja > div strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  font-size: .92em;
+  margin-bottom: .22em;
+}
+.franja .d  strong { color: $salvia; }
+.franja .nd strong { color: $acero; }
+.franja .v  strong { color: $oro; }
+.franja p { margin: 0; }
+
+// ============================================================
+//  Fila de cajas etiquetadas (p. ej. "qué se vuelve escaso")
+// ============================================================
+.cajas {
+  display: flex;
+  gap: .5em;
+  justify-content: center;
+  margin: .5em 0;
+}
+// pandoc envuelve el contenido en un <p>: display:contents lo vuelve transparente
+// para que los <span> sean items directos del flex
+.cajas > p { display: contents; }
+.cajas .caja {
+  flex: 1;
+  text-align: center;
+  padding: .5em .3em;
+  border-radius: 4px;
+  font-size: .58em;
+  font-weight: 650;
+  letter-spacing: .05em;
+  line-height: 1.25;
+  border: 1px solid $marino-borde;
+  background: $marino-alto;
+  color: $crema;
+}
+.cajas .caja.acento {
+  border-color: $oro;
+  background: rgba($oro, .13);
+  color: $oro-fuerte;
+}
+
+// Rejilla genérica de dos y tres columnas
+.cols2 { display: grid; grid-template-columns: 1fr 1fr;     gap: 1.1em; }
+.cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .9em; }
+.cols-img { display: grid; grid-template-columns: 1fr 1.9fr; gap: 1.4em; align-items: start; }
+
+// ============================================================
+//  Tablas
+// ============================================================
+.reveal table {
+  font-size: .62em;
+  border-collapse: collapse;
+  margin: .3em 0;
+  width: 100%;
+}
+.reveal table th {
+  color: $oro;
+  border-bottom: 1.5px solid $oro;
+  text-align: left;
+  padding: .4em .55em;
+  font-weight: 650;
+}
+.reveal table td {
+  border-bottom: 1px solid rgba($marino-borde, .8);
+  padding: .38em .55em;
+  vertical-align: top;
+}
+.reveal table tbody tr:nth-child(odd) { background: rgba(#fff, .028); }
+
+// ============================================================
+//  Código
+// ============================================================
+.reveal pre {
+  box-shadow: none;
+  border-left: 3px solid $oro;
+  background: $code-block-bg;
+  border-radius: 0 4px 4px 0;
+  width: 100%;
+  margin: .4em 0;
+}
+.reveal pre code {
+  background: none;
+  color: #BFCBDD;
+  padding: .7em .9em;
+  max-height: none;
+}
+.reveal .sourceCode .co { color: #6E7F99; font-style: italic; }
+.reveal .sourceCode .at { color: $acero; }
+.reveal .sourceCode .st { color: $salvia; }
+.reveal .sourceCode .fu { color: $oro; }
+
+// ============================================================
+//  Listas
+// ============================================================
+.reveal ul { margin-left: .3em; }
+.reveal ul li { margin-bottom: .3em; }
+.reveal ul li::marker { color: $oro; }
+.reveal ol li::marker { color: $oro; font-weight: 700; }
+
+// ============================================================
+//  Portada y divisorias
+// ============================================================
+.reveal section.portada  { padding-top: 15%; }
+.reveal section.divisoria { padding-top: 22%; }
+.portada { text-align: left !important; }
+.portada .regla-gruesa { height: 3px; background: $oro; margin: 0 0 .55em; }
+.portada .regla-fina   { height: 1px; background: rgba($oro, .5); margin: .55em 0 .7em; }
+.portada .titulo   { font-size: 1.9em; font-weight: 700; letter-spacing: -.012em; line-height: 1.1; }
+.portada .subtitulo{ font-size: .8em; color: $oro; margin-top: .25em; }
+.portada .pie      { font-size: .52em; color: $crema-tenue; line-height: 1.6; }
+.portada .pie .nombre { color: $crema; font-size: 1.25em; display: block; margin-bottom: .18em; }
+
+.divisoria { text-align: center !important; }
+.divisoria .acto { font-size: 1.5em; font-weight: 700; color: $crema; }
+.divisoria .bajada { font-size: .78em; color: $oro; margin-top: .4em; }
+
+// ============================================================
+//  Diagramas SVG
+// ============================================================
+.diagrama { width: 100%; margin: .3em 0 .5em; }
+.diagrama svg { width: 100%; height: auto; display: block; }
+
+// ============================================================
+//  Detalles de reveal
+// ============================================================
+.reveal .slide-number {
+  background: none;
+  color: rgba($crema, .38);
+  font-family: $font-family-monospace;
+  font-size: .5em;
+}
+.reveal .progress { color: $oro; height: 3px; }
+.reveal .controls { color: rgba($oro, .55); }
+
+// Fragments: lo oculto se atenúa en vez de desaparecer del layout
+.reveal .slides section .fragment.semi-fade-out.visible { opacity: .35; }
+
+// Pie de página tenue (los \footnotesize\color{gris} del deck)
+.nota { font-size: .58em; color: $crema-tenue; line-height: 1.42; margin-top: .45em; }
+
+// ============================================================
+//  Slides de síntesis (las que en Beamer eran fondo marino)
+// ============================================================
+.reveal section.sintesis {
+  background: linear-gradient(150deg, #16253F 0%, #0C1524 100%);
+}
+.reveal section.sintesis > h2:first-child {
+  background: none;
+  border-left: none;
+  border-bottom: 2px solid $oro;
+  color: $oro-fuerte;
+  padding: 0 0 .25em;
+  margin-bottom: .7em;
+  font-size: 1.15em;
+}
+.sintesis ul { list-style: none; margin-left: 0; }
+.sintesis ul li {
+  color: $oro-fuerte;
+  font-size: .84em;
+  margin-bottom: .62em;
+  padding-left: 1.1em;
+  position: relative;
+  line-height: 1.4;
+}
+.sintesis ul li::before {
+  content: "▸";
+  position: absolute; left: 0;
+  color: $oro;
+}
+
+// Rejillas adicionales
+.cols-40-60 { display: grid; grid-template-columns: 2fr 3fr;  gap: 1.2em; }
+.cols-60-40 { display: grid; grid-template-columns: 3fr 2fr;  gap: 1.2em; }
+.cols-30-70 { display: grid; grid-template-columns: 1fr 2.3fr; gap: 1.3em; align-items: center; }
+
+// Listas numeradas con más aire (las anatomías del prompt)
+.pasos ol { margin-left: .2em; }
+.pasos ol li { margin-bottom: .55em; font-size: .88em; }
+.pasos .glosa { display: block; font-size: .74em; color: $crema-tenue; line-height: 1.35; margin-top: .12em; }
+
+// Cierre
+.cierre { text-align: left !important; padding-top: 20%; }
+.cierre .titulo { font-size: 1.8em; font-weight: 700; }
+.cierre .bajada { font-size: .8em; color: $oro; margin-top: .3em; }
+.cierre .pie { font-size: .55em; color: $crema-tenue; margin-top: .2em; }
+
+// El h1 de las divisorias tampoco lleva barra
+.reveal section.divisoria > h1:first-child {
+  background: none;
+  border-left: none;
+  padding: 0;
+  margin: 0 0 .35em;
+  font-size: 1.55em;
+  font-weight: 700;
+  color: $crema;
+}

@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="clase_cuestionarios_files/libs/clipboard/clipboard.min.js"></script>
+<script src="clase_cuestionarios_files/libs/quarto-html/tabby.min.js"></script>
+<script src="clase_cuestionarios_files/libs/quarto-html/popper.min.js"></script>
+<script src="clase_cuestionarios_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="clase_cuestionarios_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="clase_cuestionarios_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="clase_cuestionarios_files/libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <title>Encuestas, cuestionarios y medición</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="clase_cuestionarios_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="clase_cuestionarios_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="clase_cuestionarios_files/libs/revealjs/dist/theme/quarto-91c541959402e421d4ff045fbcf1904a.css">
+  <link rel="stylesheet" href="fuentes.css">
+  <link rel="stylesheet" href="interactivos.css">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="clase_cuestionarios_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="slide level2 portada">
+<h2></h2>
+
+<script>
+window.LAB = {
+  randn: function(){ let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random();
+    return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); },
+  svg: function(tag, attrs){ const e=document.createElementNS('http://www.w3.org/2000/svg',tag);
+    for(const k in attrs) e.setAttribute(k, attrs[k]); return e; },
+  fmt: function(x,d){ return x.toFixed(d===undefined?1:d).replace('.',','); },
+  // evita que las flechas del teclado en un slider cambien de slide
+  guard: function(root){ root.querySelectorAll('input').forEach(function(i){
+    i.addEventListener('keydown', function(e){ e.stopPropagation(); }); }); }
+};
+</script>
+
+<div class="regla-gruesa">
+
+</div>
+<div class="titulo">
+<p>Encuestas, cuestionarios y medición</p>
+</div>
+<div class="subtitulo">
+<p>Del concepto al número: trabajar con el error</p>
+</div>
+<div class="regla-fina">
+
+</div>
+<div class="pie">
+<p><span class="nombre">Alejandro Plaza Reveco · profesor invitado</span> Lógica de la Investigación Social · Sociología, Universidad Diego Portales<br>
+6 de octubre de 2026</p>
+</div>
+<aside class="notes">
+<p>Tiempos sugeridos (80 min): Parte 1, 12 · Parte 2, 18 · Parte 3, 16 · Parte 4, 20 · Parte 5, 12 · cierre, 2. Teclas: S vista de orador · B pizarra · Esc vista general · F pantalla completa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="hoja-de-ruta" class="slide level2">
+<h2>Hoja de ruta</h2>
+<div class="pasos">
+<ol type="1">
+<li><strong>Medir y encuestar: lo básico</strong> <span class="glosa">variables, niveles de medición, cuestionarios</span></li>
+<li><strong>Obsesionarse con el error</strong> <span class="glosa">nos vamos a equivocar: ¿por cuánto?</span></li>
+<li><strong>Del concepto al número</strong> <span class="glosa">conceptos latentes y operacionalización</span></li>
+<li><strong>Tres casos reales: ELSOC</strong> <span class="glosa">autoeficacia política · autoritarismo · depresión</span></li>
+<li><strong>Innovaciones</strong> <span class="glosa">experimentos, modos de aplicación y datos vinculados</span></li>
+</ol>
+</div>
+</section>
+<section>
+<section id="parte-1-medir-y-encuestar" class="title-slide slide level1 divisoria center">
+<h1>Parte 1 — Medir y encuestar</h1>
+<div class="bajada">
+<p>Lo básico: qué es medir, qué es una variable y qué es un cuestionario</p>
+</div>
+</section>
+<section id="qué-significa-medir" class="slide level2">
+<h2>¿Qué significa medir?</h2>
+<div class="cols-60-40">
+<div>
+<div class="bloque">
+<p><span class="t">Definición clásica</span> Medir es <span class="hl">asignar números a objetos o eventos según reglas</span> (Stevens, 1946)</p>
+</div>
+<ul>
+<li>Medimos la estatura con una regla y la temperatura con un termómetro</li>
+<li>En sociología medimos edad, ingreso, confianza, autoritarismo…</li>
+<li>La pregunta de hoy: ¿con qué <strong>regla</strong> le asignamos un número a la confianza en las instituciones?</li>
+</ul>
+</div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 420 420" role="img" aria-label="Concepto, regla y número"><defs><marker id="mg1" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg1" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma1" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa1" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr1" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr1" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv1" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv1" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="c"><rect x="70.0" y="18.0" width="280" height="84" rx="8"></rect><text font-size="24" font-weight="700"><tspan x="210" y="45.8">Concepto</tspan><tspan x="210" y="74.2">«confianza»</tspan></text></g><g class="nd obs" data-k="r"><rect x="70.0" y="168.0" width="280" height="84" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="210" y="195.8">Regla</tspan><tspan x="210" y="224.2">pregunta + escala</tspan></text></g><g class="nd err" data-k="n"><rect x="70.0" y="318.0" width="280" height="84" rx="8"></rect><text font-size="24" font-weight="700"><tspan x="210" y="345.8">Número</tspan><tspan x="210" y="374.2">1 · 2 · 3 · 4 · 5</tspan></text></g><line class="ar g" x1="210.0" y1="106.0" x2="210.0" y2="162.0" marker-end="url(#mg1)"></line><line class="ar g" x1="210.0" y1="256.0" x2="210.0" y2="312.0" marker-end="url(#mg1)"></line></svg>
+</div>
+</div>
+</section>
+<section id="qué-es-una-variable" class="slide level2">
+<h2>¿Qué es una variable?</h2>
+<div class="bloque">
+<p><span class="t">Definición</span> Una <span class="hl">variable</span> es una característica que <strong>toma distintos valores</strong> entre las unidades que estudiamos: personas, hogares, comunas…</p>
+</div>
+<table class="grande caption-top">
+<thead>
+<tr class="header">
+<th>Persona</th>
+<th>Comuna</th>
+<th>Nivel educacional</th>
+<th>Confianza (1–5)</th>
+<th>Edad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td>Maipú</td>
+<td>Media completa</td>
+<td>2</td>
+<td>34</td>
+</tr>
+<tr class="even">
+<td>Benito</td>
+<td>Ñuñoa</td>
+<td>Universitaria</td>
+<td>4</td>
+<td>51</td>
+</tr>
+<tr class="odd">
+<td>Carla</td>
+<td>Temuco</td>
+<td>Básica</td>
+<td>3</td>
+<td>67</td>
+</tr>
+<tr class="even">
+<td>Diego</td>
+<td>Antofagasta</td>
+<td>Técnica superior</td>
+<td>1</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Cada fila es una <strong>unidad</strong>; cada columna, una <strong>variable</strong></li>
+<li>¿Las cuatro columnas son datos del mismo tipo?</li>
+</ul>
+</section>
+<section id="niveles-de-medición" class="slide level2">
+<h2>Niveles de medición</h2>
+<table class="grande caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel</th>
+<th>Qué nos dicen los valores</th>
+<th>Ejemplos</th>
+<th>Operaciones</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nominal</strong></td>
+<td>Solo categorías distintas, sin orden</td>
+<td>Comuna, partido, sexo</td>
+<td>Contar</td>
+</tr>
+<tr class="even">
+<td><strong>Ordinal</strong></td>
+<td>Categorías con orden, pero distancias desconocidas</td>
+<td>Nivel educacional, escala de acuerdo</td>
+<td>Contar, ordenar</td>
+</tr>
+<tr class="odd">
+<td><strong>Continua</strong></td>
+<td>Distancias iguales: un año más es siempre un año más</td>
+<td>Edad en años, ingreso, horas de trabajo</td>
+<td>Contar, ordenar, sumar, promediar</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Ojo</span> El número que ponemos en la base <strong>no cambia</strong> el nivel de medición: codificar «Norte = 1, Centro = 2, Sur = 3» no convierte la zona en una variable numérica.</p>
+</div>
+</div>
+</section>
+<section id="asignar-números-a-conceptos" class="slide level2">
+<h2>Asignar números a conceptos</h2>
+<div class="cols-40-60">
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 460 420" role="img" aria-label="Categorías de respuesta y números"><defs><marker id="mg2" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg2" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma2" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa2" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr2" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr2" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv2" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv2" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="c0"><rect x="20.0" y="16.0" width="200" height="58" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="120" y="45.0">Nada</tspan></text></g><g class="nd lat" data-k="n0"><rect x="345.0" y="16.0" width="70" height="58" rx="8"></rect><text font-size="26" font-weight="700"><tspan x="380" y="45.0">1</tspan></text></g><line class="ar g" x1="224.0" y1="45.0" x2="339.0" y2="45.0" marker-end="url(#mg2)"></line><g class="nd obs" data-k="c1"><rect x="20.0" y="98.0" width="200" height="58" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="120" y="127.0">Poca</tspan></text></g><g class="nd lat" data-k="n1"><rect x="345.0" y="98.0" width="70" height="58" rx="8"></rect><text font-size="26" font-weight="700"><tspan x="380" y="127.0">2</tspan></text></g><line class="ar g" x1="224.0" y1="127.0" x2="339.0" y2="127.0" marker-end="url(#mg2)"></line><g class="nd obs" data-k="c2"><rect x="20.0" y="180.0" width="200" height="58" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="120" y="209.0">Algo</tspan></text></g><g class="nd lat" data-k="n2"><rect x="345.0" y="180.0" width="70" height="58" rx="8"></rect><text font-size="26" font-weight="700"><tspan x="380" y="209.0">3</tspan></text></g><line class="ar g" x1="224.0" y1="209.0" x2="339.0" y2="209.0" marker-end="url(#mg2)"></line><g class="nd obs" data-k="c3"><rect x="20.0" y="262.0" width="200" height="58" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="120" y="291.0">Bastante</tspan></text></g><g class="nd lat" data-k="n3"><rect x="345.0" y="262.0" width="70" height="58" rx="8"></rect><text font-size="26" font-weight="700"><tspan x="380" y="291.0">4</tspan></text></g><line class="ar g" x1="224.0" y1="291.0" x2="339.0" y2="291.0" marker-end="url(#mg2)"></line><g class="nd obs" data-k="c4"><rect x="20.0" y="344.0" width="200" height="58" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="120" y="373.0">Mucha</tspan></text></g><g class="nd lat" data-k="n4"><rect x="345.0" y="344.0" width="70" height="58" rx="8"></rect><text font-size="26" font-weight="700"><tspan x="380" y="373.0">5</tspan></text></g><line class="ar g" x1="224.0" y1="373.0" x2="339.0" y2="373.0" marker-end="url(#mg2)"></line></svg>
+</div>
+<div>
+<p>«¿Cuánto confía usted en el Congreso?»</p>
+<ul>
+<li>Los números respetan el <strong>orden</strong>: más número, más confianza</li>
+<li>Pero, ¿la distancia entre «Nada» y «Poca» es igual a la que hay entre «Bastante» y «Mucha»?</li>
+<li>Si lo es, podemos <span class="hl">promediar</span>; si no, es una variable ordinal</li>
+</ul>
+<div class="ejemplo">
+<p><span class="t">Para pensar</span> Un promedio de confianza de 2,4: ¿qué significa exactamente?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-qué-nivel-de-medición" class="slide level2 ejercicio">
+<h2>Ejercicio: ¿qué nivel de medición?</h2>
+<p><span class="tenue">Hagan clic en cada tarjeta para ver la respuesta</span></p>
+<div class="tarjetas"><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">1</span><div class="q">Edad en años cumplidos</div><div class="resp"><b>Continua</b><span>Un año más es siempre un año más: tiene sentido promediar.</span></div></div><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">2</span><div class="q">Edad en tramos: 18–29, 30–44, 45–64, 65+</div><div class="resp"><b>Ordinal</b><span>Hay orden, pero los tramos no tienen el mismo ancho.</span></div></div><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">3</span><div class="q">Comuna de residencia</div><div class="resp"><b>Nominal</b><span>Categorías distintas, sin ningún orden.</span></div></div><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">4</span><div class="q">Satisfacción con la vida, de 1 a 10</div><div class="resp"><b>Ordinal</b><span>…aunque en la práctica muchas veces se trata como continua.</span></div></div><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">5</span><div class="q">Número de amigos cercanos</div><div class="resp"><b>Continua</b><span>Es un conteo: numérica (discreta), con distancias iguales.</span></div></div><div class="tarjeta" onclick="this.classList.toggle('abierta')"><span class="num">6</span><div class="q">Candidato por el que votó</div><div class="resp"><b>Nominal</b><span>Ningún candidato es «más» que otro.</span></div></div></div>
+<div class="nota">
+<p>Una decisión de diseño: la <strong>misma</strong> variable puede medirse a distintos niveles. Preguntar la edad en tramos pierde información.</p>
+</div>
+</section>
+<section id="un-cuestionario-según-asún" class="slide level2">
+<h2>Un cuestionario, según Asún</h2>
+<div class="bloque">
+<p><span class="t">Definición</span> «Un cuestionario es un dispositivo de investigación cuantitativa consistente en un conjunto de preguntas que deben ser aplicadas a un sujeto (usualmente individual) en un orden determinado y frente a las cuales este sujeto puede responder adecuando sus respuestas a un espacio restringido o a una serie de respuestas que el mismo cuestionario ofrece.»</p>
+</div>
+<ul>
+<li>Objetivo: <span class="hl">«medir» el grado o la forma</span> en que las personas poseen determinadas variables</li>
+<li>Es una <strong>conversación no horizontal</strong>: uno pregunta con opciones preestablecidas, el otro elige</li>
+</ul>
+<div class="nota">
+<p>Asún (2006, p.&nbsp;67).</p>
+</div>
+</section>
+<section id="encuesta-cuestionario" class="slide level2">
+<h2>Encuesta ≠ cuestionario</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1200 330" role="img" aria-label="Cuestionario, muestra y modo forman la encuesta"><defs><marker id="mg3" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg3" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma3" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa3" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr3" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr3" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv3" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv3" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="q"><rect x="40.0" y="15.0" width="320" height="110" rx="8"></rect><text font-size="23" font-weight="500"><tspan x="200" y="56.4" font-weight="700">Cuestionario</tspan><tspan x="200" y="83.6">¿qué preguntamos y cómo?</tspan></text></g><g class="nd obs" data-k="m"><rect x="440.0" y="15.0" width="320" height="110" rx="8"></rect><text font-size="23" font-weight="500"><tspan x="600" y="56.4" font-weight="700">Muestra</tspan><tspan x="600" y="83.6">¿a quiénes preguntamos?</tspan></text></g><g class="nd obs" data-k="mo"><rect x="840.0" y="15.0" width="320" height="110" rx="8"></rect><text font-size="23" font-weight="500"><tspan x="1000" y="56.4" font-weight="700">Modo</tspan><tspan x="1000" y="83.6">¿cómo llega la pregunta?</tspan></text></g><g class="nd err" data-k="e"><rect x="410.0" y="230.0" width="380" height="80" rx="8"></rect><text font-size="28" font-weight="700"><tspan x="600" y="270.0">Encuesta</tspan></text></g><line class="ar g" x1="313.6" y1="126.8" x2="514.6" y2="227.3" marker-end="url(#mg3)"></line><line class="ar g" x1="600.0" y1="129.0" x2="600.0" y2="224.0" marker-end="url(#mg3)"></line><line class="ar g" x1="886.4" y1="126.8" x2="685.4" y2="227.3" marker-end="url(#mg3)"></line></svg>
+</div>
+<ul>
+<li>Un buen cuestionario aplicado a una mala muestra produce <strong>malos datos</strong></li>
+<li>Una muestra perfecta con preguntas mal hechas, <strong>también</strong></li>
+<li>Modos: cara a cara, teléfono, web, autoaplicado… o <span class="hl">mezclas</span></li>
+</ul>
+</section>
+<section id="qué-se-puede-preguntar" class="slide level2">
+<h2>¿Qué se puede preguntar?</h2>
+<div class="cols3">
+<div class="bloque">
+<p><span class="t">Hechos</span> Conductas o sucesos</p>
+<p><span class="tenue">¿Votó en la última elección? ¿Con quién vive?</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">Conocimientos y habilidades</span> Hay respuestas correctas e incorrectas</p>
+<p><span class="tenue">Pruebas SIMCE o PAES, preguntas de conocimiento político</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">Opiniones y valores</span> Lo que la persona piensa o siente</p>
+<p><span class="tenue">¿Cuánto confía en el Congreso? ¿Qué es más importante: libertad o igualdad?</span></p>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Incluso los hechos pasan por la persona</span> Lo que recibimos «no es el hecho», sino «la percepción, recuerdo o lo que nos desea transmitir el sujeto» (Asún, 2006, p.&nbsp;78).</p>
+</div>
+</div>
+</section>
+<section id="síntesis" class="slide level2 sintesis">
+<h2>Síntesis</h2>
+<ul>
+<li>Medir es asignar números a conceptos según una regla explícita</li>
+<li>Las variables pueden ser nominales, ordinales o continuas: el nivel define qué operaciones tienen sentido</li>
+<li>El cuestionario es la regla de medición; la encuesta suma muestra y modo de aplicación</li>
+</ul>
+</section></section>
+<section>
+<section id="parte-2-obsesionarse-con-el-error" class="title-slide slide level1 divisoria center">
+<h1>Parte 2 — Obsesionarse con el error</h1>
+<div class="bajada">
+<p>Nos vamos a equivocar. La pregunta es: ¿por cuánto?</p>
+</div>
+</section>
+<section id="section-1" class="slide level2 portada">
+<h2></h2>
+<div class="destacado" style="margin-top:1.4em">
+<p>Trabajar con datos cuantitativos significa</p>
+<p><span class="grande">obsesionarse con el error</span></p>
+</div>
+<div class="fragment">
+<div class="pasos" style="max-width:60%; margin:1em auto 0">
+<ol type="1">
+<li>¿De dónde viene el error?</li>
+<li>¿Cómo lo evitamos o reducimos?</li>
+<li>¿Cómo le ponemos un <span class="hl">número</span>?</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="no-es-si-nos-equivocamos-sino-por-cuánto" class="slide level2">
+<h2>No es si nos equivocamos, sino por cuánto</h2>
+<div class="cols-60-40">
+<div>
+<p>Marzo de 2026: el debate sobre el MEPCO (Mecanismo de Estabilización de Precios de los Combustibles)</p>
+<div class="bloque">
+<p><span class="t">Mirada determinista</span> «El 48% de los chilenos opina que el Gobierno debía endeudarse para mantener el subsidio del MEPCO»</p>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Mirada probabilística</span> «Entre <strong>44% y 52%</strong> lo opina, con 95% de confianza»<br>
+<span class="tenue">Ilustrativo: muestra de ≈700 casos, margen de ±3,7 puntos</span></p>
+</div>
+</div>
+</div>
+<p><img data-src="figuras/mepco.jpg" class="foto"></p>
+</div>
+<div class="nota">
+<p>Dato: Cadem, Plaza Pública (marzo 2026).</p>
+</div>
+</section>
+<section id="laboratorio-por-cuánto-nos-equivocamos" class="slide level2 lab-slide">
+<h2>Laboratorio: ¿por cuánto nos equivocamos?</h2>
+
+<div class="lab lab-ancho" id="lab-mu">
+  <svg viewbox="0 0 900 430" id="mu-svg">
+    <g id="mu-eje"></g>
+    <g id="mu-int"></g>
+  </svg>
+  <div class="panel">
+    <label>Tamaño de muestra: <b id="mu-nv"></b> personas</label>
+    <input type="range" id="mu-n" min="100" max="3000" step="100" value="700">
+    <label>Sesgo de no respuesta: <b id="mu-bv"></b> puntos</label>
+    <input type="range" id="mu-b" min="0" max="8" step="1" value="0">
+    <div>
+      <button class="btn" id="mu-1">Hacer 1 encuesta</button>
+      <button class="btn" id="mu-20">Hacer 20</button>
+      <button class="btn sec" id="mu-0">Limpiar</button>
+    </div>
+    <div class="lectura">
+      <div><span class="k">Margen de error (95%)</span><span class="v" id="mu-me">–</span></div>
+      <div><span class="k">Intervalos que contienen el 48%</span><span class="v" id="mu-cov">–</span></div>
+    </div>
+    <p class="glosa">Cada línea es una encuesta distinta. <span class="hld">Verde</span>: el intervalo contiene el valor verdadero. <span class="hlx">Rojo</span>: no lo contiene.</p>
+  </div>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), L=window.LAB;
+  const P=0.48, X0=60, X1=870, lo=0.30, hi=0.66, maxRows=24, top=40, rowH=14.5;
+  const sx=p=>X0+(p-lo)/(hi-lo)*(X1-X0);
+  const surveys=[];
+  // eje
+  const ej=$('mu-eje');
+  ej.appendChild(L.svg('line',{x1:X0,y1:395,x2:X1,y2:395,stroke:'#9BA9BF','stroke-width':2}));
+  for(let p=0.30;p<=0.661;p+=0.06){
+    ej.appendChild(L.svg('line',{x1:sx(p),y1:395,x2:sx(p),y2:403,stroke:'#9BA9BF','stroke-width':2}));
+    const t=L.svg('text',{x:sx(p),y:425,'text-anchor':'middle','font-size':20,fill:'#9BA9BF'}); t.textContent=Math.round(p*100)+'%'; ej.appendChild(t);
+  }
+  ej.appendChild(L.svg('line',{x1:sx(P),y1:18,x2:sx(P),y2:395,stroke:'#D9BC66','stroke-width':3,'stroke-dasharray':'8 6'}));
+  const tv=L.svg('text',{x:sx(P)+8,y:24,'font-size':19,fill:'#F0D588','font-weight':600}); tv.textContent='valor verdadero: 48%'; ej.appendChild(tv);
+  function upd(){ $('mu-nv').textContent=$('mu-n').value; $('mu-bv').textContent=$('mu-b').value;
+    const n=+$('mu-n').value; $('mu-me').textContent='± '+L.fmt(196*Math.sqrt(P*(1-P)/n),1)+' pts'; }
+  function draw(){
+    const g=$('mu-int'); g.innerHTML='';
+    const vis=surveys.slice(-maxRows);
+    vis.forEach((s,i)=>{
+      const y=top+i*rowH, ok=(s.l<=P && s.h>=P), c=ok?'#A3BE86':'#E08C81';
+      g.appendChild(L.svg('line',{x1:sx(Math.max(lo,s.l)),y1:y,x2:sx(Math.min(hi,s.h)),y2:y,stroke:c,'stroke-width':4,'stroke-linecap':'round'}));
+      g.appendChild(L.svg('circle',{cx:sx(s.p),cy:y,r:5,fill:c}));
+    });
+    if(surveys.length){ const k=surveys.filter(s=>s.l<=P&&s.h>=P).length;
+      $('mu-cov').textContent=Math.round(100*k/surveys.length)+'% ('+k+'/'+surveys.length+')'; }
+    else $('mu-cov').textContent='–';
+  }
+  function encuestar(m){
+    const n=+$('mu-n').value, b=+$('mu-b').value/100;
+    for(let i=0;i<m;i++){
+      const pt=P+b; const ph=Math.min(0.99,Math.max(0.01,pt+L.randn()*Math.sqrt(pt*(1-pt)/n)));
+      const me=1.96*Math.sqrt(ph*(1-ph)/n); surveys.push({p:ph,l:ph-me,h:ph+me});
+    }
+    draw();
+  }
+  $('mu-1').onclick=()=>encuestar(1); $('mu-20').onclick=()=>encuestar(20);
+  $('mu-0').onclick=()=>{surveys.length=0; draw();};
+  $('mu-n').oninput=upd; $('mu-b').oninput=upd;
+  L.guard($('lab-mu')); upd(); encuestar(12);
+})();
+</script>
+
+<aside class="notes">
+<ol type="1">
+<li>Hacer 20 encuestas con n = 700: casi todas verdes (≈95%).</li>
+<li>Bajar n a 100: intervalos anchos, pero siguen conteniendo el 48%.</li>
+<li>Subir n a 3000 y agregar 4 puntos de sesgo de no respuesta: intervalos angostos y casi todos rojos. Mensaje: más casos reducen el error aleatorio, no el sesgo. Y el margen de error publicado solo mide el muestral.</li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-pregunta-científica" class="slide level2">
+<h2>La pregunta científica</h2>
+<ul>
+<li>No asumimos que la realidad social se puede capturar sin falla</li>
+<li>Asumimos que <span class="hl">nos vamos a equivocar siempre</span>: por el muestreo, las preguntas, los encuestadores, el procesamiento</li>
+<li>La pregunta es: <strong>¿por cuánto y en qué dirección?</strong></li>
+</ul>
+<div class="destacado" style="margin-top:1em">
+<p><em>«Medir conceptos de ciencias sociales siempre incorpora un grado variable, pero frecuentemente importante, de error. Equivale a tratar de comprender una conversación escuchada en una radio con mucha estática y ruido de fondo.»</em></p>
+<p><span class="tenue">Asún (2006, p.&nbsp;112)</span></p>
+</div>
+</section>
+<section id="el-tiro-al-blanco" class="slide level2">
+<h2>El tiro al blanco</h2>
+<div class="cols-40-60">
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 520 380" role="img" aria-label="Diana: el centro es el valor verdadero"><defs><marker id="mg4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg4" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa4" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr4" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv4" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><circle cx="190" cy="200" r="150.0" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle><circle cx="190" cy="200" r="105.0" fill="#1F3152"></circle><circle cx="190" cy="200" r="60.0" fill="#2B4268"></circle><circle cx="190" cy="200" r="20.0" fill="#D9BC66"></circle><path class="ar a" d="M420,70 C380,90 260,140 214,188" marker-end="url(#ma4)"></path><text class="lbl oro" font-size="22" text-anchor="middle" font-weight="600"><tspan x="430" y="52.0">centro = valor verdadero</tspan></text></svg>
+</div>
+<div style="padding-top:2.2em">
+<ul>
+<li>El <span class="hl">centro</span> es lo que queremos conocer: el valor verdadero en la población</li>
+<li>Cada <strong>disparo</strong> es una medición: una encuesta, una muestra, una respuesta</li>
+<li>Nunca vemos el centro directamente: solo vemos dónde caen los disparos</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="dos-tipos-de-error" class="slide level2">
+<h2>Dos tipos de error</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1400 380" role="img" aria-label="Cuatro dianas: precisión y sesgo"><defs><marker id="mg5" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg5" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma5" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa5" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr5" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr5" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv5" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv5" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><circle cx="175" cy="165" r="142.5" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle><circle cx="175" cy="165" r="99.75" fill="#1F3152"></circle><circle cx="175" cy="165" r="57.0" fill="#2B4268"></circle><circle cx="175" cy="165" r="19.0" fill="#D9BC66"></circle><circle cx="175.3" cy="168.7" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="171.3" cy="167.8" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="182.4" cy="168.3" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="187.5" cy="157.9" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="175.5" cy="159.4" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="168.7" cy="163.5" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="176.8" cy="168.4" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><text class="lbl claro" font-size="22" text-anchor="middle" font-weight="700"><tspan x="175" y="335.0">Preciso e insesgado</tspan></text><text class="lbl" font-size="19" text-anchor="middle" font-weight="500"><tspan x="175" y="363.0">el ideal</tspan></text><g class="fragment" data-fragment-index="1"><circle cx="525" cy="165" r="142.5" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle><circle cx="525" cy="165" r="99.75" fill="#1F3152"></circle><circle cx="525" cy="165" r="57.0" fill="#2B4268"></circle><circle cx="525" cy="165" r="19.0" fill="#D9BC66"></circle><circle cx="549.4" cy="272.2" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="566.4" cy="88.5" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="534.8" cy="135.1" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="500.2" cy="227.7" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="514.3" cy="71.3" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="539.9" cy="151.0" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="468.6" cy="120.8" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><text class="lbl claro" font-size="22" text-anchor="middle" font-weight="700"><tspan x="525" y="335.0">Impreciso, insesgado</tspan></text><text class="lbl" font-size="19" text-anchor="middle" font-weight="500"><tspan x="525" y="363.0">error aleatorio</tspan></text></g><g class="fragment" data-fragment-index="2"><circle cx="875" cy="165" r="142.5" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle><circle cx="875" cy="165" r="99.75" fill="#1F3152"></circle><circle cx="875" cy="165" r="57.0" fill="#2B4268"></circle><circle cx="875" cy="165" r="19.0" fill="#D9BC66"></circle><circle cx="929.4" cy="109.8" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="931.2" cy="110.6" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="951.5" cy="102.8" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="927.7" cy="107.8" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="944.9" cy="103.6" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="947.9" cy="98.2" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="925.7" cy="109.5" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><text class="lbl claro" font-size="22" text-anchor="middle" font-weight="700"><tspan x="875" y="335.0">Preciso, sesgado</tspan></text><text class="lbl" font-size="19" text-anchor="middle" font-weight="500"><tspan x="875" y="363.0">error sistemático</tspan></text></g><g class="fragment" data-fragment-index="3"><circle cx="1225" cy="165" r="142.5" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle><circle cx="1225" cy="165" r="99.75" fill="#1F3152"></circle><circle cx="1225" cy="165" r="57.0" fill="#2B4268"></circle><circle cx="1225" cy="165" r="19.0" fill="#D9BC66"></circle><circle cx="1243.7" cy="89.0" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1299.0" cy="145.4" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1284.8" cy="103.5" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1336.5" cy="131.9" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1270.1" cy="166.0" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1242.1" cy="121.9" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><circle cx="1307.7" cy="114.5" r="7" fill="#E8E3D9" stroke="#0F1A2E" stroke-width="2"></circle><text class="lbl claro" font-size="22" text-anchor="middle" font-weight="700"><tspan x="1225" y="335.0">Impreciso y sesgado</tspan></text><text class="lbl" font-size="19" text-anchor="middle" font-weight="500"><tspan x="1225" y="363.0">lo peor</tspan></text></g></svg>
+</div>
+<div class="fragment" data-fragment-index="1">
+<ul>
+<li><strong>Error aleatorio</strong> (varianza): nos equivocamos para ambos lados; se reduce con más casos o más preguntas</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="2">
+<ul>
+<li><span class="hlr">Error sistemático</span> (sesgo): nos equivocamos siempre hacia el mismo lado; más casos no lo arreglan</li>
+</ul>
+</div>
+<div class="fragment" data-fragment-index="3">
+<ul>
+<li>En la práctica, casi siempre tenemos un poco de ambos</li>
+</ul>
+</div>
+</section>
+<section id="laboratorio-el-tiro-al-blanco" class="slide level2 lab-slide">
+<h2>Laboratorio: el tiro al blanco</h2>
+
+<div class="lab" id="lab-tiro">
+  <svg viewbox="0 0 420 420" id="tiro-svg">
+    <circle cx="210" cy="210" r="195" fill="#17243C" stroke="#3E5578" stroke-width="2"></circle>
+    <circle cx="210" cy="210" r="135" fill="#1F3152"></circle>
+    <circle cx="210" cy="210" r="78" fill="#2B4268"></circle>
+    <circle cx="210" cy="210" r="22" fill="#D9BC66"></circle>
+    <g id="tiro-shots"></g>
+    <g id="tiro-mean"></g>
+  </svg>
+  <div class="panel">
+    <label>Sesgo (error sistemático): <b id="tiro-bv"></b></label>
+    <input type="range" id="tiro-b" min="0" max="140" value="0">
+    <label>Dispersión (error aleatorio): <b id="tiro-sv"></b></label>
+    <input type="range" id="tiro-s" min="4" max="90" value="20">
+    <div>
+      <button class="btn" id="tiro-1">Disparar 1</button>
+      <button class="btn" id="tiro-10">Disparar 10</button>
+      <button class="btn sec" id="tiro-0">Limpiar</button>
+    </div>
+    <div class="presets">
+      <button class="btn sec chico" data-p="0,10">Ideal</button>
+      <button class="btn sec chico" data-p="0,70">Aleatorio</button>
+      <button class="btn sec chico" data-p="95,10">Sistemático</button>
+      <button class="btn sec chico" data-p="90,65">Ambos</button>
+    </div>
+    <div class="lectura">
+      <div><span class="k">Disparos</span><span class="v" id="tiro-n">0</span></div>
+      <div><span class="k">Distancia del promedio al centro</span><span class="v" id="tiro-d">–</span></div>
+    </div>
+    <p class="glosa">La <span class="hl">cruz</span> marca el promedio de los disparos. Con más disparos, el error aleatorio se compensa; el sesgo, no.</p>
+  </div>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), L=window.LAB;
+  const shots=[], g=$('tiro-shots'), gm=$('tiro-mean');
+  function upd(){ $('tiro-bv').textContent=$('tiro-b').value; $('tiro-sv').textContent=$('tiro-s').value; }
+  function draw(){
+    g.innerHTML=''; gm.innerHTML='';
+    shots.forEach(s=>g.appendChild(L.svg('circle',{cx:s[0],cy:s[1],r:7,fill:'#E8E3D9',stroke:'#0F1A2E','stroke-width':2})));
+    $('tiro-n').textContent=shots.length;
+    if(!shots.length){ $('tiro-d').textContent='–'; return; }
+    const mx=shots.reduce((a,s)=>a+s[0],0)/shots.length, my=shots.reduce((a,s)=>a+s[1],0)/shots.length;
+    const st={stroke:'#7FB0DC','stroke-width':5,'stroke-linecap':'round'};
+    gm.appendChild(L.svg('line',Object.assign({x1:mx-16,y1:my-16,x2:mx+16,y2:my+16},st)));
+    gm.appendChild(L.svg('line',Object.assign({x1:mx-16,y1:my+16,x2:mx+16,y2:my-16},st)));
+    $('tiro-d').textContent=Math.round(Math.hypot(mx-210,my-210));
+  }
+  function shoot(n){
+    const b=+$('tiro-b').value, s=+$('tiro-s').value;
+    for(let i=0;i<n;i++){
+      shots.push([210+b*0.71+L.randn()*s, 210-b*0.71+L.randn()*s]);
+    }
+    draw();
+  }
+  $('tiro-1').onclick=()=>shoot(1); $('tiro-10').onclick=()=>shoot(10);
+  $('tiro-0').onclick=()=>{shots.length=0; draw();};
+  ['tiro-b','tiro-s'].forEach(id=>$(id).oninput=upd);
+  document.querySelectorAll('#lab-tiro .presets button').forEach(bt=>bt.onclick=()=>{
+    const p=bt.dataset.p.split(','); $('tiro-b').value=p[0]; $('tiro-s').value=p[1]; upd();
+    shots.length=0; shoot(10);
+  });
+  L.guard($('lab-tiro')); upd(); shoot(10);
+})();
+</script>
+
+<aside class="notes">
+<p>Usar los cuatro botones de casos. Después: sesgo alto + dispersión alta, disparar muchas veces y mostrar que la cruz (el promedio) se queda lejos del centro.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-es-un-dag" class="slide level2">
+<h2>¿Qué es un DAG?</h2>
+<div class="cols2">
+<div>
+<div class="bloque">
+<p><span class="t">Grafo dirigido acíclico</span> Un dibujo de <strong>qué produce qué</strong></p>
+<ul>
+<li><strong>Nodos</strong>: variables</li>
+<li><strong>Flechas</strong>: una variable influye en otra</li>
+<li><strong>Acíclico</strong>: no hay círculos; nada se causa a sí mismo</li>
+</ul>
+</div>
+<p>La lluvia produce paraguas abiertos y calles mojadas. Paraguas y calles mojadas <span class="hl">andan juntos</span>, aunque uno no cause al otro.</p>
+</div>
+<div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 330" role="img" aria-label="DAG: la lluvia causa paraguas y calle mojada"><defs><marker id="mg6" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg6" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma6" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa6" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr6" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr6" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv6" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv6" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="ll"><rect x="180.0" y="17.0" width="200" height="66" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="280" y="50.0">Lluvia</tspan></text></g><g class="nd obs" data-k="pa"><rect x="10.0" y="217.0" width="200" height="66" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="110" y="250.0">Paraguas</tspan></text></g><g class="nd obs" data-k="ca"><rect x="350.0" y="217.0" width="200" height="66" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="450" y="250.0">Calle mojada</tspan></text></g><line class="ar g" x1="249.4" y1="86.0" x2="141.9" y2="212.4" marker-end="url(#mg6)"></line><line class="ar g" x1="310.6" y1="86.0" x2="418.1" y2="212.4" marker-end="url(#mg6)"></line><path d="M212,250 L348,250" fill="none" stroke="#9BA9BF" stroke-width="2.5" stroke-dasharray="8 6"></path><text class="lbl" font-size="18" text-anchor="middle" font-weight="500"><tspan x="280" y="290.0">andan juntos</tspan></text></svg>
+</div>
+<p><span class="tenue" style="font-size:.6em">Convención de colores en esta clase:</span></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 80" role="img" aria-label="Leyenda de colores"><defs><marker id="mg7" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg7" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma7" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa7" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr7" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr7" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv7" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv7" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="a"><rect x="5.0" y="12.0" width="170" height="56" rx="8"></rect><text font-size="19" font-weight="700"><tspan x="90" y="40.0">no observada</tspan></text></g><g class="nd obs" data-k="b"><rect x="195.0" y="12.0" width="170" height="56" rx="8"></rect><text font-size="19" font-weight="500"><tspan x="280" y="40.0">observada</tspan></text></g><g class="nd err" data-k="c"><rect x="385.0" y="12.0" width="170" height="56" rx="8"></rect><text font-size="19" font-weight="700"><tspan x="470" y="40.0">error</tspan></text></g></svg>
+</div>
+</div>
+</div>
+<div class="nota">
+<p>Pearl y Mackenzie (2018), <em>The Book of Why</em>.</p>
+</div>
+</section>
+<section id="la-ecuación-más-importante-de-hoy" class="slide level2">
+<h2>La ecuación más importante de hoy</h2>
+<div class="ecuacion">
+<p>X = V + E</p>
+</div>
+<div class="cols2">
+<div>
+<ul>
+<li><em>X</em>: lo que <strong>observamos</strong> (la respuesta)</li>
+<li><em>V</em>: el <span class="hl">valor verdadero</span> (lo que queremos conocer)</li>
+<li><em>E</em>: el <strong>error</strong> de medición</li>
+</ul>
+<p><span class="tenue" style="font-size:.7em">Teoría clásica de los tests: toda respuesta es verdad <em>más</em> ruido</span></p>
+</div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 600 300" role="img" aria-label="X igual V más E"><defs><marker id="mg8" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg8" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma8" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa8" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr8" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr8" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv8" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv8" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="V"><rect x="15.0" y="165.0" width="190" height="90" rx="8"></rect><text font-size="24" font-weight="700"><tspan x="110" y="195.8">V</tspan><tspan x="110" y="224.2">valor verdadero</tspan></text></g><g class="nd obs" data-k="X"><rect x="385.0" y="165.0" width="190" height="90" rx="8"></rect><text font-size="24" font-weight="500"><tspan x="480" y="195.8">X</tspan><tspan x="480" y="224.2">respuesta</tspan></text></g><g class="nd err" data-k="E"><rect x="430.0" y="20.0" width="100" height="70" rx="8"></rect><text font-size="30" font-weight="700"><tspan x="480" y="55.0">E</tspan></text></g><line class="ar g" x1="209.0" y1="210.0" x2="379.0" y2="210.0" marker-end="url(#mg8)"></line><line class="ar a" x1="480.0" y1="94.0" x2="480.0" y2="159.0" marker-end="url(#ma8)"></line></svg>
+</div>
+</div>
+</section>
+<section id="un-ejemplo-con-un-hecho-no-una-opinión" class="slide level2">
+<h2>Un ejemplo con un hecho, no una opinión</h2>
+<div class="cols-60-40">
+<div style="padding-top:1.5em">
+<ul>
+<li>En una encuesta del CIS (España) se preguntó por quién habían votado en la última elección</li>
+<li>Casi el <span class="hlr">65%</span> declaró haber votado por el candidato ganador…</li>
+<li>…que en la realidad obtuvo poco más del <span class="hl">50%</span></li>
+</ul>
+</div>
+<div class="diagrama dg-medio">
+<svg class="dg" viewbox="0 0 420 400" role="img" aria-label="65 por ciento declarado versus 51 por ciento real"><defs><marker id="mg9" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg9" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma9" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa9" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr9" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr9" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv9" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv9" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><rect x="60" y="80" width="120" height="260" fill="#4E7FB0" rx="3"></rect><rect x="240" y="137" width="120" height="203" fill="#C9A84C" rx="3"></rect><line x1="30" y1="340" x2="390" y2="340" stroke="#9BA9BF" stroke-width="2"></line><text class="lbl claro" font-size="30" text-anchor="middle" font-weight="700"><tspan x="120" y="62.0">65%</tspan></text><text class="lbl claro" font-size="30" text-anchor="middle" font-weight="700"><tspan x="300" y="119.0">51%</tspan></text><text class="lbl" font-size="20" text-anchor="middle" font-weight="500"><tspan x="120" y="372.0">declarado</tspan></text><text class="lbl" font-size="20" text-anchor="middle" font-weight="500"><tspan x="300" y="372.0">resultado real</tspan></text></svg>
+</div>
+</div>
+<div class="nota">
+<p>Ejemplo en Asún (2006, p.&nbsp;103).</p>
+</div>
+</section>
+<section id="dos-historias-para-el-mismo-número" class="slide level2">
+<h2>Dos historias para el mismo número</h2>
+<div class="cols2">
+<div>
+<p><strong>Historia 1: la gente no dice la verdad</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 250" role="img" aria-label="Historia 1: deseabilidad social"><defs><marker id="mg10" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg10" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma10" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa10" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr10" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr10" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv10" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv10" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="v"><rect x="15.0" y="155.0" width="190" height="70" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="110" y="190.0">Voto real</tspan></text></g><g class="nd obs" data-k="d"><rect x="345.0" y="155.0" width="190" height="70" rx="8"></rect><text font-size="22" font-weight="500"><tspan x="440" y="177.0">Voto</tspan><tspan x="440" y="203.0">declarado</tspan></text></g><g class="nd err" data-k="s"><rect x="315.0" y="18.0" width="250" height="64" rx="8"></rect><text font-size="21" font-weight="700"><tspan x="440" y="50.0">Deseabilidad social</tspan></text></g><line class="ar g" x1="209.0" y1="190.0" x2="339.0" y2="190.0" marker-end="url(#mg10)"></line><line class="ar a" x1="440.0" y1="86.0" x2="440.0" y2="149.0" marker-end="url(#ma10)"></line></svg>
+</div>
+<p><span style="font-size:.7em">Declarar haber votado por el ganador «queda bien»: es un <strong>error de medición</strong></span></p>
+</div>
+<div class="fragment">
+<p><strong>Historia 2: responde otra gente</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 250" role="img" aria-label="Historia 2: quién acepta responder"><defs><marker id="mg11" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg11" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma11" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa11" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr11" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr11" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv11" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv11" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="v"><rect x="15.0" y="155.0" width="190" height="70" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="110" y="190.0">Voto real</tspan></text></g><g class="nd obs" data-k="d"><rect x="345.0" y="155.0" width="190" height="70" rx="8"></rect><text font-size="22" font-weight="500"><tspan x="440" y="177.0">Voto</tspan><tspan x="440" y="203.0">declarado</tspan></text></g><g class="nd err" data-k="r"><rect x="0.0" y="18.0" width="220" height="64" rx="8"></rect><text font-size="21" font-weight="700"><tspan x="110" y="50.0">Acepta responder</tspan></text></g><line class="ar g" x1="209.0" y1="190.0" x2="339.0" y2="190.0" marker-end="url(#mg11)"></line><line class="ar a" x1="110.0" y1="151.0" x2="110.0" y2="88.0" marker-end="url(#ma11)"></line></svg>
+</div>
+<p><span style="font-size:.7em">Quienes votaron (y por el ganador) aceptan más responder: es un <strong>error de representación</strong></span></p>
+</div>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">La lección</span> El mismo número equivocado puede venir de fuentes distintas. En EE.UU., buena parte de la sobreestimación de la participación se explica por la historia 2 (Jackman y Spahn, 2019).</p>
+</div>
+</div>
+</section>
+<section id="el-mapa-error-total-de-encuesta" class="slide level2">
+<h2>El mapa: error total de encuesta</h2>
+<p><img data-src="figuras/tse_groves.png" style="height:650px; width:auto; display:block; margin:0 auto; background:#fff; padding:12px; border-radius:6px"></p>
+<div class="nota">
+<p>Groves et al.&nbsp;(2009), <em>Survey Methodology</em>, cap. 2.</p>
+</div>
+</section>
+<section id="explorar-el-mapa" class="slide level2 lab-slide">
+<h2>Explorar el mapa</h2>
+<div id="lab-tse"><svg class="dg" viewbox="0 0 1700 400" role="img" aria-label="Error total de encuesta, interactivo"><defs><marker id="mg27" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg27" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma27" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa27" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr27" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr27" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv27" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv27" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><text class="lbl azul" font-size="22" text-anchor="start" font-weight="700"><tspan x="10" y="28.0">MEDICIÓN · ¿qué medimos y qué tan bien?</tspan></text><g class="nd obs" data-k="c1"><rect x="6.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="85" y="95.0">Constructo</tspan></text></g><g class="nd err clic" data-k="validez"><rect x="188.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="267" y="95.0">Validez</tspan></text></g><g class="nd obs" data-k="c2"><rect x="370.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="449" y="95.0">Pregunta</tspan></text></g><g class="nd err clic" data-k="medicion"><rect x="552.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="631" y="83.2">Error de</tspan><tspan x="631" y="106.8">medición</tspan></text></g><g class="nd obs" data-k="c3"><rect x="734.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="813" y="95.0">Respuesta</tspan></text></g><g class="nd err clic" data-k="proc"><rect x="916.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="995" y="83.2">Error de</tspan><tspan x="995" y="106.8">procesamiento</tspan></text></g><g class="nd obs" data-k="c4"><rect x="1098.0" y="55.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="1177" y="83.2">Respuesta</tspan><tspan x="1177" y="106.8">editada</tspan></text></g><line class="ar g" x1="168.0" y1="95.0" x2="182.0" y2="95.0" marker-end="url(#mg27)"></line><line class="ar g" x1="350.0" y1="95.0" x2="364.0" y2="95.0" marker-end="url(#mg27)"></line><line class="ar g" x1="532.0" y1="95.0" x2="546.0" y2="95.0" marker-end="url(#mg27)"></line><line class="ar g" x1="714.0" y1="95.0" x2="728.0" y2="95.0" marker-end="url(#mg27)"></line><line class="ar g" x1="896.0" y1="95.0" x2="910.0" y2="95.0" marker-end="url(#mg27)"></line><line class="ar g" x1="1078.0" y1="95.0" x2="1092.0" y2="95.0" marker-end="url(#mg27)"></line><text class="lbl verde" font-size="22" text-anchor="start" font-weight="700"><tspan x="10" y="205.0">REPRESENTACIÓN · ¿a quiénes medimos?</tspan></text><g class="nd obs" data-k="r1"><rect x="6.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="85" y="260.2">Población</tspan><tspan x="85" y="283.8">objetivo</tspan></text></g><g class="nd err clic" data-k="cobertura"><rect x="188.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="267" y="260.2">Error de</tspan><tspan x="267" y="283.8">cobertura</tspan></text></g><g class="nd obs" data-k="r2"><rect x="370.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="449" y="260.2">Marco</tspan><tspan x="449" y="283.8">muestral</tspan></text></g><g class="nd err clic" data-k="muestral"><rect x="552.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="631" y="260.2">Error</tspan><tspan x="631" y="283.8">muestral</tspan></text></g><g class="nd obs" data-k="r3"><rect x="734.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="813" y="272.0">Muestra</tspan></text></g><g class="nd err clic" data-k="norespuesta"><rect x="916.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="995" y="260.2">Error de no</tspan><tspan x="995" y="283.8">respuesta</tspan></text></g><g class="nd obs" data-k="r4"><rect x="1098.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="1177" y="260.2">Respon-</tspan><tspan x="1177" y="283.8">dentes</tspan></text></g><g class="nd err clic" data-k="ajuste"><rect x="1280.0" y="232.0" width="158" height="80" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="1359" y="260.2">Error de</tspan><tspan x="1359" y="283.8">ajuste</tspan></text></g><line class="ar g" x1="168.0" y1="272.0" x2="182.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="350.0" y1="272.0" x2="364.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="532.0" y1="272.0" x2="546.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="714.0" y1="272.0" x2="728.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="896.0" y1="272.0" x2="910.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="1078.0" y1="272.0" x2="1092.0" y2="272.0" marker-end="url(#mg27)"></line><line class="ar g" x1="1260.0" y1="272.0" x2="1274.0" y2="272.0" marker-end="url(#mg27)"></line><g class="nd lat" data-k="est"><rect x="1525.0" y="130.0" width="170" height="110" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="1610" y="161.4">Estadístico</tspan><tspan x="1610" y="185.0">de la</tspan><tspan x="1610" y="208.6">encuesta</tspan></text></g><path class="ar g" d="M1170,95 L1610,95 L1610,124" marker-end="url(#mg27)"></path><path class="ar g" d="M1442,272 L1610,272 L1610,246" marker-end="url(#mg27)"></path></svg><div id="tse-panel" class="tse-panel"><span class="t">Hagan clic en un recuadro dorado</span><span class="def">Cada uno es un lugar donde podemos perder la verdad.</span></div></div><script>(function(){const I={"validez": ["Validez", "La pregunta no captura el concepto que queremos medir.", "Medir «participación política» solo con el voto deja fuera protestas, organizaciones y redes."], "medicion": ["Error de medición", "La respuesta se aleja del valor verdadero por la pregunta, el encuestador o la situación.", "«¿Ha consumido drogas?» preguntado cara a cara, con la familia en la sala."], "proc": ["Error de procesamiento", "Errores al digitar, codificar o limpiar los datos.", "Una escala codificada 1, 2, 3, 4, <b>6</b>: todos los promedios quedan inflados. O codificar «trabaja en el retail»: ¿cajero o gerente?"], "cobertura": ["Error de cobertura", "El marco muestral no incluye a toda la población objetivo.", "Una encuesta por teléfono fijo deja fuera a los hogares sin línea. En 1936, el <i>Literary Digest</i> encuestó a 2,4 millones de personas y predijo la derrota de Roosevelt."], "muestral": ["Error muestral", "La diferencia por haber estudiado una muestra y no a toda la población.", "El «margen de error ± 3 puntos». Es el único con fórmula, y el único que publica la prensa."], "norespuesta": ["Error de no respuesta", "Quienes no responden son sistemáticamente distintos de quienes sí.", "Personas con jornadas largas nunca están en casa; quienes votan aceptan más responder encuestas políticas."], "ajuste": ["Error de ajuste", "Los ponderadores corrigen mal (o no corrigen) los errores anteriores.", "Ponderar solo por sexo y edad cuando el sesgo es educacional."]};
+  const root=document.getElementById('lab-tse'), p=document.getElementById('tse-panel');
+  root.querySelectorAll('.clic').forEach(function(g){
+    g.addEventListener('click',function(){
+      root.querySelectorAll('.clic').forEach(x=>x.classList.remove('activo')); g.classList.add('activo');
+      const k=I[g.dataset.k]; p.innerHTML='<span class="t">'+k[0]+'</span><span class="def">'+k[1]+'</span><span class="ej"><b>Ejemplo.</b> '+k[2]+'</span>';
+    });
+  });
+})();</script>
+<div class="nota">
+<p>Los errores se <strong>acumulan</strong>: el estadístico final los hereda todos. El margen de error que publica la prensa mide <strong>solo</strong> el error muestral.</p>
+</div>
+</section>
+<section id="un-mismo-tema-tres-encuestas-tres-números" class="slide level2">
+<h2>Un mismo tema, tres encuestas, tres números</h2>
+<p>¿Qué piensan los chilenos sobre el MEPCO? (marzo–abril de 2026)</p>
+<table class="grande caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Encuesta</th>
+<th>Lo que se preguntó (en síntesis)</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cadem, Plaza Pública</td>
+<td>El Gobierno debía endeudarse para mantener el subsidio</td>
+<td>48% de acuerdo</td>
+</tr>
+<tr class="even">
+<td>Pulso Ciudadano</td>
+<td>Rechazo a la decisión de <strong>no</strong> aplicar el mecanismo</td>
+<td>57,2% rechaza</td>
+</tr>
+<tr class="odd">
+<td>Métrica Pública</td>
+<td>Rechazo a la eliminación o suspensión del MEPCO</td>
+<td>65,5% rechaza</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Para discutir</span> ¿Estas encuestas se contradicen? ¿O cada una mide <span class="hlr">una cosa distinta</span>: el endeudamiento, una decisión del Gobierno, la existencia del mecanismo?</p>
+</div>
+<div class="nota">
+<p>Cifras según reportes de prensa; verificar en los informes originales de cada encuesta.</p>
+</div>
+</div>
+</section>
+<section id="síntesis-1" class="slide level2 sintesis">
+<h2>Síntesis</h2>
+<ul>
+<li>Nos vamos a equivocar: la pregunta científica es por cuánto y en qué dirección</li>
+<li>El error aleatorio se compensa con más casos; el sistemático no</li>
+<li>Toda respuesta es verdad más error: X = V + E</li>
+<li>El error total viene de cómo preguntamos (medición) y de a quiénes (representación)</li>
+</ul>
+</section></section>
+<section>
+<section id="parte-3-del-concepto-al-número" class="title-slide slide level1 divisoria center">
+<h1>Parte 3 — Del concepto al número</h1>
+<div class="bajada">
+<p>Conceptos latentes y operacionalización</p>
+</div>
+</section>
+<section id="cómo-se-mide" class="slide level2">
+<h2>¿Cómo se mide…?</h2>
+<div class="cajas">
+<p><span class="caja">el amor</span> <span class="caja">la inteligencia</span> <span class="caja">la confianza en los demás</span></p>
+</div>
+<div class="cajas">
+<p><span class="caja">el autoritarismo</span> <span class="caja">la depresión</span> <span class="caja acento">la eficacia política</span></p>
+</div>
+<ul>
+<li>Son conceptos <span class="hl">latentes</span>: existen (o eso creemos), pero <strong>no se observan directamente</strong></li>
+<li>No hay una regla para medir el autoritarismo como la hay para medir la estatura</li>
+<li>Solo observamos sus <strong>manifestaciones</strong>: lo que la gente dice, hace o responde</li>
+</ul>
+</section>
+<section id="operacionalización" class="slide level2">
+<h2>Operacionalización</h2>
+<div class="bloque">
+<p><span class="t">Asún (2006, p.&nbsp;69)</span> (a) Definir cuidadosamente un concepto no observable; (b) derivar consecuencias observables, los <span class="hl">indicadores</span>; (c) medir los indicadores; (d) deducir de ellos el grado en que el objeto posee el concepto.</p>
+</div>
+<div class="cols-60-40">
+<div>
+<p><strong>Un ejemplo de otras ciencias</strong></p>
+<ul>
+<li>La <strong>edad de un árbol</strong> (latente) se mide contando los <strong>anillos del tronco</strong> (indicador)</li>
+<li>Funciona porque la relación es <strong>directa y estable</strong></li>
+<li>En ciencias sociales esa relación casi nunca es tan limpia</li>
+</ul>
+</div>
+<div class="diagrama dg-chico">
+<svg class="dg" viewbox="0 0 320 330" role="img" aria-label="Anillos de un árbol"><defs><marker id="mg12" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg12" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma12" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa12" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr12" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr12" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv12" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv12" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><circle cx="160" cy="150" r="22" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="44" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="66" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="88" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="110" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="132" fill="none" stroke="#C9A84C" stroke-width="2.5"></circle><circle cx="160" cy="150" r="8" fill="#D9BC66"></circle><text class="lbl claro" font-size="22" text-anchor="middle" font-weight="500"><tspan x="160" y="315.0">6 anillos ⇒ 6 años</tspan></text></svg>
+</div>
+</div>
+</section>
+<section id="dos-roles-en-la-ciencia-teoría-y-medición" class="slide level2">
+<h2>Dos roles en la ciencia: teoría y medición</h2>
+<div class="cols2">
+<div>
+<p><img data-src="figuras/sheldon_leonard.jpg" class="foto" style="max-height:290px"></p>
+<ul>
+<li><strong>Sheldon</strong>, físico <strong>teórico</strong>: trabaja con conceptos y ecuaciones</li>
+<li><strong>Leonard</strong>, físico <strong>experimental</strong>: diseña instrumentos para medir</li>
+</ul>
+</div>
+<div>
+<div class="fila-fotos">
+<p><img data-src="figuras/higgs.jpg" class="foto" style="max-height:290px"></p>
+<p><img data-src="figuras/cern_atlas.jpg" class="foto" style="max-height:290px"></p>
+</div>
+<ul>
+<li>1964: Higgs propone una partícula <strong>en teoría</strong></li>
+<li>2012: el CERN logra <strong>medirla</strong>, 48 años después</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">En sociología</span> Hay una <span class="hl">fase teórica</span> (qué es el concepto) y una <strong>fase empírica</strong> (cómo se traduce en números). La operacionalización es el puente.</p>
+</div>
+</div>
+</section>
+<section id="del-concepto-al-número" class="slide level2">
+<h2>Del concepto al número</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1400 470" role="img" aria-label="Del concepto al índice"><defs><marker id="mg13" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg13" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma13" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa13" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr13" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr13" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv13" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv13" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="c"><rect x="30.0" y="140.0" width="200" height="100" rx="8"></rect><text font-size="28" font-weight="700"><tspan x="130" y="190.0">Concepto</tspan></text></g><g class="nd lat" data-k="d1"><rect x="355.0" y="32.0" width="230" height="76" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="470" y="70.0">Dimensión 1</tspan></text></g><line class="ar g" x1="233.8" y1="153.4" x2="356.7" y2="110.0" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p10"><rect x="725.0" y="26.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="46.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="61.8" x2="719.0" y2="52.9" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p11"><rect x="725.0" y="74.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="94.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="78.2" x2="719.0" y2="87.1" marker-end="url(#mg13)"></line><g class="nd lat" data-k="d2"><rect x="355.0" y="152.0" width="230" height="76" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="470" y="190.0">Dimensión 2</tspan></text></g><line class="ar g" x1="234.0" y1="190.0" x2="349.0" y2="190.0" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p20"><rect x="725.0" y="146.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="166.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="181.8" x2="719.0" y2="172.9" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p21"><rect x="725.0" y="194.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="214.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="198.2" x2="719.0" y2="207.1" marker-end="url(#mg13)"></line><g class="nd lat" data-k="d3"><rect x="355.0" y="272.0" width="230" height="76" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="470" y="310.0">Dimensión 3</tspan></text></g><line class="ar g" x1="233.8" y1="226.6" x2="356.7" y2="270.0" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p30"><rect x="725.0" y="266.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="286.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="301.8" x2="719.0" y2="292.9" marker-end="url(#mg13)"></line><g class="nd obs" data-k="p31"><rect x="725.0" y="314.0" width="190" height="40" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="820" y="334.0">Pregunta</tspan></text></g><line class="ar g" x1="589.0" y1="318.2" x2="719.0" y2="327.1" marker-end="url(#mg13)"></line><g class="nd err" data-k="i"><rect x="1115.0" y="130.0" width="170" height="120" rx="8"></rect><text font-size="28" font-weight="700"><tspan x="1200" y="173.5">Índice</tspan><tspan x="1200" y="206.5">45</tspan></text></g><line class="ar g" x1="876.5" y1="67.4" x2="1109.4" y2="155.7" marker-end="url(#mg13)"></line><line class="ar g" x1="903.0" y1="115.0" x2="1109.2" y2="167.1" marker-end="url(#mg13)"></line><line class="ar g" x1="919.0" y1="172.3" x2="1109.0" y2="184.3" marker-end="url(#mg13)"></line><line class="ar g" x1="919.0" y1="207.7" x2="1109.0" y2="195.7" marker-end="url(#mg13)"></line><line class="ar g" x1="903.0" y1="265.0" x2="1109.2" y2="212.9" marker-end="url(#mg13)"></line><line class="ar g" x1="876.5" y1="312.6" x2="1109.4" y2="224.3" marker-end="url(#mg13)"></line><path d="M30,400 L30,415 L590,415 L590,400" fill="none" stroke="#C9A84C" stroke-width="2.5"></path><path d="M700,400 L700,415 L1300,415 L1300,400" fill="none" stroke="#C9A84C" stroke-width="2.5"></path><text class="lbl oro" font-size="24" text-anchor="middle" font-weight="700"><tspan x="310" y="450.0">Fase teórica</tspan></text><text class="lbl oro" font-size="24" text-anchor="middle" font-weight="700"><tspan x="1000" y="450.0">Fase empírica</tspan></text></svg>
+</div>
+<p>Concepto → dimensiones → preguntas → categorías de respuesta → índice o escala</p>
+<div class="nota">
+<p>Adaptado de Asún (2006, p.&nbsp;75).</p>
+</div>
+</section>
+<section id="conceptos-simples-y-conceptos-complejos" class="slide level2">
+<h2>Conceptos simples y conceptos complejos</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Concepto simple</span> Las personas lo usan en su vida cotidiana <strong>igual que el investigador</strong></p>
+<p><span class="tenue">«¿Cuántos años tiene?» · «¿Se siente enamorado de su pareja actual?»</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">Concepto complejo</span> El habla cotidiana <strong>no lo usa</strong>, o lo usa distinto</p>
+<p><span class="tenue">No podemos preguntar «¿cuán individuado está usted?»</span></p>
+</div>
+</div>
+<ul>
+<li>Operacionalizar un concepto complejo es un proceso de <span class="hl">traducción</span>: del lenguaje del investigador al habla de las personas</li>
+<li>Hay que <strong>desagregarlo</strong> en dimensiones hasta llegar a algo que la gente pueda responder</li>
+</ul>
+<div class="nota">
+<p>Asún (2006, pp.&nbsp;71–73).</p>
+</div>
+</section>
+<section id="un-ejemplo-chileno-individuación-pnud-2002" class="slide level2">
+<h2>Un ejemplo chileno: individuación (PNUD, 2002)</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimensión</th>
+<th>Pregunta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Disposición a romper normas sociales</td>
+<td>¿Seguiría adelante con una idea aunque vaya en contra de la opinión de sus padres? ¿De su pareja? ¿De la Iglesia?</td>
+</tr>
+<tr class="even">
+<td>Deberes morales que restringen la conducta</td>
+<td>¿Cómo le gustaría ser recordado? (a) alguien que se entregó a los demás; (b) alguien que salió adelante contra viento y marea; (c) <strong>alguien fiel a sus sueños</strong>; (d) alguien que cumplió su deber</td>
+</tr>
+<tr class="odd">
+<td>Biografía como decisión personal</td>
+<td>¿Cuál frase lo representa mejor? (a) <strong>Yo analizo mi vida y veo qué hacer</strong>; (b) En la vida uno tiene que hacer lo que hay que hacer</td>
+</tr>
+</tbody>
+</table>
+<p>Un punto por cada respuesta «individualizada» ⇒ <span class="hl">índice de 0 a 5</span></p>
+<div class="nota">
+<p>Ejemplo desarrollado en Asún (2006, pp.&nbsp;73–75).</p>
+</div>
+</section>
+<section id="operacionalizar-siempre-tiene-un-costo" class="slide level2">
+<h2>Operacionalizar siempre tiene un costo</h2>
+<div class="destacado" style="margin-top:1em">
+<p><em>«El proceso de operacionalización siempre implica un grado de distorsión o mutilación del sentido teórico de un concepto. […] Nunca logramos medir totalmente el concepto que buscamos, sólo obtenemos mejores o peores interpretaciones empíricas.»</em></p>
+<p><span class="tenue">Asún (2006, p.&nbsp;77)</span></p>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">Pregunta al curso</span> ¿Las cinco preguntas del PNUD capturan todo lo que un sociólogo entiende por «individuación»? ¿Qué quedó fuera?</p>
+</div>
+</div>
+</section>
+<section id="por-qué-usamos-varias-preguntas" class="slide level2">
+<h2>Por qué usamos varias preguntas</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Cada pregunta trae su propio error: el fraseo, las palabras, el orden de las alternativas</li>
+<li>Si una pregunta empuja hacia arriba y otra hacia abajo, <span class="hl">el promedio se acerca a la verdad</span></li>
+<li>Es la lógica de «más casos», aplicada a <strong>más ítems</strong></li>
+</ul>
+<div class="ejemplo">
+<p><span class="t">Asún (2006, p.&nbsp;91)</span> Si en una prueba de 60 preguntas un alumno capaz se confunde con una, su puntaje total igual reflejará su conocimiento.</p>
+</div>
+</div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 360" role="img" aria-label="Varios ítems con errores propios"><defs><marker id="mg14" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg14" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma14" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa14" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr14" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr14" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv14" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv14" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="V"><rect x="170.0" y="12.0" width="220" height="66" rx="8"></rect><text font-size="24" font-weight="700"><tspan x="280" y="45.0">Concepto</tspan></text></g><g class="nd obs" data-k="x1"><rect x="15.0" y="147.0" width="110" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="70" y="175.0">ítem 1</tspan></text></g><g class="nd err" data-k="e1"><rect x="30.0" y="269.0" width="80" height="52" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="70" y="295.0">e1</tspan></text></g><line class="ar g" x1="223.3" y1="80.1" x2="120.3" y2="143.8" marker-end="url(#mg14)"></line><line class="ar a" x1="70.0" y1="265.0" x2="70.0" y2="209.0" marker-end="url(#ma14)"></line><g class="nd obs" data-k="x2"><rect x="155.0" y="147.0" width="110" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="210" y="175.0">ítem 2</tspan></text></g><g class="nd err" data-k="e2"><rect x="170.0" y="269.0" width="80" height="52" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="210" y="295.0">e2</tspan></text></g><line class="ar g" x1="260.3" y1="81.5" x2="227.9" y2="141.7" marker-end="url(#mg14)"></line><line class="ar a" x1="210.0" y1="265.0" x2="210.0" y2="209.0" marker-end="url(#ma14)"></line><g class="nd obs" data-k="x3"><rect x="295.0" y="147.0" width="110" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="350" y="175.0">ítem 3</tspan></text></g><g class="nd err" data-k="e3"><rect x="310.0" y="269.0" width="80" height="52" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="350" y="295.0">e3</tspan></text></g><line class="ar g" x1="299.7" y1="81.5" x2="332.1" y2="141.7" marker-end="url(#mg14)"></line><line class="ar a" x1="350.0" y1="265.0" x2="350.0" y2="209.0" marker-end="url(#ma14)"></line><g class="nd obs" data-k="x4"><rect x="435.0" y="147.0" width="110" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="490" y="175.0">ítem 4</tspan></text></g><g class="nd err" data-k="e4"><rect x="450.0" y="269.0" width="80" height="52" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="490" y="295.0">e4</tspan></text></g><line class="ar g" x1="336.7" y1="80.1" x2="439.7" y2="143.8" marker-end="url(#mg14)"></line><line class="ar a" x1="490.0" y1="265.0" x2="490.0" y2="209.0" marker-end="url(#ma14)"></line></svg>
+</div>
+</div>
+</section>
+<section id="laboratorio-cuántas-preguntas" class="slide level2 lab-slide">
+<h2>Laboratorio: ¿cuántas preguntas?</h2>
+
+<div class="lab" id="lab-it">
+  <svg viewbox="0 0 520 470" id="it-svg">
+    <g id="it-ejes"></g><g id="it-pts"></g>
+  </svg>
+  <div class="panel">
+    <label>Número de preguntas en la escala: <b id="it-kv"></b></label>
+    <input type="range" id="it-k" min="1" max="12" value="1">
+    <div><button class="btn sec" id="it-new">Nuevas personas</button></div>
+    <div class="lectura">
+      <div><span class="k">Correlación entre puntaje y valor verdadero</span><span class="v" id="it-r">–</span></div>
+      <div><span class="k">Confiabilidad aproximada (r²)</span><span class="v" id="it-r2">–</span></div>
+    </div>
+    <p class="glosa">Cada punto es una persona. Eje horizontal: su <span class="hlr">valor verdadero</span> (que en la realidad nunca vemos). Eje vertical: el <span class="hl">promedio de sus respuestas</span>. Cada pregunta trae su propio error; al promediar varias, los errores se compensan.</p>
+  </div>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), L=window.LAB, N=220, K=12, SD=1.4;
+  let V=[], E=[];
+  const sx=v=>60+(v+3)/6*440, sy=v=>420-(v+3)/6*400;
+  const ej=$('it-ejes');
+  ej.appendChild(L.svg('line',{x1:60,y1:420,x2:500,y2:420,stroke:'#9BA9BF','stroke-width':2}));
+  ej.appendChild(L.svg('line',{x1:60,y1:20,x2:60,y2:420,stroke:'#9BA9BF','stroke-width':2}));
+  ej.appendChild(L.svg('line',{x1:sx(-3),y1:sy(-3),x2:sx(3),y2:sy(3),stroke:'#D9BC66','stroke-width':2,'stroke-dasharray':'6 6'}));
+  let t=L.svg('text',{x:280,y:458,'text-anchor':'middle','font-size':19,fill:'#9BA9BF'}); t.textContent='valor verdadero'; ej.appendChild(t);
+  t=L.svg('text',{x:22,y:220,'text-anchor':'middle','font-size':19,fill:'#9BA9BF',transform:'rotate(-90 22 220)'}); t.textContent='puntaje en la escala'; ej.appendChild(t);
+  function gen(){ V=[];E=[]; for(let i=0;i<N;i++){ V.push(L.randn()); const e=[]; for(let k=0;k<K;k++) e.push(L.randn()*SD); E.push(e);} }
+  function draw(){
+    const k=+$('it-k').value; $('it-kv').textContent=k;
+    const S=V.map((v,i)=>v+E[i].slice(0,k).reduce((a,b)=>a+b,0)/k);
+    const g=$('it-pts'); g.innerHTML='';
+    S.forEach((s,i)=>g.appendChild(L.svg('circle',{cx:sx(V[i]),cy:sy(Math.max(-3,Math.min(3,s))),r:4.5,fill:'#7FB0DC','fill-opacity':.75})));
+    const mv=V.reduce((a,b)=>a+b)/N, ms=S.reduce((a,b)=>a+b)/N;
+    let c=0,a=0,b=0; for(let i=0;i<N;i++){c+=(V[i]-mv)*(S[i]-ms);a+=(V[i]-mv)**2;b+=(S[i]-ms)**2;}
+    const r=c/Math.sqrt(a*b); $('it-r').textContent=L.fmt(r,2); $('it-r2').textContent=L.fmt(r*r,2);
+  }
+  $('it-k').oninput=draw; $('it-new').onclick=()=>{gen();draw();};
+  L.guard($('lab-it')); gen(); draw();
+})();
+</script>
+
+<aside class="notes">
+<p>Partir con 1 pregunta (r ≈ 0,6). Subir a 4 y a 12. La nube se alinea con la diagonal dorada. Conectar con X = V + E: al promediar, el E de cada ítem se compensa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="validez-y-confiabilidad" class="slide level2">
+<h2>Validez y confiabilidad</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Confiabilidad</span> ¿El instrumento entrega <strong>el mismo resultado</strong> si lo aplicamos dos veces a alguien que no ha cambiado?</p>
+<p><span class="tenue">Una regla que hoy dice 15 cm y en cinco minutos dice 20 cm no sirve</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">Validez</span> ¿El instrumento mide <strong>lo que dice medir</strong>?</p>
+<p><span class="tenue">Si digo que mido autoritarismo, que sea autoritarismo y no otra cosa</span></p>
+</div>
+</div>
+<div class="destacado">
+<p>Vuelvan al tiro al blanco: un instrumento <span class="hl">preciso pero sesgado</span> es <strong>confiable pero no válido</strong>. Siempre mide lo mismo… pero no lo que queríamos.</p>
+</div>
+<div class="nota">
+<p>Asún (2006, pp.&nbsp;101–102).</p>
+</div>
+</section>
+<section id="dos-maneras-de-relacionar-concepto-e-indicadores" class="slide level2">
+<h2>Dos maneras de relacionar concepto e indicadores</h2>
+<div class="cols2">
+<div>
+<p><strong>Reflectivo</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 280" role="img" aria-label="Modelo reflectivo"><defs><marker id="mg15" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg15" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma15" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa15" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr15" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr15" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv15" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv15" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="A"><rect x="150.0" y="15.0" width="260" height="70" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="280" y="50.0">Autoritarismo</tspan></text></g><g class="nd obs" data-k="a1"><rect x="30.0" y="192.0" width="140" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="100" y="220.0">ítem 1</tspan></text></g><line class="ar g" x1="240.0" y1="87.7" x2="134.0" y2="187.9" marker-end="url(#mg15)"></line><g class="nd obs" data-k="a2"><rect x="210.0" y="192.0" width="140" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="280" y="220.0">ítem 2</tspan></text></g><line class="ar g" x1="280.0" y1="89.0" x2="280.0" y2="186.0" marker-end="url(#mg15)"></line><g class="nd obs" data-k="a3"><rect x="390.0" y="192.0" width="140" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="460" y="220.0">ítem 3</tspan></text></g><line class="ar g" x1="320.0" y1="87.7" x2="426.0" y2="187.9" marker-end="url(#mg15)"></line></svg>
+</div>
+<p><span style="font-size:.68em">El concepto <strong>causa</strong> las respuestas: si alguien es autoritario, tenderá a estar de acuerdo con todos los ítems. Los ítems <strong>deben correlacionar</strong>.</span></p>
+</div>
+<div>
+<p><strong>Formativo</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 280" role="img" aria-label="Modelo formativo"><defs><marker id="mg16" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg16" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma16" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa16" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr16" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr16" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv16" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv16" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="C"><rect x="135.0" y="15.0" width="290" height="70" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="280" y="50.0">Calidad vivienda</tspan></text></g><g class="nd obs" data-k="m1"><rect x="25.0" y="192.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="100" y="220.0">material</tspan></text></g><line class="ar g" x1="132.6" y1="189.3" x2="238.6" y2="89.1" marker-end="url(#mg16)"></line><g class="nd obs" data-k="m2"><rect x="205.0" y="192.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="280" y="220.0">servicios</tspan></text></g><line class="ar g" x1="280.0" y1="188.0" x2="280.0" y2="91.0" marker-end="url(#mg16)"></line><g class="nd obs" data-k="m3"><rect x="385.0" y="192.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="460" y="220.0">entorno</tspan></text></g><line class="ar g" x1="427.4" y1="189.3" x2="321.4" y2="89.1" marker-end="url(#mg16)"></line></svg>
+</div>
+<p><span style="font-size:.68em">Los indicadores <strong>componen</strong> el concepto: una casa puede tener buen material y mal entorno. <strong>No tienen por qué correlacionar</strong>.</span></p>
+</div>
+</div>
+<div class="alerta">
+<p><span class="t">¿Por qué importa?</span> En un modelo formativo, eliminar el indicador «que no correlaciona» significa <span class="hlr">amputar una parte del concepto</span>.</p>
+</div>
+</section>
+<section id="qué-hace-una-persona-cuando-responde" class="slide level2">
+<h2>¿Qué hace una persona cuando responde?</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1400 300" role="img" aria-label="Cuatro etapas de la respuesta"><defs><marker id="mg17" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg17" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma17" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa17" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr17" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr17" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv17" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv17" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="p0"><rect x="30.0" y="25.0" width="290" height="110" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="175" y="66.4">1. Comprensión</tspan><tspan x="175" y="93.6">¿qué me preguntan?</tspan></text></g><g class="fragment" data-fragment-index="1"><text class="lbl oro" font-size="21" text-anchor="middle" font-weight="500"><tspan x="175" y="207.4">palabras difíciles</tspan><tspan x="175" y="232.6">dobles negaciones</tspan></text></g><g class="nd lat" data-k="p1"><rect x="380.0" y="25.0" width="290" height="110" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="525" y="66.4">2. Recuperación</tspan><tspan x="525" y="93.6">¿qué recuerdo?</tspan></text></g><g class="fragment" data-fragment-index="2"><text class="lbl oro" font-size="21" text-anchor="middle" font-weight="500"><tspan x="525" y="207.4">periodos vagos</tspan><tspan x="525" y="232.6">«últimamente»</tspan></text></g><g class="nd lat" data-k="p2"><rect x="730.0" y="25.0" width="290" height="110" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="875" y="66.4">3. Juicio</tspan><tspan x="875" y="93.6">¿qué pienso?</tspan></text></g><g class="fragment" data-fragment-index="3"><text class="lbl oro" font-size="21" text-anchor="middle" font-weight="500"><tspan x="875" y="207.4">cansancio</tspan><tspan x="875" y="232.6">«cualquier cosa»</tspan></text></g><g class="nd lat" data-k="p3"><rect x="1080.0" y="25.0" width="290" height="110" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="1225" y="66.4">4. Respuesta</tspan><tspan x="1225" y="93.6">¿qué alternativa elijo?</tspan></text></g><g class="fragment" data-fragment-index="4"><text class="lbl oro" font-size="21" text-anchor="middle" font-weight="500"><tspan x="1225" y="207.4">deseabilidad social</tspan><tspan x="1225" y="232.6">aquiescencia</tspan></text></g><line class="ar g" x1="324.0" y1="80.0" x2="374.0" y2="80.0" marker-end="url(#mg17)"></line><line class="ar g" x1="674.0" y1="80.0" x2="724.0" y2="80.0" marker-end="url(#mg17)"></line><line class="ar g" x1="1024.0" y1="80.0" x2="1074.0" y2="80.0" marker-end="url(#mg17)"></line></svg>
+</div>
+<div class="fragment" data-fragment-index="5">
+<ul>
+<li>En <strong>cada etapa</strong> algo puede salir mal (en dorado)</li>
+<li>Las reglas de redacción no son manías: cada una protege una etapa</li>
+<li>Si la tarea es difícil y la motivación baja, la gente responde «lo suficiente» (<em>satisficing</em>, Krosnick, 1991)</li>
+</ul>
+</div>
+<div class="nota">
+<p>Tourangeau, Rips y Rasinski (2000).</p>
+</div>
+</section>
+<section id="ejercicio-qué-tienen-de-malo-estas-preguntas" class="slide level2 ejercicio">
+<h2>Ejercicio: ¿qué tienen de malo estas preguntas?</h2>
+<p><span class="tenue">En parejas, 2 minutos. Después, clic en cada tarjeta para ver el problema y una mejor versión</span></p>
+<div class="tarjetas"><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">1</span><div class="q">¿Está de acuerdo con que el gobierno aumente el sueldo mínimo y reduzca la jornada laboral?</div><div class="resp"><b>Pregunta doble</b><span>Separar en dos preguntas: ¿y si apoyo el sueldo pero no la jornada?</span></div></div><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">2</span><div class="q">¿No está usted en contra de que no se prohíba fumar en los parques?</div><div class="resp"><b>Doble negación</b><span>«¿Está de acuerdo con que se prohíba fumar en los parques?»</span></div></div><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">3</span><div class="q">¿Con qué frecuencia lee el diario? (Nunca / A veces / Frecuentemente)</div><div class="resp"><b>Términos vagos</b><span>«En la última semana, ¿cuántos días leyó el diario?» (0 a 7)</span></div></div><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">4</span><div class="q">¿Cuánto se ha visto perjudicado por la delincuencia desatada que vive el país?</div><div class="resp"><b>Sesgada y con presupuesto</b><span>«En los últimos 12 meses, ¿usted o alguien de su hogar fue víctima de un delito?»</span></div></div><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">5</span><div class="q">¿Cuál es su ingreso? (Menos de $500 mil / $500 mil a $1 millón / $1 a $2 millones)</div><div class="resp"><b>Categorías no exhaustivas ni excluyentes</b><span>Agregar «Más de $2 millones» y límites que no se toquen: $500.001 a $1.000.000…</span></div></div><div class="tarjeta larga" onclick="this.classList.toggle('abierta')"><span class="num">6</span><div class="q">¿Cuántas veces fue al médico el año pasado?</div><div class="resp"><b>Periodo ambiguo</b><span>«En los últimos 12 meses, ¿cuántas veces consultó a un médico?»</span></div></div></div>
+<div class="nota">
+<p>Lenzner y Menold (2016), <em>GESIS Survey Guidelines: Question Wording</em>; Asún (2006, pp.&nbsp;80–90).</p>
+</div>
+</section>
+<section id="preguntar-también-produce-la-opinión" class="slide level2">
+<h2>Preguntar también produce la opinión</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Asún lo llama <span class="hl">cristalización</span>: preguntar hace que la persona se sitúe donde antes no se había situado</li>
+<li>«Cuando aplicamos un cuestionario estamos <em>produciendo</em> información y no sólo <em>recogiendo</em> información» (p.&nbsp;72)</li>
+</ul>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Una ley que no existía</span> En EE.UU. se preguntó si había que derogar la <em>Public Affairs Act of 1975</em>, una ley <strong>inventada</strong>. Cerca de <strong>un tercio</strong> dio su opinión igual.</p>
+</div>
+</div>
+</div>
+<div class="bloque">
+<p><span class="t">Implicancias</span></p>
+<ul>
+<li>Ofrecer la opción «no sabe»</li>
+<li>Preguntar primero si conoce el tema</li>
+<li>Desconfiar de opiniones sobre temas poco conocidos</li>
+</ul>
+</div>
+</div>
+<div class="nota">
+<p>Bishop, Oldendick, Tuchfarber y Bennett (1980), <em>Public Opinion Quarterly</em>, 44(2).</p>
+</div>
+<aside class="notes">
+<p>Cincinnati, fines de los 70. Sin filtro, ~1/3 opinó sobre la ley ficticia; con un filtro («¿o no ha pensado mucho en este tema?») cayó a un dígito. La gente no responde al azar: infiere de qué se trata y responde a esa interpretación.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="síntesis-2" class="slide level2 sintesis">
+<h2>Síntesis</h2>
+<ul>
+<li>Los conceptos sociológicos son latentes: solo vemos sus manifestaciones</li>
+<li>Operacionalizar es traducir: concepto, dimensiones, preguntas, categorías, índice</li>
+<li>Varias preguntas por concepto reducen el error aleatorio</li>
+<li>Cada etapa de la respuesta puede fallar: las reglas de redacción la protegen</li>
+</ul>
+</section></section>
+<section>
+<section id="parte-4-tres-casos-reales-elsoc" class="title-slide slide level1 divisoria center">
+<h1>Parte 4 — Tres casos reales: ELSOC</h1>
+<div class="bajada">
+<p>Autoeficacia política · autoritarismo · depresión</p>
+</div>
+</section>
+<section id="elsoc-estudio-longitudinal-social-de-chile" class="slide level2">
+<h2>ELSOC: Estudio Longitudinal Social de Chile</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Encuesta <span class="hl">panel</span> del Centro de Estudios de Conflicto y Cohesión Social (COES)</li>
+<li>Sigue a <strong>las mismas personas</strong> año a año desde 2016</li>
+<li>Población urbana adulta de Chile</li>
+<li>Módulos: ciudadanía, desigualdad, redes, salud y bienestar, territorio, conflicto</li>
+<li>Cuestionarios, bases y documentación son <strong>públicos</strong></li>
+<li>Sitio del estudio: <a href="https://coes.cl/elsoc/">ELSOC – COES</a></li>
+</ul>
+</div>
+<p><img data-src="figuras/elsoc_terreno.jpg" class="foto"></p>
+</div>
+</section>
+<section id="la-operacionalización-en-una-planilla" class="slide level2">
+<h2>La operacionalización, en una planilla</h2>
+<p>El <em>Listado de Variables</em> de ELSOC documenta, para cada ítem, su concepto y su pregunta:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Concepto general</th>
+<th>Concepto específico</th>
+<th>Fraseo del ítem</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>c10_02</code></td>
+<td>Autoeficacia política</td>
+<td>Autoeficacia política</td>
+<td>Mi voto influye en el resultado de la elección</td>
+<td>Ordinal</td>
+</tr>
+<tr class="even">
+<td><code>c18_06</code></td>
+<td>Autoritarismo</td>
+<td>Autoritarismo 1</td>
+<td>La obediencia y el respeto por la autoridad son los valores más importantes que los niños debieran aprender</td>
+<td>Ordinal</td>
+</tr>
+<tr class="odd">
+<td><code>s11_02</code></td>
+<td>Estado de ánimo</td>
+<td>Sintomatología depresiva</td>
+<td>Decaimiento, pesadez o desesperanza</td>
+<td>Ordinal</td>
+</tr>
+</tbody>
+</table>
+<p>Concepto → dimensión → pregunta → categorías: el diagrama de Asún, <span class="hl">hecho planilla</span></p>
+<div class="nota">
+<p>ELSOC, Listado de Variables Global v2023.</p>
+</div>
+</section>
+<section id="caso-1.-autoeficacia-política-la-teoría" class="slide level2">
+<h2>Caso 1. Autoeficacia política: la teoría</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li><strong>Eficacia política</strong>: la sensación de que uno <strong>puede</strong> influir en la política (Campbell et al., 1954)</li>
+<li>Dos dimensiones clásicas:
+<ul>
+<li><span class="hl">Interna</span>: «entiendo la política y puedo participar»</li>
+<li><strong>Externa</strong>: «el sistema responde a gente como yo»</li>
+</ul></li>
+<li>Un concepto vecino: el <strong>deber cívico</strong>, la sensación de que <em>hay que</em> participar</li>
+</ul>
+</div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 500 400" role="img" aria-label="Eficacia política interna y externa"><defs><marker id="mg18" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg18" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma18" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa18" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr18" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr18" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv18" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv18" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="E"><rect x="100.0" y="15.0" width="300" height="70" rx="8"></rect><text font-size="24" font-weight="700"><tspan x="250" y="50.0">Eficacia política</tspan></text></g><g class="nd lat" data-k="I"><rect x="30.0" y="159.0" width="180" height="62" rx="8"></rect><text font-size="21" font-weight="700"><tspan x="120" y="190.0">Interna</tspan></text></g><g class="nd lat" data-k="X"><rect x="290.0" y="159.0" width="180" height="62" rx="8"></rect><text font-size="21" font-weight="700"><tspan x="380" y="190.0">Externa</tspan></text></g><line class="ar g" x1="214.8" y1="87.9" x2="152.9" y2="154.6" marker-end="url(#mg18)"></line><line class="ar g" x1="285.2" y1="87.9" x2="347.1" y2="154.6" marker-end="url(#mg18)"></line><g class="nd obs" data-k="D"><rect x="135.0" y="289.0" width="230" height="62" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="250" y="320.0">Deber cívico</tspan></text></g><text class="lbl" font-size="18" text-anchor="middle" font-weight="500"><tspan x="250" y="375.0">(concepto vecino)</tspan></text></svg>
+</div>
+</div>
+<div class="nota">
+<p>Campbell, Gurin y Miller (1954); Niemi, Craig y Mattei (1991).</p>
+</div>
+</section>
+<section id="caso-1.-autoeficacia-política-en-elsoc" class="slide level2">
+<h2>Caso 1. Autoeficacia política en ELSOC</h2>
+<p>«¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones?»</p>
+<table class="grande caption-top">
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Ítem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>c10_01</code></td>
+<td>Votar es mi deber como ciudadano</td>
+</tr>
+<tr class="even">
+<td><code>c10_02</code></td>
+<td>Mi voto influye en el resultado de la elección</td>
+</tr>
+<tr class="odd">
+<td><code>c10_03</code></td>
+<td>Votar permite expresar mis ideas</td>
+</tr>
+</tbody>
+</table>
+<p><span class="tenue" style="font-size:.6em">Totalmente en desacuerdo — En desacuerdo — Ni de acuerdo ni en desacuerdo — De acuerdo — Totalmente de acuerdo</span></p>
+<div class="bloque">
+<p><span class="t">Pregunta al curso</span> ¿Qué <strong>faceta</strong> de la relación con el voto captura cada ítem?</p>
+</div>
+</section>
+<section id="caso-1.-una-escala-corta-varias-facetas" class="slide level2">
+<h2>Caso 1. Una escala corta, varias facetas</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1400 400" role="img" aria-label="Una escala corta con tres facetas"><defs><marker id="mg19" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg19" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma19" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa19" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr19" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr19" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv19" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv19" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="A"><rect x="480.0" y="15.0" width="440" height="70" rx="8"></rect><text font-size="25" font-weight="700"><tspan x="700" y="50.0">Relación con el voto</tspan></text></g><g class="nd lat" data-k="DC"><rect x="70.0" y="152.0" width="320" height="66" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="230" y="185.0">Deber cívico</tspan></text></g><g class="nd obs" data-k="iDC"><rect x="50.0" y="280.0" width="360" height="90" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="230" y="312.6">c10_01</tspan><tspan x="230" y="337.4">Votar es mi deber</tspan></text></g><line class="ar g" x1="574.3" y1="86.1" x2="350.7" y2="150.3" marker-end="url(#mg19)"></line><line class="ar g" x1="230.0" y1="222.0" x2="230.0" y2="274.0" marker-end="url(#mg19)"></line><g class="nd lat" data-k="EF"><rect x="540.0" y="152.0" width="320" height="66" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="700" y="185.0">Eficacia del voto</tspan></text></g><g class="nd obs" data-k="iEF"><rect x="520.0" y="280.0" width="360" height="90" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="700" y="312.6">c10_02</tspan><tspan x="700" y="337.4">Mi voto influye</tspan></text></g><line class="ar g" x1="700.0" y1="89.0" x2="700.0" y2="146.0" marker-end="url(#mg19)"></line><line class="ar g" x1="700.0" y1="222.0" x2="700.0" y2="274.0" marker-end="url(#mg19)"></line><g class="nd lat" data-k="EX"><rect x="1010.0" y="152.0" width="320" height="66" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="1170" y="185.0">Valor expresivo</tspan></text></g><g class="nd obs" data-k="iEX"><rect x="990.0" y="280.0" width="360" height="90" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="1170" y="312.6">c10_03</tspan><tspan x="1170" y="337.4">Votar expresa mis ideas</tspan></text></g><line class="ar g" x1="825.7" y1="86.1" x2="1049.3" y2="150.3" marker-end="url(#mg19)"></line><line class="ar g" x1="1170.0" y1="222.0" x2="1170.0" y2="274.0" marker-end="url(#mg19)"></line></svg>
+</div>
+<ul>
+<li>Una encuesta panel cubre <strong>muchos</strong> temas: cada concepto recibe pocas preguntas</li>
+<li>Asún: el mínimo es una o dos preguntas por subconcepto; el resto se «invierte» en los conceptos centrales del estudio (p.&nbsp;92)</li>
+<li>Cada ítem aporta <span class="hl">una faceta</span>: quien analiza los datos decide cuáles usar según su pregunta</li>
+</ul>
+</section>
+<section id="caso-1.-leer-la-documentación-antes-de-analizar" class="slide level2">
+<h2>Caso 1. Leer la documentación antes de analizar</h2>
+<div class="cols2">
+<div>
+<div class="ejemplo">
+<p><span class="t">Lo que permite una buena documentación</span></p>
+<ul>
+<li>Ver el fraseo exacto de cada ítem</li>
+<li>Elegir los ítems que calzan con <strong>mi</strong> concepto</li>
+<li>Saber en qué olas se preguntó cada uno</li>
+</ul>
+</div>
+<div class="bloque">
+<p><span class="t">Ejemplo</span> Si me interesa la eficacia <strong>externa</strong>, <code>c10_02</code> es mi mejor candidato; si me interesa la cultura cívica, <code>c10_01</code>.</p>
+</div>
+</div>
+<div>
+<div class="alerta">
+<p><span class="t">La lección</span> La <span class="hlr">etiqueta</span> de una variable es un punto de partida, no una garantía. La validez se juzga <strong>en relación con la pregunta de investigación</strong> de quien usa los datos.</p>
+</div>
+<p>Que ELSOC publique el concepto, el fraseo y las olas de cada ítem es justamente lo que hace posible esta discusión.</p>
+</div>
+</div>
+</section>
+<section id="caso-1.-por-qué-importa-medirlo-bien" class="slide level2">
+<h2>Caso 1. ¿Por qué importa medirlo bien?</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Verba, Schlozman y Brady (1995): no todos tienen la misma <span class="hl">voz política</span></li>
+<li>Participar requiere <strong>recursos</strong> (tiempo, dinero, habilidades), <strong>compromiso</strong> (interés, eficacia) y <strong>redes</strong> que te recluten</li>
+<li>La eficacia es parte del mecanismo por el cual la <strong>desigualdad social se vuelve desigualdad política</strong></li>
+</ul>
+</div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 430" role="img" aria-label="Desigualdad social y participación"><defs><marker id="mg20" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg20" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma20" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa20" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr20" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr20" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv20" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv20" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="N"><rect x="120.0" y="12.0" width="320" height="76" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="280" y="37.6">Nivel socioeconómico</tspan><tspan x="280" y="62.4">y educación</tspan></text></g><g class="nd lat" data-k="E"><rect x="25.0" y="183.0" width="190" height="64" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="120" y="215.0">Eficacia</tspan></text></g><g class="nd obs" data-k="R"><rect x="335.0" y="177.0" width="210" height="76" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="440" y="202.6">Recursos</tspan><tspan x="440" y="227.4">(tiempo, dinero)</tspan></text></g><g class="nd err" data-k="P"><rect x="160.0" y="343.0" width="240" height="64" rx="8"></rect><text font-size="22" font-weight="700"><tspan x="280" y="375.0">Participación</tspan></text></g><line class="ar g" x1="240.4" y1="90.9" x2="155.2" y2="178.7" marker-end="url(#mg20)"></line><line class="ar g" x1="319.6" y1="90.9" x2="399.0" y2="172.7" marker-end="url(#mg20)"></line><line class="ar g" x1="154.8" y1="249.8" x2="243.8" y2="338.8" marker-end="url(#mg20)"></line><line class="ar g" x1="399.2" y1="255.8" x2="316.2" y2="338.8" marker-end="url(#mg20)"></line></svg>
+</div>
+</div>
+<div class="alerta">
+<p><span class="t">Medir no es solo un problema técnico</span> Cómo medimos la eficacia define qué podemos decir sobre <strong>un mecanismo de la desigualdad</strong>.</p>
+</div>
+</section>
+<section id="caso-2.-autoritarismo-una-larga-historia" class="slide level2">
+<h2>Caso 2. Autoritarismo: una larga historia</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Adorno, Frenkel-Brunswik, Levinson y Sanford (1950), <em>The Authoritarian Personality</em></li>
+<li>La pregunta tras el nazismo: ¿por qué personas comunes apoyan regímenes autoritarios?</li>
+<li>Construyeron la <span class="hl">escala F</span> (de «fascismo»): obediencia, convencionalismo, agresión hacia los desviados</li>
+<li>Incluía preguntas sobre la relación con los padres, justificadas desde la <strong>teoría psicoanalítica</strong> (Asún, 2006, p.&nbsp;112)</li>
+</ul>
+</div>
+<p><img data-src="figuras/adorno.jpg" class="foto"></p>
+</div>
+</section>
+<section id="caso-2.-autoritarismo-en-elsoc" class="slide level2">
+<h2>Caso 2. Autoritarismo en ELSOC</h2>
+<p>«¿En qué medida se encuentra usted de acuerdo o en desacuerdo con cada una de las siguientes afirmaciones?»</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Ítem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>c18_04</code></td>
+<td>En vez de tanta preocupación por los derechos de las personas, lo que este país necesita es un gobierno firme</td>
+</tr>
+<tr class="even">
+<td><code>c18_05</code></td>
+<td>Lo que nuestro país necesita es un mandatario/a fuerte con la determinación para llevarnos por el camino correcto</td>
+</tr>
+<tr class="odd">
+<td><code>c18_06</code></td>
+<td>La obediencia y el respeto por la autoridad son los valores más importantes que los niños debieran aprender</td>
+</tr>
+<tr class="even">
+<td><code>c18_07</code></td>
+<td>Las verdaderas claves para tener una buena vida son la obediencia y la disciplina</td>
+</tr>
+</tbody>
+</table>
+<div class="bloque">
+<p><span class="t">Miren con atención</span> ¿Qué significa responder «de acuerdo» en <strong>las cuatro</strong> afirmaciones?</p>
+</div>
+</section>
+<section id="caso-2.-un-desafío-de-toda-escala-de-acuerdo-desacuerdo" class="slide level2">
+<h2>Caso 2. Un desafío de toda escala de acuerdo / desacuerdo</h2>
+<ul>
+<li>En los cuatro ítems, <strong>estar de acuerdo = más autoritario</strong></li>
+<li>Es el formato estándar de muchas escalas, desde la escala F hasta encuestas internacionales actuales</li>
+<li>Su riesgo: la <span class="hl">aquiescencia</span>, la tendencia a responder «de acuerdo» <strong>independientemente del contenido</strong></li>
+</ul>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">¿Por qué ocurre?</span></p>
+<ul>
+<li>Cortesía con el encuestador</li>
+<li>Deferencia hacia quien pregunta</li>
+<li>Menor esfuerzo: es más fácil buscar razones para estar de acuerdo (Krosnick, 1991)</li>
+</ul>
+</div>
+<div class="alerta">
+<p><span class="t">Consecuencia</span> Una persona aquiescente puede aparecer como <strong>más autoritaria</strong> de lo que es: un <span class="hlr">error sistemático</span>.</p>
+</div>
+</div>
+<div class="nota">
+<p>Bogner y Landrock (2016), <em>GESIS Survey Guidelines: Response Biases in Standardised Surveys</em>, sección 2.2.</p>
+</div>
+</section>
+<section id="caso-2.-el-dag-del-problema" class="slide level2">
+<h2>Caso 2. El DAG del problema</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1100 330" role="img" aria-label="La aquiescencia puede fabricar una relación"><defs><marker id="mg21" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg21" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma21" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa21" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr21" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr21" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv21" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv21" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="Ed"><rect x="35.0" y="25.0" width="250" height="70" rx="8"></rect><text font-size="23" font-weight="500"><tspan x="160" y="60.0">Educación</tspan></text></g><g class="nd err" data-k="Q"><rect x="765.0" y="25.0" width="270" height="70" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="900" y="60.0">Aquiescencia</tspan></text></g><g class="nd lat" data-k="A"><rect x="35.0" y="225.0" width="250" height="70" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="160" y="260.0">Autoritarismo</tspan></text></g><g class="nd obs" data-k="R"><rect x="765.0" y="220.0" width="270" height="80" rx="8"></rect><text font-size="22" font-weight="500"><tspan x="900" y="247.0">Puntaje en</tspan><tspan x="900" y="273.0">la escala</tspan></text></g><line class="ar g" x1="289.0" y1="260.0" x2="759.0" y2="260.0" marker-end="url(#mg21)"></line><line class="ar a" x1="900.0" y1="99.0" x2="900.0" y2="214.0" marker-end="url(#ma21)"></line><line class="ar a dash" x1="289.0" y1="60.0" x2="759.0" y2="60.0" marker-end="url(#ma21)"></line><text class="lbl" font-size="19" text-anchor="middle" font-weight="500"><tspan x="524.0" y="88.0">menos educación, más aquiescencia</tspan></text><line class="ar g" x1="160.0" y1="99.0" x2="160.0" y2="219.0" marker-end="url(#mg21)"></line><text class="lbl" font-size="26" text-anchor="middle" font-weight="500"><tspan x="138.0" y="159.0">?</tspan></text></svg>
+</div>
+<ul>
+<li>Si las personas con menos educación aparecen «más autoritarias», ¿cuánto es autoritarismo y cuánto es <strong>forma de responder</strong>?</li>
+<li>El error de medición puede <span class="hl">fabricar o inflar relaciones</span> entre variables</li>
+</ul>
+</section>
+<section id="laboratorio-una-relación-fabricada" class="slide level2 lab-slide">
+<h2>Laboratorio: una relación fabricada</h2>
+
+<div class="lab" id="lab-aq">
+  <svg viewbox="0 0 520 440" id="aq-svg"><g id="aq-g"></g></svg>
+  <div class="panel">
+    <label>Fuerza de la aquiescencia: <b id="aq-sv"></b></label>
+    <input type="range" id="aq-s" min="0" max="10" value="6">
+    <label>Formato de la escala</label>
+    <div>
+      <button class="btn" id="aq-mismo">4 ítems en la misma dirección</button>
+      <button class="btn sec" id="aq-bal">Escala balanceada (2 + 2 invertidos)</button>
+    </div>
+    <div class="lectura">
+      <div><span class="k">Diferencia observada (educación baja − alta)</span><span class="v" id="aq-dif">–</span></div>
+      <div><span class="k">Diferencia verdadera</span><span class="v">0,00</span></div>
+    </div>
+    <p class="glosa">Simulación: 600 personas, con el <b>mismo</b> autoritarismo promedio en ambos grupos. Las personas con menos educación tienden a decir «de acuerdo» un poco más. La línea dorada es el promedio verdadero.</p>
+  </div>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), L=window.LAB, N=600;
+  let bal=false; const A=[],Z=[],ED=[],NZ=[];
+  for(let i=0;i<N;i++){A.push(L.randn()); Z.push(Math.abs(L.randn())); ED.push(i%2); const nz=[]; for(let j=0;j<4;j++) nz.push(L.randn()*0.6); NZ.push(nz);}
+  function puntaje(i,s){
+    const q=s*(ED[i]===0?1:0.3)*Z[i]; let tot=0;
+    for(let j=0;j<4;j++){
+      const inv = bal && j>=2;
+      // respuesta en escala 1-5 (continua), "acuerdo" sube con la aquiescencia
+      const r = inv ? 3 - 0.8*A[i] + q + NZ[i][j] : 3 + 0.8*A[i] + q + NZ[i][j];
+      tot += inv ? 6 - r : r;
+    }
+    return tot/4;
+  }
+  function draw(){
+    const s=+$('aq-s').value/10*0.9; $('aq-sv').textContent=$('aq-s').value;
+    let m=[0,0], n=[0,0]; for(let i=0;i<N;i++){ m[ED[i]]+=puntaje(i,s); n[ED[i]]++; }
+    m=[m[0]/n[0], m[1]/n[1]];
+    const g=$('aq-g'); g.innerHTML='';
+    const y=v=>390-(v-2)/2*330;
+    g.appendChild(L.svg('line',{x1:50,y1:390,x2:500,y2:390,stroke:'#9BA9BF','stroke-width':2}));
+    [2,2.5,3,3.5,4].forEach(v=>{ const t=L.svg('text',{x:40,y:y(v)+6,'text-anchor':'end','font-size':17,fill:'#9BA9BF'}); t.textContent=L.fmt(v,1); g.appendChild(t);
+      g.appendChild(L.svg('line',{x1:50,y1:y(v),x2:500,y2:y(v),stroke:'#2B3D5C','stroke-width':1})); });
+    [['Educación baja',m[0],120,'#C9A84C'],['Educación alta',m[1],330,'#4E7FB0']].forEach(b=>{
+      g.appendChild(L.svg('rect',{x:b[2],y:y(b[1]),width:120,height:390-y(b[1]),fill:b[3],rx:3}));
+      let t=L.svg('text',{x:b[2]+60,y:y(b[1])-10,'text-anchor':'middle','font-size':22,'font-weight':700,fill:'#E8E3D9'}); t.textContent=L.fmt(b[1],2); g.appendChild(t);
+      t=L.svg('text',{x:b[2]+60,y:420,'text-anchor':'middle','font-size':19,fill:'#9BA9BF'}); t.textContent=b[0]; g.appendChild(t);
+    });
+    g.appendChild(L.svg('line',{x1:50,y1:y(3),x2:500,y2:y(3),stroke:'#D9BC66','stroke-width':3,'stroke-dasharray':'9 6'}));
+    $('aq-dif').textContent=L.fmt(m[0]-m[1],2);
+  }
+  $('aq-s').oninput=draw;
+  $('aq-mismo').onclick=()=>{bal=false; $('aq-mismo').classList.remove('sec'); $('aq-bal').classList.add('sec'); draw();};
+  $('aq-bal').onclick=()=>{bal=true; $('aq-bal').classList.remove('sec'); $('aq-mismo').classList.add('sec'); draw();};
+  L.guard($('lab-aq')); draw();
+})();
+</script>
+
+<aside class="notes">
+<p>Con aquiescencia 6 y la escala en una sola dirección: aparece una diferencia de ~0,2–0,3 puntos que NO existe. Subir a 10: crece. Cambiar a escala balanceada: la diferencia vuelve a ≈ 0.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="caso-2.-cómo-se-enfrenta" class="slide level2">
+<h2>Caso 2. ¿Cómo se enfrenta?</h2>
+<div class="cols3">
+<div class="bloque">
+<p><span class="t">1. Escalas balanceadas</span> Mitad de los ítems en un sentido y mitad en el otro: la aquiescencia se cancela</p>
+<p><span class="tenue">Ej.: escala RWA de Altemeyer</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">2. Categorías propias</span> Reemplazar «de acuerdo / en desacuerdo» por alternativas del ítem</p>
+<p><span class="tenue">«¿Cuánto influye su voto?» Nada — Poco — Algo — Mucho</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">3. Medición indirecta</span> Preguntar por otra cosa que revela el concepto</p>
+<p><span class="tenue">¿Qué es más importante que aprenda un niño: <strong>obediencia</strong> o <strong>independencia</strong>? (Feldman y Stenner, 1997)</span></p>
+</div>
+</div>
+<ul>
+<li>La opción 3 elige entre dos cosas <strong>deseables</strong>: no hay un «de acuerdo» fácil</li>
+<li>Medir bien exige <span class="hl">creatividad conceptual</span>, no solo técnica</li>
+</ul>
+</section>
+<section id="caso-3.-depresión-un-instrumento-clínico-en-una-encuesta" class="slide level2">
+<h2>Caso 3. Depresión: un instrumento clínico en una encuesta</h2>
+<p>«¿Cuántas veces durante las <strong>últimas dos semanas</strong> ha sentido alguna de las siguientes molestias?»</p>
+<div class="cols-60-40">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Síntoma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>s11_01</code></td>
+<td>Poco interés o alegría para realizar sus actividades</td>
+</tr>
+<tr class="even">
+<td><code>s11_02</code></td>
+<td>Decaimiento, pesadez o desesperanza</td>
+</tr>
+<tr class="odd">
+<td><code>s11_03</code></td>
+<td>Dificultad para dormir, o exceso de sueño</td>
+</tr>
+<tr class="even">
+<td><code>s11_04</code></td>
+<td>Cansancio o falta de energía</td>
+</tr>
+<tr class="odd">
+<td><code>s11_05</code></td>
+<td>Apetito disminuido o aumentado</td>
+</tr>
+<tr class="even">
+<td><code>s11_06</code></td>
+<td>Dificultad para concentrarse</td>
+</tr>
+<tr class="odd">
+<td><code>s11_07</code></td>
+<td>Mala opinión de sí mismo</td>
+</tr>
+<tr class="even">
+<td><code>s11_08</code></td>
+<td>Movimientos o lenguaje enlentecidos</td>
+</tr>
+<tr class="odd">
+<td><code>s11_09</code></td>
+<td>Pensamientos de muerte o de hacerse daño</td>
+</tr>
+</tbody>
+</table>
+<div class="bloque">
+<p><span class="t">PHQ-9</span></p>
+<ul>
+<li><em>Patient Health Questionnaire</em>: instrumento clínico validado</li>
+<li>Nueve síntomas, periodo de referencia preciso</li>
+<li>Asún: <span class="hl">no inventar todo</span>, usar instrumentos probados (p.&nbsp;108)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="caso-3.-adaptar-tiene-costos" class="slide level2">
+<h2>Caso 3. Adaptar tiene costos</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">PHQ-9 original · 4 categorías</span> 0 Nunca · 1 Varios días · 2 Más de la mitad de los días · 3 Casi todos los días</p>
+</div>
+<div class="bloque">
+<p><span class="t">ELSOC · 5 categorías</span> 1 Nunca · 2 Algunos días · 3 Más de la mitad de los días · 4 Casi todos los días · <span class="hl">5 Todos los días</span></p>
+</div>
+</div>
+<ul>
+<li>El PHQ-9 tiene <strong>puntajes de corte</strong> (5, 10, 15, 20) para la escala 0–27</li>
+<li>Con otra escala de respuesta, esos cortes no se aplican directamente</li>
+<li>Toda adaptación es una decisión con costos y beneficios de <span class="hl">comparabilidad</span></li>
+</ul>
+</section>
+<section id="caso-3.-el-problema-de-tener-a-alguien-enfrente" class="slide level2">
+<h2>Caso 3. El problema de tener a alguien enfrente</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Responder sobre el propio ánimo frente a un <strong>desconocido</strong> no es neutral</li>
+<li><span class="hl">Deseabilidad social</span>: responder lo que «queda bien»</li>
+<li><strong>Efecto encuestador</strong>: las respuestas cambian según quién pregunta</li>
+<li><strong>Presencia de terceros</strong>: la pareja o los hijos en la sala</li>
+</ul>
+</div>
+<div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 330" role="img" aria-label="Presencia del encuestador y de terceros"><defs><marker id="mg22" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg22" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma22" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa22" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr22" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr22" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv22" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv22" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="D"><rect x="15.0" y="220.0" width="190" height="80" rx="8"></rect><text font-size="21" font-weight="700"><tspan x="110" y="247.6">Síntomas</tspan><tspan x="110" y="272.4">reales</tspan></text></g><g class="nd obs" data-k="R"><rect x="350.0" y="220.0" width="200" height="80" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="450" y="247.6">Síntomas</tspan><tspan x="450" y="272.4">declarados</tspan></text></g><g class="nd err" data-k="Enc"><rect x="350.0" y="22.0" width="200" height="76" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="450" y="48.2">Encuestador</tspan><tspan x="450" y="71.8">presente</tspan></text></g><g class="nd err" data-k="Ter"><rect x="40.0" y="22.0" width="200" height="76" rx="8"></rect><text font-size="20" font-weight="700"><tspan x="140" y="48.2">Terceros</tspan><tspan x="140" y="71.8">presentes</tspan></text></g><line class="ar g" x1="209.0" y1="260.0" x2="344.0" y2="260.0" marker-end="url(#mg22)"></line><line class="ar a" x1="450.0" y1="102.0" x2="450.0" y2="214.0" marker-end="url(#ma22)"></line><line class="ar a" x1="202.3" y1="100.2" x2="383.0" y2="216.7" marker-end="url(#ma22)"></line></svg>
+</div>
+<p><span class="tenue" style="font-size:.66em">Ambos empujan <strong>hacia abajo</strong>: subreporte</span></p>
+</div>
+</div>
+<div class="nota">
+<p>Bogner y Landrock (2016), secciones 2.1, 3.1 y 3.2.</p>
+</div>
+</section>
+<section id="caso-3.-la-solución-de-elsoc-pasar-la-tablet" class="slide level2">
+<h2>Caso 3. La solución de ELSOC: pasar la tablet</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>En este módulo el encuestador <strong>entrega la tablet</strong> y la persona responde sola</li>
+<li>ELSOC lo registra: <code>s11_10</code> indica si la persona contestó directamente en la tablet</li>
+<li>Lo mismo con el <strong>voto</strong>: «PREGUNTA AUTOADMINISTRADA. ENTREVISTADO DEBE RESPONDER DIRECTAMENTE EN LA TABLET»</li>
+</ul>
+<div class="ejemplo">
+<p><span class="t">Asún ya lo anticipaba (p.&nbsp;108)</span> Aumentar la confidencialidad «dejando que parte del instrumento lo responda secretamente (sin mediación del encuestador)».</p>
+</div>
+</div>
+<p><img data-src="figuras/tablet.jpg" class="foto"></p>
+</div>
+</section>
+<section id="caso-3.-una-pregunta-abierta-qué-es-la-depresión" class="slide level2">
+<h2>Caso 3. Una pregunta abierta: ¿qué es la depresión?</h2>
+<div class="cols2">
+<div>
+<p><strong>Causa común</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 270" role="img" aria-label="Modelo de causa común"><defs><marker id="mg23" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg23" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma23" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa23" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr23" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr23" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv23" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv23" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd lat" data-k="D"><rect x="170.0" y="13.0" width="220" height="64" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="280" y="45.0">Depresión</tspan></text></g><g class="nd obs" data-k="s1"><rect x="10.0" y="183.0" width="120" height="54" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="70" y="210.0">ánimo</tspan></text></g><line class="ar g" x1="236.1" y1="79.5" x2="109.1" y2="179.3" marker-end="url(#mg23)"></line><g class="nd obs" data-k="s2"><rect x="150.0" y="183.0" width="120" height="54" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="210" y="210.0">sueño</tspan></text></g><line class="ar g" x1="264.9" y1="80.7" x2="223.8" y2="177.5" marker-end="url(#mg23)"></line><g class="nd obs" data-k="s3"><rect x="290.0" y="183.0" width="120" height="54" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="350" y="210.0">energía</tspan></text></g><line class="ar g" x1="295.1" y1="80.7" x2="336.2" y2="177.5" marker-end="url(#mg23)"></line><g class="nd obs" data-k="s4"><rect x="430.0" y="183.0" width="120" height="54" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="490" y="210.0">concentr.</tspan></text></g><line class="ar g" x1="323.9" y1="79.5" x2="450.9" y2="179.3" marker-end="url(#mg23)"></line></svg>
+</div>
+<p><span style="font-size:.68em">La depresión es una condición latente que <strong>produce</strong> los síntomas: sumarlos tiene sentido</span></p>
+</div>
+<div class="fragment">
+<p><strong>Red de síntomas</strong></p>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 270" role="img" aria-label="Red de síntomas"><defs><marker id="mg24" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg24" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma24" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa24" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr24" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr24" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv24" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv24" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd obs" data-k="s"><rect x="45.0" y="22.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="120" y="50.0">sueño</tspan></text></g><g class="nd obs" data-k="e"><rect x="365.0" y="22.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="440" y="50.0">energía</tspan></text></g><g class="nd obs" data-k="c"><rect x="365.0" y="187.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="440" y="215.0">concentr.</tspan></text></g><g class="nd obs" data-k="a"><rect x="45.0" y="187.0" width="150" height="56" rx="8"></rect><text font-size="20" font-weight="500"><tspan x="120" y="215.0">ánimo</tspan></text></g><line class="ar g" x1="199.0" y1="50.0" x2="359.0" y2="50.0" marker-end="url(#mg24)"></line><line class="ar g" x1="440.0" y1="82.0" x2="440.0" y2="181.0" marker-end="url(#mg24)"></line><line class="ar g" x1="361.0" y1="215.0" x2="201.0" y2="215.0" marker-end="url(#mg24)"></line><line class="ar g" x1="120.0" y1="183.0" x2="120.0" y2="84.0" marker-end="url(#mg24)"></line></svg>
+</div>
+<p><span style="font-size:.68em">Los síntomas <strong>se causan entre sí</strong>: la depresión <em>es</em> la red. Ojo: este dibujo <strong>no es un DAG</strong>, porque tiene un ciclo</span></p>
+</div>
+</div>
+<div class="bloque">
+<p><span class="t">La lección</span> Incluso en instrumentos clínicos, <span class="hl">¿qué es el concepto?</span> sigue siendo una pregunta abierta. Operacionalizar es tomar posición teórica.</p>
+</div>
+<div class="nota">
+<p>Borsboom y Cramer (2013); Fried y Nesse (2015).</p>
+</div>
+</section>
+<section id="caso-3.-medir-también-tiene-consecuencias-éticas" class="slide level2">
+<h2>Caso 3. Medir también tiene consecuencias éticas</h2>
+<ul>
+<li>El ítem <code>s11_09</code> pregunta por <strong>pensamientos de muerte o de hacerse daño</strong></li>
+<li>Una encuesta que pregunta esto debe estar preparada para lo que puede escuchar: protocolos de <span class="hl">derivación</span> a apoyo profesional, encuestadores capacitados y aprobación de un <strong>comité de ética</strong></li>
+</ul>
+<table class="grande caption-top">
+<thead>
+<tr class="header">
+<th>Caso</th>
+<th>Pregunta</th>
+<th>Fuente de error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Autoeficacia</td>
+<td>¿qué faceta mide cada ítem?</td>
+<td>validez</td>
+</tr>
+<tr class="even">
+<td>Autoritarismo</td>
+<td>¿el formato empuja?</td>
+<td>sesgo de respuesta</td>
+</tr>
+<tr class="odd">
+<td>Depresión</td>
+<td>¿la situación empuja?</td>
+<td>efecto encuestador y modo</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="síntesis-3" class="slide level2 sintesis">
+<h2>Síntesis</h2>
+<ul>
+<li>Una buena documentación permite discutir la validez de cada ítem</li>
+<li>El formato de acuerdo / desacuerdo puede introducir error sistemático</li>
+<li>La situación de entrevista cambia las respuestas: la autoaplicación protege los temas sensibles</li>
+<li>Toda medición es también una posición teórica y una responsabilidad ética</li>
+</ul>
+</section></section>
+<section>
+<section id="parte-5-innovaciones" class="title-slide slide level1 divisoria center">
+<h1>Parte 5 — Innovaciones</h1>
+<div class="bajada">
+<p>Experimentos, modos de aplicación y datos vinculados</p>
+</div>
+</section>
+<section id="experimentos-dentro-de-encuestas" class="slide level2">
+<h2>Experimentos dentro de encuestas</h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>Se asigna <span class="hl">al azar</span> a cada persona una versión distinta del cuestionario</li>
+<li>Como el azar decide, los grupos son <strong>comparables en todo lo demás</strong></li>
+<li>Cualquier diferencia en las respuestas se debe a <strong>la versión</strong></li>
+<li>Combina <strong>muestras representativas</strong> con <strong>inferencia causal</strong></li>
+</ul>
+</div>
+<div>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 560 330" role="img" aria-label="El azar corta la confusión"><defs><marker id="mg25" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg25" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma25" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa25" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr25" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr25" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv25" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv25" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd err" data-k="Z"><rect x="25.0" y="18.0" width="170" height="64" rx="8"></rect><text font-size="23" font-weight="700"><tspan x="110" y="50.0">Azar</tspan></text></g><g class="nd obs" data-k="V"><rect x="25.0" y="215.0" width="170" height="80" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="110" y="242.6">Versión</tspan><tspan x="110" y="267.4">A / B</tspan></text></g><g class="nd obs" data-k="Y"><rect x="345.0" y="220.0" width="190" height="70" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="440" y="255.0">Respuesta</tspan></text></g><g class="nd obs" data-k="U"><rect x="335.0" y="15.0" width="210" height="80" rx="8"></rect><text font-size="18" font-weight="500"><tspan x="440" y="44.4">Edad, educación,</tspan><tspan x="440" y="65.6">ideología…</tspan></text></g><line class="ar a" x1="110.0" y1="86.0" x2="110.0" y2="209.0" marker-end="url(#ma25)"></line><line class="ar g" x1="199.0" y1="255.0" x2="339.0" y2="255.0" marker-end="url(#mg25)"></line><line class="ar g" x1="440.0" y1="99.0" x2="440.0" y2="214.0" marker-end="url(#mg25)"></line><line class="ar r dash" x1="370.6" y1="97.1" x2="181.1" y2="211.9" marker-end="url(#mr25)"></line><text class="lbl rojo" font-size="44" text-anchor="middle" font-weight="700"><tspan x="268" y="160.0">✕</tspan></text></svg>
+</div>
+<p><span class="tenue" style="font-size:.64em">El azar <strong>corta</strong> la flecha entre las características de las personas y la versión que reciben</span></p>
+</div>
+</div>
+<div class="nota">
+<p>Mutz (2011), <em>Population-Based Survey Experiments</em>.</p>
+</div>
+</section>
+<section id="dos-experimentos-clásicos-de-fraseo" class="slide level2">
+<h2>Dos experimentos clásicos de fraseo</h2>
+<div class="cols2">
+<div class="ejemplo">
+<p><span class="t">Prohibir vs.&nbsp;permitir (Rugg, 1941)</span> «¿Debería EE.UU. <strong>prohibir</strong> los discursos públicos contra la democracia?» → 54% sí</p>
+<p>«¿Debería <strong>permitir</strong>…?» → 75% no</p>
+<p>Misma idea, <strong>21 puntos</strong> de diferencia</p>
+</div>
+<div class="ejemplo">
+<p><span class="t">Rangos de respuesta (Schwarz et al., 1985)</span> Horas diarias de televisión:</p>
+<p>Rangos <strong>bajos</strong> → 16% dice más de 2½ horas<br>
+Rangos <strong>altos</strong> → 38% dice más de 2½ horas</p>
+<p>Las alternativas sugieren qué es «normal»</p>
+</div>
+</div>
+<ul>
+<li>Ambos son <em>split-ballot</em>: dos versiones asignadas al azar</li>
+<li>El primero muestra error en una <strong>opinión</strong>; el segundo, en un <span class="hl">hecho</span></li>
+</ul>
+</section>
+<section id="tipos-de-experimentos-en-encuestas" class="slide level2">
+<h2>Tipos de experimentos en encuestas</h2>
+<table class="grande caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Diseño</th>
+<th>En qué consiste</th>
+<th>Sirve para</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>Split-ballot</em></td>
+<td>Dos redacciones de la misma pregunta</td>
+<td>Efectos de fraseo, orden, escalas</td>
+</tr>
+<tr class="even">
+<td>Viñetas</td>
+<td>Historias breves con atributos que varían (sexo, clase, nacionalidad…)</td>
+<td>Juicios de justicia, discriminación, merecimiento</td>
+</tr>
+<tr class="odd">
+<td><em>Conjoint</em></td>
+<td>Elegir entre perfiles que combinan varios atributos</td>
+<td>Preferencias por candidatos, políticas, inmigrantes</td>
+</tr>
+<tr class="even">
+<td>Lista</td>
+<td>Contar cuántas afirmaciones de una lista son ciertas; un grupo tiene una extra, sensible</td>
+<td>Temas sensibles: compra de votos, discriminación</td>
+</tr>
+</tbody>
+</table>
+<div class="nota">
+<p>Auspurg y Hinz (2015); Hainmueller, Hopkins y Yamamoto (2014); Blair e Imai (2012).</p>
+</div>
+</section>
+<section id="conjoint-en-vivo-el-curso-vota" class="slide level2 lab-slide">
+<h2>Conjoint en vivo: el curso vota</h2>
+
+<div class="lab lab-cj" id="lab-cj">
+  <div class="cj-pantalla">
+    <div class="cj-top"><b>Ronda <span id="cj-r">1</span>.</b> Si tuviera que elegir alcalde/sa, ¿por quién votaría?</div>
+    
+<table class="cj-tabla caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Candidatura A</th>
+<th data-quarto-table-cell-role="th">Candidatura B</th>
+</tr>
+</thead>
+<tbody id="cj-body">
+</tbody><tfoot>
+<tr class="odd">
+<td>Manos alzadas</td>
+<td><input type="number" id="cj-va" class="cj-voto" min="0" max="200" value="0"></td>
+<td><input type="number" id="cj-vb" class="cj-voto" min="0" max="200" value="0"></td>
+</tr>
+</tfoot>
+
+</table>
+
+    <div class="cj-botones">
+      <button class="btn" id="cj-ok">Registrar ronda y sortear otra</button>
+      <button class="btn sec" id="cj-0">Reiniciar</button>
+    </div>
+    <div class="cj-hist" id="cj-hist"></div>
+  </div>
+  <div class="panel">
+    <div class="cj-res-t">Porcentaje de votos que obtuvo la candidatura con cada característica</div>
+    <div id="cj-res" class="cj-res"><p class="glosa">Después de 3 rondas aparecen los resultados.</p></div>
+  </div>
+</div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id), L=window.LAB;
+  const ATR={'Edad':['32 años','47 años','63 años'],'Género':['Mujer','Hombre'],
+    'Profesión':['Profesora','Empresario/a','Dirigente vecinal'],'Experiencia':['Ninguna','Concejal/a 8 años'],
+    'Prioridad':['Seguridad','Vivienda','Salud']};
+  let A,B,ronda=1,total=0; const st={};
+  const reset=()=>{ Object.keys(ATR).forEach(k=>ATR[k].forEach(v=>st[k+'|'+v]={g:0,n:0})); };
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  function nuevo(){ A={};B={}; Object.keys(ATR).forEach(k=>{A[k]=pick(ATR[k]); B[k]=pick(ATR[k]);});
+    $('cj-body').innerHTML=Object.keys(ATR).map(k=>'<tr><td>'+k+'</td><td>'+A[k]+'</td><td>'+B[k]+'</td></tr>').join('');
+    $('cj-r').textContent=ronda; $('cj-va').value=0; $('cj-vb').value=0; }
+  function registrar(){
+    const va=Math.max(0,parseInt($('cj-va').value)||0), vb=Math.max(0,parseInt($('cj-vb').value)||0), n=va+vb;
+    if(!n){ $('cj-va').focus(); return; }
+    // cada característica suma los votos de su candidatura sobre los votos totales de la ronda
+    Object.keys(ATR).forEach(k=>{ st[k+'|'+A[k]].g+=va; st[k+'|'+A[k]].n+=n; st[k+'|'+B[k]].g+=vb; st[k+'|'+B[k]].n+=n; });
+    total+=n; $('cj-hist').textContent='Ronda '+ronda+': A '+va+' · B '+vb+'  —  votos acumulados: '+total;
+    ronda++; res(); nuevo();
+  }
+  function res(){
+    if(ronda<=3){ $('cj-res').innerHTML='<p class="glosa">Después de 3 rondas aparecen los resultados.</p>'; return; }
+    let h='';
+    Object.keys(ATR).forEach(k=>{ h+='<div class="cj-k">'+k+'</div>';
+      ATR[k].forEach(v=>{ const s=st[k+'|'+v], p=s.n?s.g/s.n:0;
+        h+='<div class="cj-fila"><span class="cj-l">'+v+'</span><span class="cj-barra"><span style="width:'+Math.round(p*100)+'%"></span><i></i></span><span class="cj-p">'+(s.n?Math.round(p*100)+'%':'–')+'</span></div>'; }); });
+    $('cj-res').innerHTML=h+'<p class="glosa">La línea marca 50%: lo esperable si la característica no importara. Con pocas rondas, los porcentajes son muy ruidosos (¡error aleatorio!).</p>';
+  }
+  $('cj-ok').onclick=registrar;
+  $('cj-0').onclick=()=>{ reset(); ronda=1; total=0; $('cj-hist').textContent=''; res(); nuevo(); };
+  document.querySelectorAll('#lab-cj .cj-voto').forEach(i=>{
+    i.addEventListener('keydown',e=>{ e.stopPropagation(); if(e.key==='Enter') registrar(); });
+    i.addEventListener('focus',()=>i.select());
+  });
+  reset(); nuevo();
+})();
+</script>
+
+<aside class="notes">
+<p>Hacer 6 a 8 rondas. En cada una: «¿quiénes votarían por A?», contar manos y anotar; lo mismo con B; Enter o «Registrar ronda». Los atributos se sortean de nuevo. Después preguntar: ¿alguien diría en voz alta que vota por género o por edad? El conjoint lo detecta sin preguntarlo directamente.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modos-de-aplicación-y-mixed-mode" class="slide level2">
+<h2>Modos de aplicación y <em>mixed-mode</em></h2>
+<div class="cols-60-40">
+<div>
+<ul>
+<li>El <strong>mismo cuestionario no mide igual</strong> cara a cara, por teléfono o por web</li>
+<li>Teléfono: preguntas cortas, pocas alternativas, sin tarjetas</li>
+<li>Web o autoaplicado: más reporte de temas sensibles, pero nadie aclara dudas</li>
+<li><span class="hl">Mixed-mode</span>: combinar modos para reducir costos o no respuesta, a riesgo de mezclar <strong>efectos de modo</strong></li>
+</ul>
+</div>
+<div>
+<div class="ejemplo">
+<p><span class="t">Caso chileno: CASEN 2020</span> Por la pandemia, se aplicó mayoritariamente por <strong>teléfono</strong>, con un cuestionario reducido. El Ministerio advirtió cautela al comparar con años anteriores.</p>
+</div>
+<p><span style="font-size:.7em">La tablet de ELSOC es un <strong>cambio de modo dentro de la misma entrevista</strong></span></p>
+</div>
+</div>
+<div class="nota">
+<p>de Leeuw (2005); Kreuter, Presser y Tourangeau (2008).</p>
+</div>
+</section>
+<section id="más-allá-del-cuestionario-vincular-datos" class="slide level2">
+<h2>Más allá del cuestionario: vincular datos</h2>
+<div class="diagrama">
+<svg class="dg" viewbox="0 0 1400 430" role="img" aria-label="La encuesta conectada con otras fuentes"><defs><marker id="mg26" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#8FA3C0"></path></marker><marker id="sg26" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#8FA3C0"></path></marker><marker id="ma26" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path></marker><marker id="sa26" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#D9BC66"></path></marker><marker id="mr26" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path></marker><marker id="sr26" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#E08C81"></path></marker><marker id="mv26" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#A3BE86"></path></marker><marker id="sv26" markerwidth="10" markerheight="10" refx="1" refy="5" orient="auto" markerunits="userSpaceOnUse"><path d="M10,0 L0,5 L10,10 Z" fill="#A3BE86"></path></marker></defs><g class="nd err" data-k="E"><rect x="550.0" y="160.0" width="300" height="110" rx="8"></rect><text font-size="25" font-weight="700"><tspan x="700" y="200.2">Respuestas de</tspan><tspan x="700" y="229.8">la encuesta</tspan></text></g><g class="nd obs" data-k="A"><rect x="15.0" y="30.0" width="430" height="100" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="230" y="67.6" font-weight="700">Registros administrativos</tspan><tspan x="230" y="92.4">MINEDUC · Registro Social de Hogares</tspan></text></g><line class="ar g" x1="407.9" y1="131.1" x2="544.2" y2="170.3" marker-end="url(#mg26)" marker-start="url(#sg26)"></line><g class="nd obs" data-k="Q"><rect x="955.0" y="30.0" width="430" height="100" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="1170" y="67.6" font-weight="700">Seguimiento cualitativo</tspan><tspan x="1170" y="92.4">¿acepta una entrevista en profundidad?</tspan></text></g><line class="ar g" x1="992.1" y1="131.1" x2="855.8" y2="170.3" marker-end="url(#mg26)" marker-start="url(#sg26)"></line><g class="nd obs" data-k="Dn"><rect x="15.0" y="300.0" width="430" height="100" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="230" y="337.6" font-weight="700">Donación de datos</tspan><tspan x="230" y="362.4">historial de Instagram o LinkedIn</tspan></text></g><line class="ar g" x1="407.9" y1="298.9" x2="544.2" y2="259.7" marker-end="url(#mg26)" marker-start="url(#sg26)"></line><g class="nd obs" data-k="P"><rect x="955.0" y="300.0" width="430" height="100" rx="8"></rect><text font-size="21" font-weight="500"><tspan x="1170" y="337.6" font-weight="700">Paradatos</tspan><tspan x="1170" y="362.4">tiempos de respuesta, dispositivo</tspan></text></g><line class="ar g" x1="992.1" y1="298.9" x2="855.8" y2="259.7" marker-end="url(#mg26)" marker-start="url(#sg26)"></line></svg>
+</div>
+<ul>
+<li>La encuesta deja de ser la única fuente: se <span class="hl">conecta</span> con otros datos sobre la misma persona</li>
+<li>Permite medir hechos sin depender del recuerdo y combinar métodos cuantitativos y cualitativos</li>
+</ul>
+</section>
+<section id="un-ejemplo-real-elsoc-pide-el-rut" class="slide level2">
+<h2>Un ejemplo real: ELSOC pide el RUT</h2>
+<div class="cols-60-40">
+<div>
+<div class="ejemplo">
+<p><span class="t">Pregunta m66_01 (cuestionario 2022)</span> «Con el objetivo de potenciar el desarrollo de estudios y políticas públicas basadas en evidencia […] queremos consultarle sobre la posibilidad de contar con su RUT, de manera de poder <strong>vincular sus respuestas</strong> en esta encuesta con datos administrativos […] ¿Compartiría usted su RUT para fines de este estudio?»</p>
+</div>
+<p>La pregunta recuerda los protocolos de confidencialidad y la aprobación del <strong>comité de ética</strong>.</p>
+</div>
+<div>
+<div class="alerta">
+<p><span class="t">Condiciones éticas</span></p>
+<ul>
+<li>Consentimiento <span class="hlr">específico</span> para cada vínculo</li>
+<li>Derecho a decir que no, sin consecuencias</li>
+<li>Datos seudonimizados y resguardados</li>
+<li>Aprobación de un comité de ética</li>
+</ul>
+</div>
+<p><span class="tenue" style="font-size:.64em">Quienes aceptan vincular sus datos pueden ser distintos de quienes no: otra fuente de error de representación</span></p>
+</div>
+</div>
+<div class="nota">
+<p>ELSOC, cuestionario maestro 2022; Sakshaug y Kreuter (2012); Boeschoten et al.&nbsp;(2022).</p>
+</div>
+</section>
+<section id="síntesis-4" class="slide level2 sintesis">
+<h2>Síntesis</h2>
+<ul>
+<li>Los experimentos en encuestas combinan muestras representativas con inferencia causal</li>
+<li><em>Split-ballot</em>, viñetas, <em>conjoint</em> y listas permiten estudiar el fraseo y los temas sensibles</li>
+<li>El modo de aplicación también es parte de la medición</li>
+<li>Vincular encuestas con registros, entrevistas y datos digitales exige consentimiento y resguardo ético</li>
+</ul>
+</section>
+<section id="recomendaciones-para-construir-un-cuestionario" class="slide level2">
+<h2>Recomendaciones para construir un cuestionario</h2>
+<div class="cols2">
+<div class="pasos">
+<ol type="1">
+<li><strong>No inventar todo</strong>: revisar instrumentos existentes (ELSOC, CEP, CASEN, ISSP)</li>
+<li><strong>Varias preguntas</strong> por concepto importante</li>
+<li>Seguir las <strong>reglas de redacción</strong></li>
+<li>Pensar el <strong>orden</strong>: de lo simple a lo complejo, lo sensible al final</li>
+</ol>
+</div>
+<div class="pasos">
+<ol start="5" type="1">
+<li>Temas sensibles: <strong>autoaplicación</strong> y confidencialidad</li>
+<li><strong>Pretest</strong>: probar con personas reales y preguntar cómo entendieron</li>
+<li>Trabajar en <strong>equipo</strong></li>
+<li><span class="hl">No esperar perfección</span>: «en toda encuesta siempre hay preguntas que no funcionan» (Asún, p.&nbsp;67)</li>
+</ol>
+</div>
+</div>
+<div class="nota">
+<p>Asún (2006, pp.&nbsp;66–67, 98–100, 108–109).</p>
+</div>
+</section>
+<section id="un-recurso-para-seguir-gesis-survey-guidelines" class="slide level2">
+<h2>Un recurso para seguir: GESIS Survey Guidelines</h2>
+<div class="cols-60-40">
+<p><img data-src="figuras/gesis.png" class="foto"></p>
+<div>
+<ul>
+<li>Guías breves del instituto alemán GESIS, con <strong>revisión de pares</strong></li>
+<li>De <span class="hl">acceso libre</span> (licencia CC BY-NC)</li>
+<li>Una guía para cada decisión: redacción de preguntas, diseño de escalas, sesgos de respuesta, pretest cognitivo, modos de aplicación</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="para-llevarse" class="slide level2 sintesis">
+<h2>Para llevarse</h2>
+<ul>
+<li>Trabajar con datos es obsesionarse con el error: nos vamos a equivocar, la pregunta es por cuánto</li>
+<li>El error viene de a quiénes preguntamos y de cómo preguntamos</li>
+<li>Los conceptos sociológicos son latentes: medirlos exige traducirlos con cuidado</li>
+<li>Operacionalizar es una decisión teórica, no solo técnica</li>
+<li>El fraseo, el formato y la situación de entrevista cambian las respuestas, y podemos estudiarlo</li>
+</ul>
+</section>
+<section id="referencias" class="slide level2">
+<h2>Referencias</h2>
+<div class="refs">
+<p>Adorno, T. W., Frenkel-Brunswik, E., Levinson, D. y Sanford, N. (1950). <em>The Authoritarian Personality</em>. Harper.</p>
+<p>Asún, R. (2006). Construcción de cuestionarios y escalas: el proceso de la producción de información cuantitativa. En M. Canales (Ed.), <em>Metodologías de investigación social</em> (pp.&nbsp;63–114). LOM.</p>
+<p>Auspurg, K. y Hinz, T. (2015). <em>Factorial Survey Experiments</em>. Sage.</p>
+<p>Bishop, G., Oldendick, R., Tuchfarber, A. y Bennett, S. (1980). Pseudo-opinions on public affairs. <em>Public Opinion Quarterly</em>, 44(2), 198–209.</p>
+<p>Blair, G. e Imai, K. (2012). Statistical analysis of list experiments. <em>Political Analysis</em>, 20(1), 47–77.</p>
+<p>Boeschoten, L., Ausloos, J., Möller, J., Araujo, T. y Oberski, D. (2022). A framework for privacy preserving digital trace data collection through data donation. <em>Computational Communication Research</em>, 4(2), 388–423.</p>
+<p>Bogner, K. y Landrock, U. (2016). <em>Response Biases in Standardised Surveys</em>. GESIS Survey Guidelines.</p>
+<p>Bollen, K. y Lennox, R. (1991). Conventional wisdom on measurement: A structural equation perspective. <em>Psychological Bulletin</em>, 110(2), 305–314.</p>
+<p>Borsboom, D. y Cramer, A. (2013). Network analysis: An integrative approach to the structure of psychopathology. <em>Annual Review of Clinical Psychology</em>, 9, 91–121.</p>
+<p>Campbell, A., Gurin, G. y Miller, W. (1954). <em>The Voter Decides</em>. Row, Peterson.</p>
+<p>de Leeuw, E. (2005). To mix or not to mix data collection modes in surveys. <em>Journal of Official Statistics</em>, 21(2), 233–255.</p>
+<p>Feldman, S. y Stenner, K. (1997). Perceived threat and authoritarianism. <em>Political Psychology</em>, 18(4), 741–770.</p>
+<p>Fried, E. y Nesse, R. (2015). Depression sum-scores don’t add up. <em>BMC Medicine</em>, 13, 72.</p>
+<p>Groves, R., Fowler, F., Couper, M., Lepkowski, J., Singer, E. y Tourangeau, R. (2009). <em>Survey Methodology</em> (2.ª ed.). Wiley.</p>
+<p>Hainmueller, J., Hopkins, D. y Yamamoto, T. (2014). Causal inference in conjoint analysis. <em>Political Analysis</em>, 22(1), 1–30.</p>
+</div>
+</section>
+<section id="referencias-continuación" class="slide level2">
+<h2>Referencias (continuación)</h2>
+<div class="refs">
+<p>Jackman, S. y Spahn, B. (2019). Why does the ANES overestimate voter turnout? <em>Political Analysis</em>, 27(2), 193–207.</p>
+<p>Kreuter, F., Presser, S. y Tourangeau, R. (2008). Social desirability bias in CATI, IVR, and Web surveys. <em>Public Opinion Quarterly</em>, 72(5), 847–865.</p>
+<p>Krosnick, J. (1991). Response strategies for coping with the cognitive demands of attitude measures in surveys. <em>Applied Cognitive Psychology</em>, 5(3), 213–236.</p>
+<p>Lenzner, T. y Menold, N. (2016). <em>Question Wording</em>. GESIS Survey Guidelines.</p>
+<p>Mutz, D. (2011). <em>Population-Based Survey Experiments</em>. Princeton University Press.</p>
+<p>Niemi, R., Craig, S. y Mattei, F. (1991). Measuring internal political efficacy in the 1988 National Election Study. <em>American Political Science Review</em>, 85(4), 1407–1413.</p>
+<p>Pearl, J. y Mackenzie, D. (2018). <em>The Book of Why</em>. Basic Books.</p>
+<p>Rugg, D. (1941). Experiments in wording questions: II. <em>Public Opinion Quarterly</em>, 5(1), 91–92.</p>
+<p>Sakshaug, J. y Kreuter, F. (2012). Assessing the magnitude of non-consent biases in linked survey and administrative data. <em>Survey Research Methods</em>, 6(2), 113–122.</p>
+<p>Saris, W., Revilla, M., Krosnick, J. y Shaeffer, E. (2010). Comparing questions with agree/disagree response options to questions with item-specific response options. <em>Survey Research Methods</em>, 4(1), 61–79.</p>
+<p>Schwarz, N., Hippler, H.-J., Deutsch, B. y Strack, F. (1985). Response scales: Effects of category range on reported behavior and comparative judgments. <em>Public Opinion Quarterly</em>, 49(3), 388–395.</p>
+<p>Stevens, S. S. (1946). On the theory of scales of measurement. <em>Science</em>, 103(2684), 677–680.</p>
+<p>Tourangeau, R., Rips, L. y Rasinski, K. (2000). <em>The Psychology of Survey Response</em>. Cambridge University Press.</p>
+<p>Verba, S., Schlozman, K. y Brady, H. (1995). <em>Voice and Equality: Civic Voluntarism in American Politics</em>. Harvard University Press.</p>
+</div>
+</section>
+<section id="section-2" class="slide level2 portada">
+<h2></h2>
+<div class="regla-gruesa">
+
+</div>
+<div class="titulo">
+<p>¡Gracias!</p>
+</div>
+<div class="subtitulo">
+<p>Encuestas, cuestionarios y medición</p>
+</div>
+<div class="regla-fina">
+
+</div>
+<div class="pie">
+<p><span class="nombre">Alejandro Plaza Reveco</span> aplazareveco@gmail.com<br>
+<a href="https://alejandroplazareveco.github.io/">alejandroplazareveco.github.io</a></p>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="clase_cuestionarios_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="clase_cuestionarios_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.5e-2,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

@@ -1,0 +1,11 @@
+Guarda aquí las imágenes con estos nombres exactos (si falta alguna, el PDF muestra un recuadro con la sugerencia):
+
+- tse_groves.png           Figura oficial del error total de encuesta (Groves et al. 2009). Si no está, se usa el diagrama TikZ.
+- mepco.jpg                Foto asociada al MEPCO (bencinera, titular del alza)
+- sheldon_leonard.jpg      Sheldon y Leonard, The Big Bang Theory
+- higgs.jpg                Peter Higgs
+- cern_atlas.jpg           Detector ATLAS del CERN
+- elsoc_terreno.jpg        Encuestador/a de ELSOC con tablet o logo COES-ELSOC
+- adorno_authoritarian.jpg Portada de The Authoritarian Personality o foto de Adorno
+- tablet_autoaplicada.jpg  Persona respondiendo sola en una tablet
+- gesis_guidelines.png     Pantallazo de las GESIS Survey Guidelines

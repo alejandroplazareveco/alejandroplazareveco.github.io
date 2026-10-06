@@ -108,6 +108,16 @@ section.active{display:block}
 .fiction-text{font-family:var(--serif);font-size:1.1rem;line-height:1.95;color:var(--text-mid);text-align:justify;max-width:640px}
 .fiction-text p{margin-bottom:1.1rem}
 .fiction-text p:last-child{margin-bottom:0}
+.talk-yr{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin:2rem 0 0.85rem;display:flex;align-items:center;gap:0.7rem}
+.talk-yr::after{content:'';flex:1;height:1px;background:var(--border)}
+.talk-item{padding:1rem 0;border-bottom:1px solid var(--border)}
+.talk-title{font-family:var(--serif);font-size:1.05rem;color:var(--oxford);font-style:italic;margin-bottom:0.25rem}
+.talk-venue{font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem}
+.talk-links{display:flex;flex-wrap:wrap;gap:0.5rem}
+.talk-link{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.7rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--oxford);text-decoration:none;border:1px solid rgba(0,33,71,0.18);padding:0.2rem 0.65rem;border-radius:2px;transition:border-color 0.2s,color 0.2s}
+.talk-link:hover{border-color:var(--gold);color:var(--gold)}
+.talk-link-primary{background:var(--oxford);color:var(--bone);border-color:var(--oxford)}
+.talk-link-primary:hover{background:var(--gold);border-color:var(--gold);color:var(--bone)}
 footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid rgba(184,146,58,0.1)}
 .fh{font-family:var(--serif);font-size:1.2rem;font-style:italic;color:rgba(245,242,236,0.62);margin-bottom:0.4rem}
 .fh em{color:var(--gold);font-style:normal}
@@ -126,6 +136,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
     <li><a id="n-teaching" onclick="go('teaching')" data-en="Teaching" data-es="Docencia">Teaching</a></li>
     <li><a id="n-consulting" onclick="go('consulting')" data-en="Consulting" data-es="Consultoría">Consulting</a></li>
     <li><a id="n-writing" onclick="go('writing')" data-en="Writing" data-es="Escritura">Writing</a></li>
+    <li><a id="n-talks" onclick="go('talks')" data-en="Talks" data-es="Charlas">Talks</a></li>
     <li><a href="files/cv-plaza-2026.pdf" target="_blank" class="nav-cv">CV</a></li>
     <li><div class="lang-sw"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('es')">ES</button></div></li>
   </ul>
@@ -351,7 +362,7 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 
 <section id="writing">
 <div class="sw">
-  <div class="sh"><span class="sn">05 ——</span><h2 class="st" id="sec-writing">Writing</h2></div>
+  <div class="sh"><span class="sn">06 ——</span><h2 class="st" id="sec-writing">Writing</h2></div>
   <div class="wt">
     <button class="wtb active" id="wtab-op" onclick="wtab(this,'op')">Opinion</button>
     <button class="wtb" id="wtab-es" onclick="wtab(this,'es')">Essays</button>
@@ -390,6 +401,83 @@ footer{background:#000f24;padding:2.25rem;text-align:center;border-top:1px solid
 </div>
 </section>
 
+<section id="talks">
+<div class="sw">
+  <div class="sh"><span class="sn">05 ——</span><h2 class="st" id="sec-talks">Talks</h2></div>
+
+  <div class="talk-yr" id="talks-yr-2026">2026</div>
+
+  <div class="talk-item">
+    <div class="talk-title">Encuestas, cuestionarios y medición: del concepto al número</div>
+    <div class="talk-venue">Guest lecture · Lógica de la Investigación Social, Sociología — Universidad Diego Portales · October 2026</div>
+    <div class="talk-links">
+      <a class="talk-link talk-link-primary" href="talks/cuestionarios-udp-2026/clase_cuestionarios.html" target="_blank">Slides ↗</a>
+    </div>
+  </div>
+
+  <div class="talk-yr" id="talks-yr-2025">2025</div>
+
+  <div class="talk-item">
+    <div class="talk-title">From Cohesion to Division: Macrostructural Factors Driving Class Homogeneity</div>
+    <div class="talk-venue">Interdisciplinary Conference on Social Norms, Cohesion, and (De)Polarization · Utrecht University, Netherlands</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Gaining Social Capital? The Impact of Institutional Political Experience on Politicians' Social Trajectories</div>
+    <div class="talk-venue">XLV Sunbelt Conference, INSNA · Paris, France</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Networked Inequality: The Role of Changes in Network Size on Attitudes Towards Inequality</div>
+    <div class="talk-venue">5th ISA Forum of Sociology · Rabat, Morocco</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Assessing the Longitudinal Stability of Network Size Using Nsum: Evidence from Chile</div>
+    <div class="talk-venue">5th ISA Forum of Sociology · Rabat, Morocco</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Gaining Social Capital? The Impact of Entering into Representative Politics on Social Trajectories</div>
+    <div class="talk-venue">CEISAL Congress 2025 · Paris, France</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-yr" id="talks-yr-2024">2024</div>
+
+  <div class="talk-item">
+    <div class="talk-title">Educational Mobility, Homophily, and Social Closure</div>
+    <div class="talk-venue">XLIV Sunbelt Conference, INSNA · Edinburgh, Scotland, UK</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Cross-Class Embeddedness: Social Networks and Preferences for Redistribution</div>
+    <div class="talk-venue">15th European Graduate Network Conference · University of Zurich, Switzerland</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-yr" id="talks-yr-2023">2023</div>
+
+  <div class="talk-item">
+    <div class="talk-title">Social Circles and Redistributive Preferences: A Cross-Country Analysis Using ISSP 2017</div>
+    <div class="talk-venue">15th Annual Conference, INAS · Princeton University, USA</div>
+    <div class="talk-links"></div>
+  </div>
+
+  <div class="talk-item">
+    <div class="talk-title">Educational Mobility and Homophily</div>
+    <div class="talk-venue">First Chilean Conference on Social Networks · Universidad Mayor, Santiago, Chile</div>
+    <div class="talk-links"></div>
+  </div>
+
+</div>
+</section>
+
 <footer>
   <div class="fh"><em>'</em>Wir müssen wissen. Wir werden wissen.<em>'</em></div>
   <div class="fa">— David Hilbert, Königsberg, 1930</div>
@@ -403,7 +491,7 @@ const translations = {
     'bio-p1':`I am a Doctoral Researcher at the <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> graduate program at <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, jointly coordinated with the <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. My research investigates how social networks mediate the relationship between institutions, civil society, life events, and political attitudes. Using comparative and longitudinal data, I explore how inequality and welfare regimes shape the structure and composition of individuals' personal networks—and, in turn, how these networks influence interpersonal trust and broader political orientations.`,
     'bio-p2':`Between March and May 2025, I was a visiting researcher at the <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Swedish Institute for Social Research (SOFI)</a> at Stockholm University, within the Social Policy Unit.`,
     'bio-p3':`I hold a Master's in Sociology from the <a href="https://www.uc.cl/" target="_blank">Pontifical Catholic University of Chile</a> and a Bachelor's from the <a href="https://www.uchile.cl/" target="_blank">University of Chile</a>. Prior to my doctoral studies, I was Technical Coordinator of <a href="https://coes.cl/" target="_blank">ELSOC — COES</a>, specialising in survey design, panel data, and network analysis.`,
-    'sec-research':'Research','sec-teaching':'Teaching','sec-consulting':'Consulting','sec-writing':'Writing',
+    'sec-research':'Research','sec-teaching':'Teaching','sec-consulting':'Consulting','sec-writing':'Writing','sec-talks':'Talks',
     'res-pub-title':'Published','res-review-title':'Under Review','res-working-title':'Working Papers',
     'role-instructor':'Instructor of record','role-grad':'Graduate Teaching Assistant','role-undergrad':'Undergraduate Teaching Assistant',
     'con-engagements':'Selected engagements',
@@ -415,7 +503,7 @@ const translations = {
     'bio-p1':`Soy investigador doctoral en el programa de posgrado <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> de la <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, coordinado conjuntamente con la <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. Mi investigación examina cómo las redes sociales median la relación entre instituciones, sociedad civil, eventos de vida y actitudes políticas. A través de datos comparativos y longitudinales, exploro cómo la desigualdad y los regímenes de bienestar configuran la estructura y composición de las redes personales —y, a su vez, cómo estas redes influyen en la confianza interpersonal y las orientaciones políticas.`,
     'bio-p2':`Entre marzo y mayo de 2025, fui investigador visitante en el <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Instituto Sueco de Investigación Social (SOFI)</a> de la Universidad de Estocolmo, en la Unidad de Política Social.`,
     'bio-p3':`Tengo un Magíster en Sociología de la <a href="https://www.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile</a> y una Licenciatura de la <a href="https://www.uchile.cl/" target="_blank">Universidad de Chile</a>. Antes de mi doctorado, fui Coordinador Técnico del Estudio Longitudinal Social de Chile (<a href="https://coes.cl/" target="_blank">ELSOC — COES</a>), especializándome en diseño de encuestas, datos de panel y análisis de redes.`,
-    'sec-research':'Investigación','sec-teaching':'Docencia','sec-consulting':'Consultoría','sec-writing':'Escritura',
+    'sec-research':'Investigación','sec-teaching':'Docencia','sec-consulting':'Consultoría','sec-writing':'Escritura','sec-talks':'Charlas',
     'res-pub-title':'Publicados','res-review-title':'En Revisión','res-working-title':'Documentos de Trabajo',
     'role-instructor':'Profesor titular','role-grad':'Ayudante de posgrado','role-undergrad':'Ayudante de pregrado',
     'con-engagements':'Proyectos seleccionados',
@@ -428,7 +516,7 @@ function setLang(lang){
   const t=translations[lang];
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===lang.toUpperCase()));
   ['bio-eyebrow','bio-p1','bio-p2','bio-p3'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=t[id];});
-  ['sec-research','sec-teaching','sec-consulting','sec-writing','res-pub-title','res-review-title','res-working-title','role-instructor','role-grad','role-undergrad','con-engagements','footer-copy','wtab-op','wtab-es','wtab-fi'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t[id];});
+  ['sec-research','sec-teaching','sec-consulting','sec-writing','sec-talks','res-pub-title','res-review-title','res-working-title','role-instructor','role-grad','role-undergrad','con-engagements','footer-copy','wtab-op','wtab-es','wtab-fi'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t[id];});
   document.querySelectorAll('.nav-links a[data-en]').forEach(el=>{el.textContent=el.getAttribute('data-'+lang);});
   document.querySelector('.bio-lnk[data-en="Publications"]').textContent=lang==='es'?'Publicaciones':'Publications';
   document.querySelector('.bio-lnk[data-en="Teaching"]').textContent=lang==='es'?'Docencia':'Teaching';
