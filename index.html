@@ -507,8 +507,8 @@ const translations = {
     'footer-copy':'© 2026 Alejandro Plaza Reveco · Berlin, Germany'
   },
   es: {
-    'bio-eyebrow':'Berlín, Alemania',
-    'bio-p1':`Soy investigador doctoral en el programa de posgrado <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> de la <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, coordinado conjuntamente con la <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. Mi investigación examina cómo las redes sociales median la relación entre instituciones, sociedad civil, eventos de vida y actitudes políticas. A través de datos comparativos y longitudinales, exploro cómo la desigualdad y los regímenes de bienestar configuran la estructura y composición de las redes personales —y, a su vez, cómo estas redes influyen en la confianza interpersonal y las orientaciones políticas.`,
+    'bio-eyebrow':'Santiago, Chile',
+    'bio-p1':`Soy Coordinador del proyecto <a href="https://mideuc.cl/" target="_blank">Sensores Sociales</a> del <a href="https://mideuc.cl/" target="_blank">Instituto MIDE UC</a>, Pontificia Universidad Católica de Chile, e investigador doctoral en el programa de posgrado <a href="https://www.sowi.hu-berlin.de/en/dynamics" target="_blank">RTG Dynamics</a> de la <a href="https://www.hu-berlin.de/en" target="_blank">Humboldt-Universität zu Berlin</a>, coordinado conjuntamente con la <a href="https://www.hertie-school.org/en/" target="_blank">Hertie School of Governance</a>. Mi investigación examina cómo las redes sociales median la relación entre instituciones, sociedad civil, eventos de vida y actitudes políticas. A través de datos comparativos y longitudinales, exploro cómo la desigualdad y los regímenes de bienestar configuran la estructura y composición de las redes personales —y, a su vez, cómo estas redes influyen en la confianza interpersonal y las orientaciones políticas.`,
     'bio-p2':`Entre marzo y mayo de 2025, fui investigador visitante en el <a href="https://www.su.se/swedish-institute-for-social-research/" target="_blank">Instituto Sueco de Investigación Social (SOFI)</a> de la Universidad de Estocolmo, en la Unidad de Política Social.`,
     'bio-p3':`Tengo un Magíster en Sociología de la <a href="https://www.uc.cl/" target="_blank">Pontificia Universidad Católica de Chile</a> y una Licenciatura de la <a href="https://www.uchile.cl/" target="_blank">Universidad de Chile</a>. Antes de mi doctorado, fui Coordinador Técnico del Estudio Longitudinal Social de Chile (<a href="https://coes.cl/" target="_blank">ELSOC — COES</a>), especializándome en diseño de encuestas, datos de panel y análisis de redes.`,
     'sec-research':'Investigación','sec-teaching':'Docencia','sec-consulting':'Consultoría','sec-writing':'Escritura','sec-talks':'Charlas',
@@ -531,7 +531,7 @@ function setLang(lang){
   document.querySelector('.bio-lnk[data-en="Consulting"]').textContent=lang==='es'?'Consultoría':'Consulting';
   document.querySelector('.bio-lnk[data-en="Download CV"]').textContent=lang==='es'?'Descargar CV':'Download CV';
   document.querySelector('.bio-lnk[data-en="Get in touch"]').textContent=lang==='es'?'Contacto':'Get in touch';
-  document.querySelector('.p-role').innerHTML=lang==='es'?'Investigador Doctoral<br>Humboldt-Universität zu Berlin<br>RTG Dynamics':'Doctoral Researcher<br>Humboldt-Universität zu Berlin<br>RTG Dynamics';
+  document.querySelector('.p-role').innerHTML=lang==='es'?'Coordinador de Sensores Sociales, MIDE UC<br>Investigador Doctoral<br>Humboldt-Universität zu Berlin':'Coordinador de Sensores Sociales, MIDE UC<br>Doctoral Researcher<br>Humboldt-Universität zu Berlin';
 }
 function go(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
