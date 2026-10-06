@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="artesania_files/libs/clipboard/clipboard.min.js"></script>
+<script src="artesania_files/libs/quarto-html/tabby.min.js"></script>
+<script src="artesania_files/libs/quarto-html/popper.min.js"></script>
+<script src="artesania_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="artesania_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="artesania_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="artesania_files/libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <title>Sobre artesanIA intelectual</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="artesania_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="artesania_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="artesania_files/libs/revealjs/dist/theme/quarto-91c541959402e421d4ff045fbcf1904a.css">
+  <link rel="stylesheet" href="fuentes.css">
+  <link href="artesania_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="artesania_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="artesania_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="artesania_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="artesania_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="artesania_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="section" class="slide level2 portada">
+<h2></h2>
+<div class="regla-gruesa">
+
+</div>
+<div class="titulo">
+<p>Sobre artesan<span class="ia">IA</span> intelectual<span class="cursor"></span></p>
+</div>
+<div class="subtitulo">
+<p>Un flujo de trabajo para la investigación social en tiempos de IA</p>
+</div>
+<div class="regla-fina">
+
+</div>
+<div class="pie">
+<p><span class="nombre">Alejandro Plaza Reveco</span> Instituto MIDE UC · Pontificia Universidad Católica de Chile<br>
+Taller para ayudantes de investigación · Septiembre 2026</p>
+</div>
+<aside class="notes">
+<p>El título es una cita: es el apéndice de Mills. Decirlo en voz alta acá.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="acto-0-el-oficio" class="title-slide slide level1 divisoria center">
+<h1>Acto 0 — El oficio</h1>
+<div class="bajada">
+<p>Antes de hablar de herramientas: ¿qué significa hoy saber investigar?</p>
+</div>
+</section>
+<section id="si-la-ia-puede-hacer-todo-esto-qué-queda-del-investigador" class="slide level2">
+<h2>Si la IA puede hacer todo esto… ¿qué queda del investigador?</h2>
+<div class="cajas" style="margin-bottom:.35em">
+<p><span class="caja">Buscar literatura</span> <span class="caja">Resumir papers</span> <span class="caja">Escribir código</span> <span class="caja">Generar hipótesis</span></p>
+</div>
+<div class="cajas" style="margin-bottom:1em">
+<p><span class="caja">Producir figuras</span> <span class="caja">Revisar textos</span> <span class="caja">Escribir un primer borrador</span></p>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">La provocación</span> Muchas de estas tareas son hoy <span class="hlr">más rápidas, más baratas y parcialmente automatizables</span>. <strong>Entonces, ¿qué significa saber investigar?</strong></p>
+</div>
+<div class="nota">
+<p>Vamos a responderla mirando qué parte del proceso requiere criterio científico y responsabilidad intelectual.</p>
+</div>
+</div>
+</section>
+<section id="dos-libros-sobre-algo-más-importante-que-las-herramientas" class="slide level2">
+<h2>Dos libros sobre algo más importante que las herramientas</h2>
+<div class="cols2">
+<div>
+<div class="cols-img">
+<p><img data-src="figuras/mills-libro.jpg" style="border-radius:3px;width:100.0%"></p>
+<div>
+<p><strong>C. Wright Mills (1959)</strong><br>
+<em>La imaginación sociológica</em>, apéndice</p>
+<ul>
+<li>El <span class="hl">fichero</span>: un archivo donde conviven experiencia personal, lecturas y trabajo en curso. <span class="hld">Reordenarlo produce preguntas nuevas.</span></li>
+<li>“Que cada quien sea su propio metodólogo”: el método se construye junto con el problema.</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="cols-img">
+<p><img data-src="figuras/becker-libro.jpg" style="border-radius:3px;width:100.0%"></p>
+<div>
+<p><strong>Howard S. Becker (1986)</strong><br>
+<em>Manual de escritura para científicos sociales</em></p>
+<ul>
+<li><span class="hl">Escribir es pensar</span>: el primer borrador sirve para descubrir qué quieres decir. <span class="hld">La claridad aparece al reescribir.</span></li>
+<li>La prosa académica defensiva nace del miedo a ser juzgado. Se cura escribiendo simple.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p><strong>El punto de encuentro:</strong> los dos ponen en el centro los mismos dos artefactos — <span class="hlr">el archivo</span> y <span class="hlr">el borrador</span> — que son, justamente, los dos que la IA toca primero.</p>
+</div>
+<aside class="notes">
+<p>Acá va el chiste del título: “Sobre artesanía intelectual” le roba el nombre al apéndice de Mills, que escribe justamente contra el fetichismo del método. La tensión con lo que sigue es deliberada.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="la-investigación-es-un-oficio" class="slide level2">
+<h2>La investigación es un oficio</h2>
+<div class="diagrama">
+<svg viewbox="0 0 1200 195" role="img" aria-label="Cadena del oficio con flecha de retorno">
+  <defs>
+    <marker id="fl" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+    <marker id="flo" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" font-size="21" font-weight="600" text-anchor="middle">
+    <rect x="10" y="18" width="150" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="85" y="56" fill="#E8E3D9">Curiosidad</text>
+    <rect x="180" y="18" width="150" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="255" y="56" fill="#E8E3D9">Problema</text>
+    <rect x="350" y="18" width="150" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="425" y="56" fill="#E8E3D9">Lectura</text>
+    <rect x="520" y="18" width="150" height="62" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="595" y="56" fill="#F0D588">Argumento</text>
+    <rect x="690" y="18" width="150" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="765" y="56" fill="#E8E3D9">Diseño</text>
+    <rect x="860" y="18" width="150" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="935" y="56" fill="#E8E3D9">Evidencia</text>
+    <rect x="1030" y="18" width="150" height="62" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="1105" y="56" fill="#F0D588">Escritura</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2" marker-end="url(#fl)">
+    <line x1="160" y1="49" x2="172" y2="49"></line>
+    <line x1="330" y1="49" x2="342" y2="49"></line>
+    <line x1="500" y1="49" x2="512" y2="49"></line>
+    <line x1="670" y1="49" x2="682" y2="49"></line>
+    <line x1="840" y1="49" x2="852" y2="49"></line>
+    <line x1="1010" y1="49" x2="1022" y2="49"></line>
+  </g>
+  <path d="M1105,80 C1105,180 255,180 255,80" fill="none" stroke="#D9BC66" stroke-width="2" marker-end="url(#flo)"></path>
+  <rect x="466" y="140" width="428" height="30" fill="#0F1A2E"></rect>
+  <text x="680" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" fill="#D9BC66">revisión, anomalías, nuevas preguntas</text>
+</svg>
+</div>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Mills</span> Las buenas preguntas aparecen al <span class="hl">conectar</span> elementos que al inicio estaban separados: biografía ↔︎ historia ↔︎ estructura</p>
+</div>
+<div class="bloque">
+<p><span class="t">Becker</span> Las ideas se terminan mientras se escriben: borrador → revisión → mejor argumento. <span class="hl">Escribir también es investigar.</span></p>
+</div>
+</div>
+<div class="destacado">
+<p>Ejecutar una técnica es una <strong>habilidad</strong>. Saber <span class="hlr">cuándo usarla, por qué usarla y qué significa el resultado</span> es oficio.</p>
+</div>
+</section>
+<section id="la-ia-desplaza-el-cuello-de-botella" class="slide level2">
+<h2>La IA desplaza el cuello de botella</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Antes: operaciones costosas</span> Encontrar literatura · resumir decenas de papers · escribir y depurar código · producir un primer borrador · explorar muchas alternativas</p>
+</div>
+<div class="ejemplo">
+<p><span class="t">Ahora: producción abundante</span> Podemos encontrar <span class="hl">más</span> · resumir <span class="hl">más</span> · programar <span class="hl">más</span> · escribir <span class="hl">más</span> · generar <span class="hl">más ideas</span></p>
+</div>
+</div>
+<div class="fragment">
+<div style="text-align:center; font-size:.86em; color:#F0D588; font-weight:650; margin:.7em 0 .3em">
+<p>Entonces, ¿qué se vuelve escaso?</p>
+</div>
+<div class="cajas">
+<p><span class="caja">CRITERIO</span> <span class="caja acento">SELECCIÓN</span> <span class="caja">EVALUACIÓN</span> <span class="caja acento">INTEGRACIÓN</span> <span class="caja">RESPONSABILIDAD</span></p>
+</div>
+<div class="nota">
+<p>Producir información se vuelve barato. Lo que gana peso es decidir qué merece atención, qué es creíble y qué podemos afirmar a partir de la evidencia.</p>
+</div>
+</div>
+</section>
+<section id="entonces-necesitamos-un-sistema" class="slide level2">
+<h2>Entonces necesitamos un sistema</h2>
+<div class="diagrama">
+<svg viewbox="0 0 1200 250" role="img" aria-label="La IA como asistencia transversal a todas las etapas">
+  <defs>
+    <marker id="fl2" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" font-size="20" font-weight="600" text-anchor="middle">
+    <rect x="14" y="16" width="145" height="58" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="86" y="52" fill="#E8E3D9">Idea</text>
+    <rect x="182" y="16" width="145" height="58" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="254" y="52" fill="#E8E3D9">Literatura</text>
+    <rect x="350" y="16" width="145" height="58" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="422" y="52" fill="#F0D588">Archivo</text>
+    <rect x="518" y="16" width="145" height="58" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="590" y="52" fill="#E8E3D9">Diseño</text>
+    <rect x="686" y="16" width="145" height="58" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="758" y="52" fill="#E8E3D9">Análisis</text>
+    <rect x="854" y="16" width="145" height="58" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="926" y="52" fill="#F0D588">Escritura</text>
+    <rect x="1022" y="16" width="145" height="58" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="1094" y="52" fill="#E8E3D9">Paper</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2" marker-end="url(#fl2)">
+    <line x1="159" y1="45" x2="172" y2="45"></line><line x1="327" y1="45" x2="340" y2="45"></line>
+    <line x1="495" y1="45" x2="508" y2="45"></line><line x1="663" y1="45" x2="676" y2="45"></line>
+    <line x1="831" y1="45" x2="844" y2="45"></line><line x1="999" y1="45" x2="1012" y2="45"></line>
+  </g>
+  <g stroke="#D9BC66" stroke-width="1.4" opacity=".55">
+    <line x1="86" y1="74" x2="86" y2="170"></line><line x1="254" y1="74" x2="254" y2="170"></line>
+    <line x1="422" y1="74" x2="422" y2="170"></line><line x1="590" y1="74" x2="590" y2="170"></line>
+    <line x1="758" y1="74" x2="758" y2="170"></line><line x1="926" y1="74" x2="926" y2="170"></line>
+    <line x1="1094" y1="74" x2="1094" y2="170"></line>
+  </g>
+  <rect x="14" y="170" width="1153" height="60" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+  <text x="590" y="207" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#F0D588">IA como asistencia transversal</text>
+</svg>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El principio</span> La IA puede <span class="hlr">asistir</span> todas las etapas. El <strong>juicio</strong> que conecta una etapa con la siguiente se queda con nosotros.</p>
+</div>
+<div class="destacado">
+<p><span class="grande">Si producir información se vuelve barato, necesitamos un workflow que preserve el criterio.</span></p>
+</div>
+</div>
+</section>
+<section id="cómo-leer-este-taller-tres-preguntas-en-cada-estación" class="slide level2">
+<h2>Cómo leer este taller: tres preguntas en cada estación</h2>
+<p>“Criterio” se vuelve operativo cuando se traduce en preguntas concretas. En cada estación van a ver la misma franja al pie de la slide, con tres campos:</p>
+<div style="margin:1.1em 0">
+<div class="franja" style="position:relative; bottom:auto">
+<div class="d">
+<p><strong>Delego</strong> Lo que la IA hace mejor, más rápido o más barato que yo, <em>y que puedo revisar</em>.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Lo que, si lo entrego, deja de ser investigación mía. Casi siempre: el juicio.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> La prueba concreta que me dice si lo delegado está bien.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p><strong>La regla que ordena todo el taller</strong></p>
+<p><span class="grande">Delego lo que puedo verificar.</span></p>
+<p>La tercera columna manda sobre las otras dos.</p>
+</div>
+</div>
+</section>
+<section id="las-formas-de-verificación-de-la-más-barata-a-la-más-cara" class="slide level2">
+<h2>Las formas de verificación, de la más barata a la más cara</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Costo</th>
+<th style="text-align: left;">Ejemplo concreto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="hld">Automática</span></td>
+<td style="text-align: left;">segundos</td>
+<td style="text-align: left;">Corro <code>00</code>–<code>03</code> y la Tabla 2 se regenera idéntica</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="hld">De existencia</span></td>
+<td style="text-align: left;">un clic</td>
+<td style="text-align: left;">El DOI resuelve y el paper existe, con esos autores y ese año</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="hlr">De consistencia</span></td>
+<td style="text-align: left;">un minuto</td>
+<td style="text-align: left;">El <em>N</em> del output coincide con el <em>N</em> declarado en el PAP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="hlr">De contenido</span></td>
+<td style="text-align: left;">minutos</td>
+<td style="text-align: left;">Abro el PDF en la página citada y dice lo que la ficha dice</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="hlx">De juicio</span></td>
+<td style="text-align: left;">horas</td>
+<td style="text-align: left;">Leo el paper completo y decido si el argumento se sostiene</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Cómo se usa esta tabla</span> Mientras más arriba esté la verificación disponible, <span class="hl">más se puede delegar</span> esa tarea. Las tres primeras filas habilitan el trabajo asistido a escala; la última se queda con nosotros y es la que define el oficio.</p>
+</div>
+</div>
+</section>
+<section id="el-flujo-completo-de-un-vistazo-versión-de-ascensor" class="slide level2">
+<h2>El flujo completo, de un vistazo (versión de ascensor)</h2>
+<p>El proceso tiene <span class="hl">estaciones claras</span>, donde cada herramienta hace una cosa y donde el criterio sigue siendo tuyo.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 330" role="img" aria-label="Mapa del flujo en siete estaciones">
+  <defs>
+    <marker id="fl3" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" font-size="21" font-weight="600" text-anchor="middle">
+    <rect x="30" y="20" width="230" height="80" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="145" y="67" fill="#E8E3D9">1. Ideación</text>
+    <rect x="330" y="20" width="230" height="80" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="445" y="55" fill="#E8E3D9">2. Mapeo de</text><text x="445" y="82" fill="#E8E3D9">literatura</text>
+    <rect x="630" y="20" width="230" height="80" rx="7" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="745" y="55" fill="#F0D588">3. Fichado</text><text x="745" y="82" fill="#F0D588">(2.º cerebro)</text>
+    <rect x="930" y="20" width="230" height="80" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="1045" y="55" fill="#E8E3D9">4. ¿Flota</text><text x="1045" y="82" fill="#E8E3D9">la idea?</text>
+
+    <rect x="930" y="215" width="230" height="80" rx="7" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="1045" y="262" fill="#F0D588">5. PAP</text>
+    <rect x="630" y="215" width="230" height="80" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="745" y="250" fill="#E8E3D9">6. Código</text><text x="745" y="277" fill="#E8E3D9">(OSF)</text>
+    <rect x="330" y="215" width="230" height="80" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="445" y="262" fill="#E8E3D9">7. Escritura</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.2" marker-end="url(#fl3)">
+    <line x1="260" y1="60" x2="318" y2="60"></line>
+    <line x1="560" y1="60" x2="618" y2="60"></line>
+    <line x1="860" y1="60" x2="918" y2="60"></line>
+    <line x1="1045" y1="100" x2="1045" y2="205"></line>
+    <line x1="930" y1="255" x2="872" y2="255"></line>
+    <line x1="630" y1="255" x2="572" y2="255"></line>
+  </g>
+</svg>
+</div>
+<div class="nota">
+<p>En <span class="hl">dorado</span>: los dos anclajes del proceso — el segundo cerebro y el PAP. Todo lo demás gira en torno a ellos. Esta es la versión que cabe en un ascensor. La siguiente es la real.</p>
+</div>
+</section>
+<section id="el-mismo-flujo-como-ocurre-de-verdad" class="slide level2">
+<h2>El mismo flujo, como ocurre de verdad</h2>
+<p>Hay retornos, ramas muertas y trabajo en paralelo.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 320" role="img" aria-label="El flujo real, con retornos y rama de abandono">
+  <defs>
+    <marker id="fl4" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+    <marker id="flo4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#D9BC66"></path>
+    </marker>
+    <marker id="flr4" markerwidth="10" markerheight="10" refx="9" refy="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#E08C81"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" font-size="19" font-weight="600" text-anchor="middle">
+    <rect x="10" y="90" width="142" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="81" y="128" fill="#E8E3D9">1. Idea</text>
+    <rect x="178" y="90" width="142" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="249" y="128" fill="#E8E3D9">2. Mapeo</text>
+    <rect x="346" y="90" width="142" height="62" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="417" y="128" fill="#F0D588">3. Fichado</text>
+    <rect x="514" y="90" width="142" height="62" rx="20" fill="#132A44" stroke="#4E7FB0" stroke-width="2"></rect>
+    <text x="585" y="128" fill="#BFD8F0">4. ¿Flota?</text>
+    <rect x="682" y="90" width="142" height="62" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="753" y="128" fill="#F0D588">5. PAP</text>
+    <rect x="850" y="90" width="142" height="62" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="921" y="128" fill="#E8E3D9">6. Código</text>
+    <rect x="1018" y="90" width="142" height="62" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="1089" y="128" fill="#F0D588">7. Escritura</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2" marker-end="url(#fl4)">
+    <line x1="152" y1="121" x2="166" y2="121"></line><line x1="320" y1="121" x2="334" y2="121"></line>
+    <line x1="488" y1="121" x2="502" y2="121"></line><line x1="824" y1="121" x2="838" y2="121"></line>
+    <line x1="992" y1="121" x2="1006" y2="121"></line>
+  </g>
+  <line x1="656" y1="121" x2="670" y2="121" stroke="#A3BE86" stroke-width="2.4" marker-end="url(#fl4)"></line>
+  <text x="663" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#A3BE86">sí</text>
+
+  <path d="M1089,90 C1089,18 249,18 249,90" fill="none" stroke="#D9BC66" stroke-width="2" marker-end="url(#flo4)"></path>
+  <rect x="418" y="14" width="504" height="28" fill="#0F1A2E"></rect>
+  <text x="670" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" fill="#D9BC66">escribir revela el agujero: se vuelve a leer y a estimar</text>
+
+  <line x1="585" y1="152" x2="585" y2="206" stroke="#E08C81" stroke-width="2.2" marker-end="url(#flr4)"></line>
+  <text x="606" y="180" font-family="Inter, sans-serif" font-size="16" fill="#E08C81">no</text>
+  <rect x="435" y="212" width="300" height="66" rx="6" fill="#2A1614" stroke="#E08C81" stroke-width="1.8"></rect>
+  <text x="585" y="240" text-anchor="middle" font-family="Inter, sans-serif" font-size="19" font-weight="600" fill="#E08C81">Se archiva</text>
+  <text x="585" y="263" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#EBB3AC">el PAP queda como registro</text>
+
+  <path d="M690,168 v10 h470 v-10" fill="none" stroke="#D9BC66" stroke-width="1.8"></path>
+  <text x="925" y="200" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#D9BC66">teoría y empírico avanzan en paralelo</text>
+</svg>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El mapa y el territorio</span> Una ruta dibujada y un viaje son dos cosas distintas. El mapa sirve para saber <span class="hlr">dónde estás y qué falta</span>. El viaje lo haces tú, con los desvíos que aparezcan. Cuando el mapa estorba, se dobla y se guarda.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="acto-i-descubrimiento" class="title-slide slide level1 divisoria center">
+<h1>Acto I — Descubrimiento</h1>
+<div class="bajada">
+<p>Estaciones 1 a 3: de una intuición a un corpus fichado</p>
+</div>
+</section>
+<section id="estación-1-ideación-pensar-en-voz-alta" class="slide level2">
+<h2>Estación 1 — Ideación: pensar en voz alta</h2>
+<p>El punto de partida es un <span class="hl">tema que me genera curiosidad</span>. El objetivo de esta estación es llegar a una <span class="hld">versión pequeña</span> del problema: qué es, cómo funciona, por qué podría importar.</p>
+<ul>
+<li>Uso un modelo conversacional como <span class="hl">interlocutor</span> para explorar el tema y sus tensiones</li>
+<li>Busco <span class="hl">delimitar</span> de qué estoy hablando y con qué vocabulario</li>
+<li>Salida esperada: un par de párrafos que capturen la intuición</li>
+</ul>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Ejemplo: el que vamos a seguir todo el taller</span> “Las instituciones formales cambian la vida de la gente. ¿Cambian también la <em>estructura</em> de sus relaciones? ¿Qué pasa con una red de apoyo cuando llega un banco?”</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Reformular, buscar contraejemplos, nombrar tensiones, traducir la intuición al vocabulario del campo.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Elegir qué me importa. La curiosidad se queda conmigo.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Nada formal todavía: esta estación no produce material citable, y por eso se puede explorar libre.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-2-el-caso-que-vamos-a-seguir" class="slide level2">
+<h2>Estación 2 — El caso que vamos a seguir</h2>
+<div class="bloque">
+<p><span class="t">La pregunta</span> Cómo las instituciones formales modifican la <span class="hl">estructura de las redes interpersonales</span>. Caso empírico motivante: la expansión del microcrédito formal en la India rural.</p>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">La insuficiencia que quiero postular</span> La literatura discute <em>crowding in</em> contra <em>crowding out</em> midiendo cantidades agregadas: confianza, participación, tamaño y densidad de la red. Mi sospecha es que una misma intervención puede <span class="hlr">sacar unas funciones relacionales y meter otras al mismo tiempo</span>: quitar el préstamo informal y dejar intacto el apoyo emocional, o eliminar los lazos que cruzan castas y crear otros dentro del mismo grupo.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">El concepto propio</span> <span class="hld">Institutional rewiring</span>: el proceso por el cual un cambio en la provisión institucional formal altera los mecanismos que gobiernan la formación, mantención, disolución y composición social de las relaciones interpersonales.</p>
+</div>
+<div class="nota">
+<p>Retengan esa definición: es la pieza que hace funcionar todo el prompt.</p>
+</div>
+</div>
+</section>
+<section id="estación-2-anatomía-del-prompt-lo-que-define-el-objeto" class="slide level2">
+<h2>Estación 2 — Anatomía del prompt: lo que define el objeto</h2>
+<p>Un buen prompt de revisión tiene partes identificables. Estas cuatro definen <em>qué</em> se busca.</p>
+<div class="pasos">
+<ol type="1">
+<li><p><span class="hl">Tu concepto, definido en una oración.</span> <span class="glosa">«Institutional rewiring: el proceso por el cual…» Sin esto, el motor devuelve el campo entero.</span></p></li>
+<li><p><span class="hl">El caso motivante, con su límite explícito.</span> <span class="glosa">«El caso es el microcrédito en India rural, pero la revisión no debe restringirse a microfinanzas, economía, India ni países de bajos ingresos.»</span></p></li>
+<li><p><span class="hl">La insuficiencia teórica que estás postulando.</span> <span class="glosa">«Quiero investigar si el marco crowding in/out es incompleto porque la misma intervención puede…»</span></p></li>
+<li><p><span class="hl">Las dimensiones con las que quieres el material ordenado.</span> <span class="glosa">Función relacional · fronteras sociales · posición estructural. Son las carpetas en las que quieres recibir los papers.</span></p></li>
+</ol>
+</div>
+<div class="nota">
+<p>El punto 4 es el que más rinde y el que casi nadie escribe: define la forma del output antes de que el motor busque.</p>
+</div>
+</section>
+<section id="estación-2-anatomía-del-prompt-lo-que-controla-la-búsqueda" class="slide level2">
+<h2>Estación 2 — Anatomía del prompt: lo que controla la búsqueda</h2>
+<p>Estas tres partes controlan <em>dónde</em> busca y <em>qué</em> descarta.</p>
+<div class="pasos">
+<ol start="5" type="1">
+<li><p><span class="hl">Los mecanismos, nombrados.</span> <span class="glosa">Sustitución funcional · complementariedad institucional · emancipación relacional · colapso multiplex · vulnerabilidad de los puentes · encuentros producidos institucionalmente. Le entregas el vocabulario con el que quieres que te devuelva el material.</span></p></li>
+<li><p><span class="hl">Seed papers y autores.</span> <span class="glosa">Banerjee et al.&nbsp;· Binzel et al.&nbsp;· Dupas et al.&nbsp;· Valente · Jackson; y las tradiciones: Simmel, Blau, Granovetter, Burt, Lin, Small. <strong>Esto es lo que habilita el snowballing.</strong></span></p></li>
+<li><p><span class="hl">Criterios de inclusión y de exclusión.</span> <span class="glosa">Los de <em>exclusión</em> filtran más: «excluir estudios donde las redes aparecen sólo como canales fijos de difusión, o donde capital social se mide con un único ítem de confianza generalizada».</span></p></li>
+</ol>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Una línea que vale por sí sola</span> “No asumas que todos estos autores sostienen la misma posición teórica. Úsalos para <span class="hl">identificar marcos en competencia</span>.”</p>
+</div>
+</div>
+</section>
+<section id="estación-2-qué-le-pido-de-vuelta-el-formato-del-output" class="slide level2">
+<h2>Estación 2 — Qué le pido de vuelta (el formato del output)</h2>
+<p>Pedir “un resumen de la literatura” devuelve prosa. Pedir <span class="hl">columnas por nombre</span> devuelve algo con lo que se puede trabajar.</p>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Matriz de evidencia</span> Una fila por paper, con columnas nombradas: cita, disciplina, país, intervención · diseño, tipo de red, ¿longitudinal? · resultado relacional y estructural · mecanismo propuesto · <span class="hld">fuerza causal</span> · <span class="hld">limitación para mi proyecto</span></p>
+</div>
+<div class="bloque">
+<p><span class="t">Los otros entregables</span> Mapa conceptual de tradiciones teóricas · comparación de mecanismos con evidencia a favor <em>y en contra</em> · modelos teóricos rivales con predicciones distintas · strings booleanos para lo que quedó sin buscar</p>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">La mejor pregunta de todo el prompt</span> “Evalúa la novedad de esta contribución: qué ya está establecido, qué se estudió por separado, qué es genuinamente nuevo, y <span class="hlr">qué afirmación de novedad sería indefendible</span>.”</p>
+</div>
+</div>
+</section>
+<section id="estación-2-las-reglas-de-control-de-calidad-van-dentro-del-prompt" class="slide level2">
+<h2>Estación 2 — Las reglas de control de calidad van dentro del prompt</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Reglas que escribo en el prompt</span></p>
+<ul>
+<li>No inventes papers, hallazgos, citas ni DOIs. <span class="hl">Verifica que cada paper exista</span></li>
+<li>Marca claramente working papers y borradores</li>
+<li>Distingue lo que el paper afirma de tu propia inferencia</li>
+<li><span class="hl">Reporta evidencia contradictoria</span> en lugar de forzar consenso</li>
+<li>Distingue tamaño de red, densidad, frecuencia, transferencias, confianza y capital social: son cosas diferentes</li>
+</ul>
+</div>
+<div class="bloque">
+<p><span class="t">Lo que reviso al recibir el output</span></p>
+<ul>
+<li>Tomo <span class="hl">10 referencias al azar</span> y compruebo que los DOI resuelvan</li>
+<li>¿La matriz separa diseño causal de correlacional, o mezcla todo?</li>
+<li>¿Apareció el paper que <span class="hld">amenaza mi novedad</span>? (en mi caso, Binzel et al.)</li>
+<li>¿Qué idiomas, regiones y décadas quedaron fuera?</li>
+<li>¿Distinguió afirmación de inferencia, como se lo pedí?</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p>El output cumple una función precisa: ordenar el terreno y nombrar a los candidatos. Después viene la lectura.</p>
+</div>
+</div>
+</section>
+<section id="estación-2-cómo-se-llama-esto-que-estamos-haciendo" class="slide level2">
+<h2>Estación 2 — Cómo se llama esto que estamos haciendo</h2>
+<div class="alerta">
+<p><span class="t">Precisión terminológica</span> Esto es una <span class="hl">búsqueda semántica asistida</span>, y funciona muy bien para lo que hace. Una <em>revisión sistemática</em> exige además protocolo registrado, criterios preespecificados, exhaustividad demostrable y reproducibilidad del proceso. Son dos cosas distintas, y un revisor distingue la diferencia.</p>
+</div>
+<div class="fragment">
+<div class="cols2">
+<div class="ejemplo">
+<p><span class="t">Nómbrenlo así en un paper</span> “mapeo de literatura” · “búsqueda exploratoria estructurada” · “revisión narrativa asistida”</p>
+</div>
+<div class="bloque">
+<p><span class="t">Y si quieren la palabra completa</span> Agreguen las tres piezas que faltan: protocolo escrito <em>antes</em> de buscar, criterios de inclusión y exclusión declarados, y <span class="hl">registro de búsqueda</span> reproducible. Las dos primeras ya las tienen en el prompt; la tercera viene en dos slides.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-2-tres-motores-y-lo-que-cada-uno-hace-bien" class="slide level2">
+<h2>Estación 2 — Tres motores, y lo que cada uno hace bien</h2>
+<div class="cols3">
+<div class="bloque">
+<p><span class="t">Elicit</span> Extracción estructurada de hallazgos por paper. Bueno para <span class="hl">comparar</span> diseños y muestras.</p>
+</div>
+<div class="bloque">
+<p><span class="t">SciSpace</span> Lectura y explicación de papers; síntesis temática larga. Bueno para <span class="hl">entrar</span> a una literatura ajena.</p>
+</div>
+<div class="bloque">
+<p><span class="t">Consensus</span> Qué dice la evidencia agregada sobre una pregunta. Bueno para <span class="hl">calibrar</span> si hay consenso.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">La regla de oro</span> Lo que le pido a las plataformas es que me devuelvan los <span class="hlr">papers más importantes</span> y me digan cómo se ordena el campo. <strong>La lectura sigo haciéndola yo.</strong></p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Recuperar candidatos, extraer diseño, datos y muestra, mapear el vocabulario del campo.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Decidir qué es importante. El ranking del motor mide relevancia semántica, no calidad.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Todo paper que cito lo abrí. Los que no abrí quedan en el registro de búsqueda, no en el paper.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-2-el-paso-que-falta-en-casi-todos-los-flujos-el-snowballing" class="slide level2">
+<h2>Estación 2 — El paso que falta en casi todos los flujos: el snowballing</h2>
+<p>Los motores semánticos optimizan <span class="hl">relevancia respecto a tu fraseo</span>. La centralidad de un paper en su campo es otra cosa, y por eso los clásicos aparecen poco: usan palabras distintas a las tuyas.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 240" role="img" aria-label="Snowballing hacia atrás y hacia adelante">
+  <defs>
+    <marker id="fl5" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="20" y="85" width="215" height="70" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="127" y="115" font-size="20" font-weight="600" fill="#E8E3D9">Motor</text>
+    <text x="127" y="140" font-size="20" font-weight="600" fill="#E8E3D9">semántico</text>
+
+    <rect x="315" y="85" width="215" height="70" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="422" y="127" font-size="20" font-weight="600" fill="#F0D588">5--8 semillas</text>
+
+    <rect x="610" y="10" width="290" height="80" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="755" y="40" font-size="20" font-weight="700" fill="#E8E3D9">Hacia atrás</text>
+    <text x="755" y="68" font-size="17" fill="#9BA9BF">bibliografía de las semillas</text>
+
+    <rect x="610" y="150" width="290" height="80" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="755" y="180" font-size="20" font-weight="700" fill="#E8E3D9">Hacia adelante</text>
+    <text x="755" y="208" font-size="17" fill="#9BA9BF">quién las citó después</text>
+
+    <rect x="975" y="85" width="205" height="70" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="1077" y="115" font-size="20" font-weight="600" fill="#F0D588">Corpus</text>
+    <text x="1077" y="140" font-size="20" font-weight="600" fill="#F0D588">núcleo</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.2" fill="none" marker-end="url(#fl5)">
+    <line x1="235" y1="120" x2="303" y2="120"></line>
+    <path d="M530,110 C570,95 570,60 598,52"></path>
+    <path d="M530,130 C570,145 570,180 598,188"></path>
+    <path d="M900,52  C930,60 930,95 963,110"></path>
+    <path d="M900,188 C930,180 930,145 963,130"></path>
+  </g>
+</svg>
+</div>
+<div class="fragment">
+<div class="cols2">
+<div class="ejemplo">
+<p><span class="t">Herramientas</span> <code>Connected Papers</code> · <code>Litmaps</code> · <code>Scopus</code> · “Citado por” de Google Scholar</p>
+</div>
+<div class="alerta">
+<p><span class="t">Regla práctica</span> Si un paper aparece en la bibliografía de <span class="hlr">tres</span> de tus semillas y no lo tenías, ese es el paper que te faltaba leer.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-2-el-embudo-cada-paper-cumple-una-función-distinta" class="slide level2">
+<h2>Estación 2 — El embudo: cada paper cumple una función distinta</h2>
+<p>De decenas de resultados, unos pocos merecen lectura completa.</p>
+<div class="cols-40-60">
+<div class="diagrama">
+<svg viewbox="0 0 520 330" role="img" aria-label="Embudo de screening de literatura">
+  <defs>
+    <marker id="fl6" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="20" y="15" width="480" height="76" rx="6" fill="#132A44" stroke="#4E7FB0" stroke-width="1.8"></rect>
+    <text x="260" y="47" font-size="24" font-weight="600" fill="#BFD8F0">40--60 resultados</text>
+    <text x="260" y="76" font-size="24" font-weight="600" fill="#BFD8F0">+ snowballing</text>
+
+    <rect x="110" y="127" width="300" height="66" rx="6" fill="#1C2A18" stroke="#7E9C64" stroke-width="1.8"></rect>
+    <text x="260" y="168" font-size="24" font-weight="600" fill="#BBD19E">Screening por abstract</text>
+
+    <rect x="165" y="229" width="190" height="80" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="260" y="262" font-size="24" font-weight="600" fill="#F0D588">5--8 papers</text>
+    <text x="260" y="290" font-size="24" font-weight="600" fill="#F0D588">núcleo</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.4" marker-end="url(#fl6)">
+    <line x1="260" y1="91" x2="260" y2="117"></line>
+    <line x1="260" y1="193" x2="260" y2="219"></line>
+  </g>
+</svg>
+</div>
+<div>
+<div class="ejemplo">
+<p><span class="t">Papers de información — fichado ligero</span> Aportan <span class="hl">antecedentes</span> y evidencia empírica. Se anotan y fichan en superficie. <em>“En Hungría se reportan mayores niveles de homofilia.”</em></p>
+</div>
+<div class="alerta">
+<p><span class="t">Papers con argumento — leer completo</span> Hacen una <span class="hlr">contribución teórica disciplinada</span>. Aquí me detengo y leo íntegro. <em>Ej.: «Love Thy Neighbor» (Baldassarri); Binzel et al.&nbsp;para nuestro caso.</em></p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-2-del-output-crudo-a-una-nota-del-vault" class="slide level2">
+<h2>Estación 2 — Del output crudo a una nota del vault</h2>
+<p>El output de estas plataformas es largo y vive fuera de mi archivo. El registro de búsqueda es el paso que lo <span class="hl">convierte en una nota más</span> del segundo cerebro.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 150" role="img" aria-label="Del output del motor a una nota del vault">
+  <defs>
+    <marker id="fl7" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="15" y="25" width="250" height="86" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="140" y="60" font-size="20" font-weight="600" fill="#E8E3D9">Elicit / SciSpace</text>
+    <text x="140" y="87" font-size="20" font-weight="600" fill="#E8E3D9">Consensus</text>
+
+    <rect x="325" y="25" width="250" height="86" rx="6" fill="#1A2130" stroke="#5A6577" stroke-width="1.5"></rect>
+    <text x="450" y="60" font-size="20" font-weight="600" fill="#9BA9BF">Output crudo</text>
+    <text x="450" y="87" font-size="16" fill="#7C889B">largo, fuera del vault</text>
+
+    <rect x="635" y="25" width="250" height="86" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="760" y="60" font-size="20" font-weight="600" fill="#E8E3D9">Le paso el output</text>
+    <text x="760" y="87" font-size="20" font-weight="600" fill="#E8E3D9">+ mi plantilla</text>
+
+    <rect x="945" y="25" width="240" height="86" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="1065" y="60" font-size="20" font-weight="600" fill="#F0D588">Nota nueva</text>
+    <text x="1065" y="87" font-size="20" font-weight="600" fill="#F0D588">en el vault</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.2" marker-end="url(#fl7)">
+    <line x1="265" y1="68" x2="313" y2="68"></line>
+    <line x1="575" y1="68" x2="623" y2="68"></line>
+    <line x1="885" y1="68" x2="933" y2="68"></line>
+  </g>
+</svg>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Qué gano con eso</span> La búsqueda queda <span class="hl">buscable</span>: dentro de seis meses encuentro qué busqué y qué descarté · el frontmatter permite filtrarla junto a las demás notas del proyecto · los papers incluidos quedan <span class="hl">enlazados</span> a sus fichas con <code>[[ ]]</code></p>
+</div>
+</div>
+</section>
+<section id="estación-2-cómo-se-ve-esa-nota" class="slide level2">
+<h2>Estación 2 — Cómo se ve esa nota</h2>
+<p>Es una nota de Obsidian como cualquier otra: frontmatter arriba, contenido abajo.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">titulo</span><span class="kw">:</span><span class="at"> </span><span class="st">"Busqueda -- institutional rewiring (cluster 1)"</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">tipo</span><span class="kw">:</span><span class="at"> registro-busqueda      fecha: 2026-09-08</span></span>
+<span id="cb1-4"><a href=""></a><span class="fu">motor</span><span class="kw">:</span><span class="at"> SciSpace</span></span>
+<span id="cb1-5"><a href=""></a><span class="fu">temas</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">redes-sociales</span><span class="kw">,</span><span class="at"> welfare-state</span><span class="kw">]</span></span>
+<span id="cb1-6"><a href=""></a><span class="fu">relevancia_papers</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">redes-desigualdad</span><span class="kw">]</span></span>
+<span id="cb1-7"><a href=""></a><span class="fu">estado</span><span class="kw">:</span><span class="at"> procesado</span></span>
+<span id="cb1-8"><a href=""></a><span class="fu">n_recuperados</span><span class="kw">:</span><span class="at"> 47            n_incluidos: 6</span></span>
+<span id="cb1-9"><a href=""></a><span class="pp">---</span></span>
+<span id="cb1-10"><a href=""></a><span class="co"># Que busque</span></span>
+<span id="cb1-11"><a href=""></a><span class="at">Instituciones formales y cambio en estructura de redes.</span></span>
+<span id="cb1-12"><a href=""></a></span>
+<span id="cb1-13"><a href=""></a><span class="co"># Que excluí y por que</span></span>
+<span id="cb1-14"><a href=""></a><span class="at">28 no miden redes ; 9 solo simulacion ; 4 duplicados</span></span>
+<span id="cb1-15"><a href=""></a></span>
+<span id="cb1-16"><a href=""></a><span class="co"># Incluidos</span></span>
+<span id="cb1-17"><a href=""></a><span class="kw">-</span><span class="at"> </span><span class="kw">[[</span><span class="at">Binzel_etal</span><span class="dv"> 2020</span><span class="kw">]]</span><span class="at"> </span><span class="fu">-- COMPITE con mi gap</span><span class="kw">:</span><span class="at"> efectos sobre</span></span>
+<span id="cb1-18"><a href=""></a><span class="at">                          lazos inter-subcasta</span></span>
+<span id="cb1-19"><a href=""></a><span class="kw">-</span><span class="at"> </span><span class="kw">[[</span><span class="at">Dupas_etal</span><span class="dv"> 2019</span><span class="kw">]]</span><span class="at">  -- APORTA sustitucion funcional</span></span>
+<span id="cb1-20"><a href=""></a></span>
+<span id="cb1-21"><a href=""></a><span class="co"># Sesgo detectado</span></span>
+<span id="cb1-22"><a href=""></a><span class="at">0 resultados en espanol ; ningun libro. Revisar SciELO.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="interludio-qué-es-obsidian" class="title-slide slide level1 divisoria center">
+<h1>Interludio — ¿Qué es Obsidian?</h1>
+<div class="bajada">
+<p>Antes de la Estación 3, la herramienta donde vive el archivo</p>
+</div>
+</section>
+<section id="obsidian-notas-en-texto-plano" class="slide level2">
+<h2>Obsidian: notas en texto plano</h2>
+<div class="cols-30-70">
+<div>
+<p><img data-src="figuras/obsidian-logo.png" style="width:100.0%"></p>
+</div>
+<div>
+<ul>
+<li>Editor de notas donde cada nota es un <span class="hl">archivo <code>.md</code> en una carpeta de tu disco</span>. Esa carpeta se llama <em>vault</em></li>
+<li>Los archivos son tuyos: sin formato propietario, se abren con cualquier editor, se versionan con Git y se leen en veinte años</li>
+<li>Funciona sin conexión y sin cuenta. El mío vive dentro de Dropbox, así que el respaldo es automático</li>
+<li>Tiene <span class="hl">plugins</span>. El que uso a diario es el de <span class="hld">ecuaciones en LaTeX</span>: escribo <code>$\beta_1$</code> dentro de una nota y se renderiza como β₁</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Por qué texto plano y no un gestor bibliográfico</span> Un gestor guarda <span class="hl">referencias</span>. Un vault en texto plano guarda <span class="hl">ideas, notas propias, borradores y referencias en el mismo espacio</span>, y deja que se enlacen entre sí. Los dos conviven: las referencias siguen en Zotero.</p>
+</div>
+</div>
+</section>
+<section id="markdown-en-un-minuto" class="slide level2">
+<h2>Markdown en un minuto</h2>
+<p>Markdown es texto normal con unas pocas marcas. Lo que ven es lo que uno escribe.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href=""></a><span class="fu"># Titulo        ## Subtitulo       ### Sub-subtitulo</span></span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>**negrita**     *cursiva*          <span class="in">`codigo`</span></span>
+<span id="cb2-4"><a href=""></a></span>
+<span id="cb2-5"><a href=""></a><span class="ss">- </span>item de lista</span>
+<span id="cb2-6"><a href=""></a><span class="at">&gt; cita textual</span></span>
+<span id="cb2-7"><a href=""></a></span>
+<span id="cb2-8"><a href=""></a>#un-tag                 &lt;- CLASIFICA: agrupa notas por concepto</span>
+<span id="cb2-9"><a href=""></a>[<span class="co">[</span><span class="ot">Otra nota</span><span class="co">]</span>]           &lt;- ENLAZA: conecta esta nota con otra</span>
+<span id="cb2-10"><a href=""></a>[<span class="co">[</span><span class="ot">Otra nota|como digo</span><span class="co">]</span>] &lt;- enlaza mostrando otro texto</span>
+<span id="cb2-11"><a href=""></a></span>
+<span id="cb2-12"><a href=""></a>$\beta_1$               &lt;- LaTeX inline (plugin de ecuaciones)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Las dos marcas que importan para el segundo cerebro</span> <code>#tag</code> <span class="hlr">clasifica</span>: una nota puede llevar muchos, y agrupa por concepto. <code>[[enlace]]</code> <span class="hlr">conecta</span>: une esta nota con otra específica, y <strong>es lo que dibuja el grafo</strong>.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-el-segundo-cerebro-un-vault-de-doble-vínculo" class="slide level2">
+<h2>Estación 3 — El segundo cerebro: un vault de doble vínculo</h2>
+<div class="cols2">
+<div>
+<p>Todo lo que leo se ficha en el vault. La clave es el <span class="hld">doble vínculo</span>: conecto ideas por <code>#tags</code> y por enlaces <code>[[ ]]</code>.</p>
+<ul>
+<li>Cada paper y cada idea es una <span class="hl">nota atómica</span> (Zettelkasten)</li>
+<li>Los <code>#tags</code> son conceptos; los <code>[[enlaces]]</code> unen papers con notas propias</li>
+<li>Busco <code>#crowding-in</code> y veo <span class="hl">todas</span> las fichas conectadas a esa idea</li>
+<li>De esa red de notas nace, después, el argumento</li>
+</ul>
+<div class="nota">
+<p>Es el “fichero” de Mills, en markdown y con búsqueda.</p>
+</div>
+</div>
+<div class="diagrama">
+<svg viewbox="0 0 620 400" role="img" aria-label="Red de tags y fichas del vault">
+  <g stroke="#5A6577" stroke-width="2">
+    <line x1="310" y1="200" x2="130" y2="120"></line><line x1="310" y1="200" x2="130" y2="285"></line>
+    <line x1="310" y1="200" x2="495" y2="120"></line><line x1="310" y1="200" x2="495" y2="285"></line>
+    <line x1="310" y1="62" x2="130" y2="120"></line><line x1="310" y1="62" x2="495" y2="285"></line>
+    <line x1="310" y1="338" x2="130" y2="285"></line><line x1="130" y1="120" x2="130" y2="285"></line>
+  </g>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="35" y="95" width="190" height="52" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="130" y="127" font-size="19" fill="#E8E3D9">[[Binzel 2020]]</text>
+    <rect x="30" y="258" width="200" height="56" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="130" y="282" font-size="18" fill="#E8E3D9">[[DiMaggio</text>
+    <text x="130" y="304" font-size="18" fill="#E8E3D9">y Garip 2011]]</text>
+    <rect x="400" y="95" width="190" height="52" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="495" y="127" font-size="19" fill="#E8E3D9">[[Baldassarri]]</text>
+    <rect x="395" y="258" width="200" height="56" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="495" y="282" font-size="18" fill="#E8E3D9">[[@marco-</text>
+    <text x="495" y="304" font-size="18" fill="#E8E3D9">teorico-p2]]</text>
+
+    <circle cx="310" cy="62" r="52" fill="#2A2416" stroke="#C9A84C" stroke-width="2"></circle>
+    <text x="310" y="56" font-size="17" font-weight="700" fill="#F0D588">#crowd-</text>
+    <text x="310" y="77" font-size="17" font-weight="700" fill="#F0D588">ing-in</text>
+    <circle cx="310" cy="200" r="52" fill="#2A2416" stroke="#C9A84C" stroke-width="2"></circle>
+    <text x="310" y="194" font-size="17" font-weight="700" fill="#F0D588">#homo-</text>
+    <text x="310" y="215" font-size="17" font-weight="700" fill="#F0D588">phily</text>
+    <circle cx="310" cy="338" r="52" fill="#2A2416" stroke="#C9A84C" stroke-width="2"></circle>
+    <text x="310" y="332" font-size="17" font-weight="700" fill="#F0D588">#social</text>
+    <text x="310" y="353" font-size="17" font-weight="700" fill="#F0D588">capital</text>
+  </g>
+</svg>
+</div>
+</div>
+</section>
+<section id="estación-3-qué-parte-de-la-ficha-se-delega" class="slide level2">
+<h2>Estación 3 — Qué parte de la ficha se delega</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="hld">Delegable: campos mecánicos</span></th>
+<th style="text-align: left;"><span class="hlr">Mío: campos de juicio</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Metadata, autores, año, DOI</td>
+<td style="text-align: left;"><strong>Idea central</strong> en una frase</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Datos, muestra, método, medidas</td>
+<td style="text-align: left;"><strong>Conexión con mi argumento</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Resumen del diseño de identificación</td>
+<td style="text-align: left;"><strong>La objeción</strong>: qué no me convence</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tags candidatos del esquema</td>
+<td style="text-align: left;">Los <code>[[enlaces]]</code> y su verbo</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El antipatrón que hay que reconocer</span> Una ficha con la columna izquierda perfecta y la derecha generada queda <span class="hlr">correcta y vacía</span>: produce la apariencia del trabajo sin el trabajo. Es el modo de falla característico del fichado asistido, y pasa desapercibido porque el texto se ve bien.</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Todo lo mecánico y verificable contra el PDF.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> La idea central, la conexión y la objeción. Ahí está el valor compuesto del archivo.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Leo la ficha seis meses después y reconstruyo por qué guardé ese paper.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-3-cómo-se-ve-una-ficha" class="slide level2">
+<h2>Estación 3 — Cómo se ve una ficha</h2>
+<p>Idea atómica + enlaces con verbo + una objeción propia.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href=""></a><span class="fu">titulo</span><span class="kw">:</span><span class="at"> </span><span class="st">"Binzel et al. 2020 -- Formal financial institution"</span></span>
+<span id="cb3-3"><a href=""></a><span class="fu">autor</span><span class="kw">:</span><span class="at"> Binzel, Field, Pande, Paul-Delvaux</span></span>
+<span id="cb3-4"><a href=""></a><span class="fu">anio</span><span class="kw">:</span><span class="at"> 2020        tipo: articulo</span></span>
+<span id="cb3-5"><a href=""></a><span class="fu">temas</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">redes-sociales</span><span class="kw">,</span><span class="at"> crowding-in</span><span class="kw">]</span></span>
+<span id="cb3-6"><a href=""></a><span class="fu">relevancia_papers</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">redes-desigualdad</span><span class="kw">]</span></span>
+<span id="cb3-7"><a href=""></a><span class="fu">estado</span><span class="kw">:</span><span class="at"> procesado</span></span>
+<span id="cb3-8"><a href=""></a><span class="pp">---</span></span>
+<span id="cb3-9"><a href=""></a><span class="co"># Idea central</span></span>
+<span id="cb3-10"><a href=""></a><span class="at">La llegada de un banco formal reduce la cooperacion comunitaria</span></span>
+<span id="cb3-11"><a href=""></a><span class="at">y los lazos que cruzan subcastas.</span></span>
+<span id="cb3-12"><a href=""></a></span>
+<span id="cb3-13"><a href=""></a><span class="co">## Conexiones            (cada enlace lleva su VERBO)</span></span>
+<span id="cb3-14"><a href=""></a><span class="kw">-</span><span class="at"> </span><span class="kw">[[</span><span class="at">Homofilia</span><span class="kw">]]</span><span class="at">        -- FORMALIZA la seleccion de vinculos</span></span>
+<span id="cb3-15"><a href=""></a><span class="kw">-</span><span class="at"> </span><span class="kw">[[</span><span class="at">Dupas_etal</span><span class="dv"> 2019</span><span class="kw">]]</span><span class="at">  -- COMPLEMENTA con sustitucion funcional</span></span>
+<span id="cb3-16"><a href=""></a><span class="kw">-</span><span class="at"> </span><span class="kw">[[</span><span class="at">@inst-rewiring</span><span class="kw">]]</span><span class="at">   </span><span class="fu">-- COMPITE</span><span class="kw">:</span><span class="at"> cubre parte de mi gap</span></span>
+<span id="cb3-17"><a href=""></a></span>
+<span id="cb3-18"><a href=""></a><span class="co">## Objecion</span></span>
+<span id="cb3-19"><a href=""></a><span class="fu">Mide cooperacion con un juego de bienes publicos</span><span class="kw">:</span><span class="at"> valido para</span></span>
+<span id="cb3-20"><a href=""></a><span class="at">comportamiento, mudo sobre la estructura de la red.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="estación-3-la-regla-del-verbo" class="slide level2">
+<h2>Estación 3 — La regla del verbo</h2>
+<p>Un modelo de lenguaje enlaza cualquier cosa con cualquier cosa por similitud superficial. Cuando todo conecta con todo, el grafo deja de informar.</p>
+<div class="cols2">
+<div class="falla">
+<p><span class="t">Enlaces que no dicen nada</span></p>
+<ul>
+<li><code>[[Granovetter]]</code> — se relaciona con</li>
+<li><code>[[Blau]]</code> — tema similar</li>
+<li><code>[[Burt]]</code> — relevante</li>
+</ul>
+</div>
+<div class="ejemplo">
+<p><span class="t">Enlaces con verbo</span></p>
+<ul>
+<li><code>[[Granovetter]]</code> — <strong>FUNDA</strong> el mecanismo de lazos débiles</li>
+<li><code>[[Blau]]</code> — <strong>PREDICE</strong> lo contrario en contextos consolidados</li>
+<li><code>[[Burt]]</code> — <strong>MIDE</strong> la posición que yo asumo sin medir</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p>Se crea un <code>[[enlace]]</code> cuando se puede nombrar la relación con un <strong>verbo</strong>.</p>
+<p>“Se relaciona con” funciona como excusa, no como verbo.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-el-uso-más-milleriano-de-la-ia" class="slide level2">
+<h2>Estación 3 — El uso más milleriano de la IA</h2>
+<p>Mills dice que <span class="hl">reordenar el fichero es el método de invención</span>: uno yuxtapone carpetas que no iban juntas y ahí aparece el problema. Con un archivo grande, esa operación se hace difícil a mano.</p>
+<div class="cols2">
+<div class="falla">
+<p><span class="t">Consultas de bajo retorno</span></p>
+<ul>
+<li>“Resúmeme mis notas sobre X”</li>
+<li>“Hazme un estado del arte”</li>
+<li>“Ordena mis fichas por tema”</li>
+</ul>
+<p>Comprimen lo que ya sabías.</p>
+</div>
+<div class="ejemplo">
+<p><span class="t">Consultas de alto retorno</span></p>
+<ul>
+<li>“¿Dónde se <strong>contradicen</strong> mis fichas?”</li>
+<li>“¿Qué par de fichas sería <strong>sorprendente</strong> junto?”</li>
+<li>“¿Qué ficha posterior <strong>refuta</strong> lo que escribí en <code>@marco-teorico-p2</code>?”</li>
+<li>“¿Qué concepto uso con <strong>dos sentidos</strong> distintos?”</li>
+</ul>
+</div>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Recorrer el archivo completo buscando tensiones y vecindades improbables.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Decidir si la tensión es interesante o es coincidencia de vocabulario.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Abro las dos fichas: la contradicción tiene que estar en el texto, no en el resumen.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-por-qué-dos-herramientas-y-no-una" class="slide level2">
+<h2>Estación 3 — Por qué dos herramientas y no una</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">NotebookLM — lectura acotada</span> Opera sobre un <span class="hl">corpus cerrado</span> que tú subes, y cita al párrafo.</p>
+<p>Pregunta típica: <em>“¿Qué dice exactamente <strong>este</strong> paper sobre la medición de homofilia?”</em></p>
+<p>Ventaja: se mantiene dentro de las fuentes, y la cita es verificable en un clic.</p>
+</div>
+<div class="bloque">
+<p><span class="t">Claude sobre el vault — memoria</span> Opera sobre el <span class="hl">archivo acumulado</span> y conoce las reglas de la casa (el <code>CLAUDE.md</code>).</p>
+<p>Pregunta típica: <em>“¿Qué tengo <strong>yo</strong> sobre esto, y dónde se contradice?”</em></p>
+<p>Ventaja: compone en el tiempo. Cada ficha nueva mejora todas las consultas futuras.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">La distinción de fondo</span> Una hace <span class="hlr">lectura</span>. La otra hace <span class="hlr">memoria</span>. Tenerlas claras explica por qué a veces “la IA resume mal los papers”: se le está pidiendo memoria a una herramienta de lectura, o al revés.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-cómo-se-ve-el-archivo-cuando-lleva-un-año" class="slide level2">
+<h2>Estación 3 — Cómo se ve el archivo cuando lleva un año</h2>
+
+<img data-src="figuras/grafo-vault.png" class="quarto-figure quarto-figure-center r-stretch" style="width:62.0%"><div class="fragment">
+<div class="cols3">
+<div class="nota">
+<p><span class="hld">Los racimos</span> son literaturas: welfare state, redes, clivajes. Aparecen solos, sin que nadie los declare.</p>
+</div>
+<div class="nota">
+<p><span class="hld">Los nodos puente</span> son casi siempre notas propias (<code>@</code>): las ideas que conectan dos literaturas son las candidatas a paper.</p>
+</div>
+<div class="nota">
+<p><span class="hld">Los nodos aislados</span> son fichas que nunca enlacé. Cada uno es una pregunta pendiente: ¿por qué guardé esto?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-3-cómo-conecto-el-asistente-al-vault" class="slide level2">
+<h2>Estación 3 — Cómo conecto el asistente al vault</h2>
+<div class="pasos">
+<ol type="1">
+<li><p><span class="hl">El vault es una carpeta.</span> Se le da acceso <span class="hld">a esa carpeta</span>, y a ninguna otra. En la práctica: Claude Desktop con acceso al sistema de archivos, o Claude Code abierto dentro del directorio del vault.</p></li>
+<li><p><span class="hl">En la raíz viven <code>CLAUDE.md</code> y <code>README.md</code>.</span> Se leen al inicio de cada sesión, antes de responder nada.</p></li>
+<li><p><span class="hl">Permisos por etapas.</span> Primero sólo lectura. La escritura se habilita cuando el contrato ya funciona, y con la regla de confirmar antes de mover o renombrar archivos.</p></li>
+<li><p><span class="hl">Red de seguridad.</span> El vault está en Dropbox y bajo control de versiones, así que cualquier cambio es reversible.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Lo que se queda fuera de la carpeta</span> Datos individuales de terceros sin anonimizar, manuscritos ajenos en revisión, e instrumentos bajo convenio institucional. Esos viven en otra parte del disco, fuera del alcance del asistente.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-los-dos-archivos-que-hacen-la-diferencia" class="slide level2">
+<h2>Estación 3 — Los dos archivos que hacen la diferencia</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t"><code>README.md</code> — para humanos</span></p>
+<ul>
+<li>Estructura de carpetas (<code>00_META</code> a <code>80_TESIS</code>)</li>
+<li>Convención de nombres: <code>Apellido YYYY.md</code>, <code>Korpi_Palme 1998.md</code>, <code>@nota-propia.md</code></li>
+<li>Tags principales del esquema</li>
+<li>Estado actual de cada paper</li>
+</ul>
+<p>Es el mapa del vault. Lo lee un coautor nuevo, o yo en seis meses.</p>
+</div>
+<div class="bloque">
+<p><span class="t"><code>CLAUDE.md</code> — para el asistente</span></p>
+<ul>
+<li>Quién soy y en qué proyectos estoy</li>
+<li>El frontmatter YAML obligatorio</li>
+<li>Mi nivel técnico (<em>no me expliques regresión</em>)</li>
+<li>Las reglas de trabajo</li>
+</ul>
+<p>Es el contrato. Sin él, cada sesión empieza de cero y el asistente inventa convenciones nuevas.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p>Escribir estos dos archivos toma una tarde. Es la inversión con mejor retorno de todo el flujo.</p>
+</div>
+</div>
+</section>
+<section id="estación-3-extracto-real-de-mi-claude.md" class="slide level2">
+<h2>Estación 3 — Extracto real de mi <code>CLAUDE.md</code></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="fu"># CLAUDE.md -- Contexto del vault</span></span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="fu">## Instruccion de uso</span></span>
+<span id="cb4-4"><a href=""></a>Lee este archivo al inicio de cada sesion antes de responder.</span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a><span class="fu">## Convenciones</span></span>
+<span id="cb4-7"><a href=""></a><span class="ss">- </span>Fichas de lectura: Apellido YYYY.md      (Mouw 2003.md)</span>
+<span id="cb4-8"><a href=""></a><span class="ss">- </span>Notas propias: prefijo @                 (@marco-teorico.md)</span>
+<span id="cb4-9"><a href=""></a><span class="ss">- </span>Frontmatter YAML obligatorio en toda nota nueva</span>
+<span id="cb4-10"><a href=""></a></span>
+<span id="cb4-11"><a href=""></a><span class="fu">## Nivel tecnico</span></span>
+<span id="cb4-12"><a href=""></a>Usuario avanzado de R. No explicar estadistica basica ni intermedia.</span>
+<span id="cb4-13"><a href=""></a>Codigo en estilo tidyverse por defecto.</span>
+<span id="cb4-14"><a href=""></a></span>
+<span id="cb4-15"><a href=""></a><span class="fu">## Como trabajar conmigo</span></span>
+<span id="cb4-16"><a href=""></a><span class="ss">- </span>Referencias: usa SOLO lo que encuentres en el vault. Nunca inventes</span>
+<span id="cb4-17"><a href=""></a>  fuentes ni atribuyas argumentos sin haberlos leido en las notas.</span>
+<span id="cb4-18"><a href=""></a><span class="ss">- </span>Gaps: si no encuentras algo en el vault, dilo explicitamente.</span>
+<span id="cb4-19"><a href=""></a>  No rellenes con conocimiento general sin avisar.</span>
+<span id="cb4-20"><a href=""></a><span class="ss">- </span>Reorganizacion de archivos: confirma siempre antes de ejecutar.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="nota">
+<p>Las tres reglas del final son las que más trabajo hacen: acotan la fuente, obligan a declarar los vacíos y ponen un freno antes de tocar archivos.</p>
+</div>
+</section>
+<section id="síntesis-acto-i" class="slide level2 sintesis">
+<h2>Síntesis — Acto I</h2>
+<ul>
+<li>El prompt de revisión vale por su definición conceptual, sus dimensiones y sus criterios de exclusión</li>
+<li>El snowballing encuentra lo que el motor semántico deja fuera</li>
+<li>El registro de búsqueda convierte la búsqueda en una nota auditable</li>
+<li>El contrato del vault (<code>CLAUDE.md</code> + <code>README.md</code>) es lo que hace que el fichado asistido sirva</li>
+<li>Idea central, conexión y objeción son míos. El resto se delega</li>
+<li>2–5 fichas al día como hábito atómico: mantener el archivo vivo. Lo que se mide de verdad es cuántas fichas cambiaron el argumento</li>
+</ul>
+</section></section>
+<section>
+<section id="acto-ii-decisión" class="title-slide slide level1 divisoria center">
+<h1>Acto II — Decisión</h1>
+<div class="bajada">
+<p>Estaciones 4 y 5: comprometerse con una idea (o soltarla)</p>
+</div>
+</section>
+<section id="estación-4-flota-la-idea" class="slide level2">
+<h2>Estación 4 — ¿Flota la idea?</h2>
+<p>Con el corpus fichado, vuelvo a sistematizar lo que tengo. Antes de escribir una línea del paper, hay una pregunta que decide todo:</p>
+<div class="bloque">
+<p><span class="t">La pregunta que va primero</span> ¿La idea <span class="hl">flota</span>? ¿Funciona como aporte? Y sobre todo: ¿funciona para un <span class="hld">buen journal</span>?</p>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El costo oculto de la IA: la abundancia</span> Con IA podemos generar y cubrir <span class="hlr">muchas</span> ideas. El recurso que escasea pasa a ser el <span class="hlr">tiempo</span>, y con él la <strong>selectividad</strong>: en qué voy a gastar mis semanas.</p>
+</div>
+<div class="nota">
+<p>Archivar es el resultado más frecuente, y es un buen resultado: una idea archivada con su PAP queda como capital disponible.</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Sistematizar el corpus, listar qué se sabe y qué falta, contrastar el fit de journals.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> La decisión. Define en qué gasto los próximos seis meses.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Escribo el aporte en una frase. Si necesito un párrafo, todavía no flota.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-5-el-pap-el-mapa-del-paper" class="slide level2">
+<h2>Estación 5 — El PAP: el mapa del paper</h2>
+<p>Si la idea flota, construyo un <span class="hl">plan de preanálisis (PAP)</span>: el esqueleto completo del estudio, antes de tocar los datos en serio.</p>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Qué contiene</span></p>
+<ul>
+<li>Hipótesis básicas</li>
+<li>Elección teórica</li>
+<li>Cómo se <span class="hl">mide</span> cada constructo</li>
+<li>Cómo se <span class="hl">estima</span> el efecto</li>
+<li>Chequeos de <span class="hl">robustez</span></li>
+</ul>
+</div>
+<div class="bloque">
+<p><span class="t">Para qué sirve (de verdad)</span></p>
+<ul>
+<li>Sirve para pre-registrar, y también para mucho más</li>
+<li>Es un <span class="hld">registro</span> del trabajo hecho, por si la idea se archiva</li>
+<li>Permite avanzar teoría y empírico <span class="hld">en paralelo</span></li>
+<li>Da el mapa: qué falta cerrar</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Por qué importa el mapa</span> Sin PAP uno puede <span class="hlr">leer literatura para siempre</span> o <span class="hlr">recodificar para siempre</span>. El PAP dice: “esta es tu idea, y esto hay que cerrar”.</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Estructurar el documento y proponer los chequeos de robustez del diseño.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Las hipótesis, la elección teórica y las decisiones de medición.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Cada decisión queda fechada. Si después cambio una, queda el registro.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-5-el-pap-obliga-a-explicitar-la-identificación" class="slide level2">
+<h2>Estación 5 — El PAP obliga a explicitar la identificación</h2>
+<p>Escribir el PAP fuerza a dibujar el <span class="hl">argumento causal</span> antes de estimar.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 270" role="img" aria-label="DAG con confusor">
+  <defs>
+    <marker id="fl8" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+    <marker id="fl8g" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#7C889B"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="440" y="16" width="300" height="72" rx="6" fill="#1A2130" stroke="#7C889B" stroke-width="1.6" stroke-dasharray="7 5"></rect>
+    <text x="590" y="48" font-size="20" font-weight="600" fill="#9BA9BF">Recursos previos</text>
+    <text x="590" y="74" font-size="20" font-weight="600" fill="#9BA9BF">(confusor)</text>
+
+    <rect x="45" y="165" width="300" height="82" rx="6" fill="#132A44" stroke="#4E7FB0" stroke-width="1.8"></rect>
+    <text x="195" y="198" font-size="21" font-weight="600" fill="#BFD8F0">Llegada del</text>
+    <text x="195" y="226" font-size="21" font-weight="600" fill="#BFD8F0">banco formal</text>
+
+    <rect x="450" y="165" width="300" height="82" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="600" y="198" font-size="21" font-weight="600" fill="#E8E3D9">Estructura</text>
+    <text x="600" y="226" font-size="21" font-weight="600" fill="#E8E3D9">de la red</text>
+
+    <rect x="855" y="165" width="300" height="82" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="1005" y="198" font-size="21" font-weight="600" fill="#E8E3D9">Logro de</text>
+    <text x="1005" y="226" font-size="21" font-weight="600" fill="#E8E3D9">estatus</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.4" marker-end="url(#fl8)">
+    <line x1="345" y1="206" x2="438" y2="206"></line>
+    <line x1="750" y1="206" x2="843" y2="206"></line>
+  </g>
+  <text x="391" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#D9BC66">rewiring</text>
+  <text x="796" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#D9BC66">H₁</text>
+  <g stroke="#7C889B" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#fl8g)">
+    <line x1="490" y1="88" x2="250" y2="158"></line>
+    <line x1="700" y1="88" x2="950" y2="158"></line>
+  </g>
+</svg>
+</div>
+<div class="nota">
+<p>La ruta <strong>punteada</strong> <em>U → X</em>, <em>U → Y</em> es la puerta trasera que el diseño (efectos fijos, IV, matching) debe cerrar. El PAP la declara <em>antes</em> de mirar los resultados.</p>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Nota deliberada: en esta slide la IA no aparece</span> Un modelo puede listar estrategias de identificación genéricas. Saber qué confunde <span class="hlr">este</span> caso sale de la literatura que leíste y del terreno que conoces.</p>
+</div>
+</div>
+</section>
+<section id="síntesis-acto-ii" class="slide level2 sintesis">
+<h2>Síntesis — Acto II</h2>
+<ul>
+<li>Antes de escribir: decidir si la idea flota y para qué journal</li>
+<li>Con IA sobran ideas; la destreza escasa es la selectividad</li>
+<li>Archivar es un buen resultado: el PAP conserva el trabajo</li>
+<li>Explicitar el DAG obliga a resolver la identificación temprano</li>
+</ul>
+</section></section>
+<section>
+<section id="acto-iii-producción" class="title-slide slide level1 divisoria center">
+<h1>Acto III — Producción</h1>
+<div class="bajada">
+<p>Estaciones 6 y 7: código reproducible y escritura estratégica</p>
+</div>
+</section>
+<section id="estación-6-código-estructura-estándar-osf" class="slide level2">
+<h2>Estación 6 — Código: estructura estándar OSF</h2>
+<p>El análisis siempre arranca con la misma <span class="hl">estructura de carpetas</span>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource text number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>proyecto-rewiring/</span>
+<span id="cb5-2"><a href=""></a>|-- input/</span>
+<span id="cb5-3"><a href=""></a>|   \-- data/</span>
+<span id="cb5-4"><a href=""></a>|       |-- raw/            &lt;- datos originales, NUNCA se editan</span>
+<span id="cb5-5"><a href=""></a>|       \-- processed/      &lt;- bases limpias y de trabajo</span>
+<span id="cb5-6"><a href=""></a>|-- output/</span>
+<span id="cb5-7"><a href=""></a>|   |-- figures/</span>
+<span id="cb5-8"><a href=""></a>|   \-- tables/</span>
+<span id="cb5-9"><a href=""></a>|-- scripts/                &lt;- ver siguiente slide</span>
+<span id="cb5-10"><a href=""></a>|-- documents/</span>
+<span id="cb5-11"><a href=""></a>|   \-- PAP.md</span>
+<span id="cb5-12"><a href=""></a>|-- renv.lock               &lt;- entorno congelado (paquetes + versiones)</span>
+<span id="cb5-13"><a href=""></a>\-- README.md               &lt;- que es esto, como se corre, en que orden</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="nota">
+<p>Reglas intocables: <code>raw/</code> es sólo lectura; la semilla se fija en el script; el entorno queda congelado. Todo lo demás se <em>reconstruye</em> corriendo los scripts.</p>
+</div>
+</section>
+<section id="estación-6-scripts-numerados-y-la-prueba-de-fuego" class="slide level2">
+<h2>Estación 6 — Scripts numerados, y la prueba de fuego</h2>
+<p>Los scripts se nombran con <span class="hl">prefijo numérico</span> según el orden en que se corren. Cada uno hace <span class="hld">una</span> cosa.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Script</th>
+<th style="text-align: left;">Qué hace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>00_procesamiento.R</code></td>
+<td style="text-align: left;">Recodificación, merge, construcción de la base maestra</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>01_descriptivos.R</code></td>
+<td style="text-align: left;">Univariados, bivariados, tablas y figuras descriptivas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>02_multivariado.R</code></td>
+<td style="text-align: left;">Modelos principales (la estimación del PAP)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>03_robustez.R</code></td>
+<td style="text-align: left;">Chequeos de robustez y análisis de sensibilidad</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">La prueba de fuego — guárdenla, reaparece en el Acto IV</span> Borro <code>processed/</code> y <code>output/</code>, corro <code>00</code> a <code>03</code> en orden, y el paper se <span class="hl">reconstruye entero</span>. Cuando eso ocurre, el pipeline está sano.</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Escribir y depurar código, recodificar, generar tablas y figuras, redactar el README.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> Qué se estima y por qué. El código implementa el PAP.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> La prueba de fuego: barata, automática e independiente de quién escribió el código.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-7-escritura-gap-argumento-contribución" class="slide level2">
+<h2>Estación 7 — Escritura: gap, argumento, contribución</h2>
+<p>Un paper construye un argumento sobre tres pilares. Todo párrafo de la introducción trabaja para uno de ellos.</p>
+<div class="bloque">
+<p><span class="t">1. El gap — qué NO sabemos</span> “A pesar de la extensa investigación sobre <em>X</em>, sigue sin saberse si …”. La literatura previa establece <em>A</em>, y <span class="hl">deja abierto</span> <em>B</em> por una limitación teórica o de datos.</p>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">2. El argumento — por qué creemos que el mundo funciona así</span> Tu respuesta <span class="hld">original</span> a esa pregunta. Aquí casi no hay citas: es <strong>tu</strong> tesis.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">3. La contribución — qué cambia si tenemos razón</span> Ordenada por importancia. En sociología, la contribución <span class="hl">teórica</span> pesa más que la puramente empírica. Se <span class="hlr">adelanta</span> toda a la intro: al llegar a la conclusión, el revisor ya decidió.</p>
+</div>
+</div>
+</section>
+<section id="estación-7-la-intro-por-párrafos-y-la-elección-de-audiencia" class="slide level2">
+<h2>Estación 7 — La intro por párrafos y la elección de audiencia</h2>
+<div class="cols2">
+<div>
+<p><strong>La introducción, párrafo a párrafo</strong></p>
+<ol type="1">
+<li>Tema + puzzle (con citas <span class="hl">estratégicas</span>)</li>
+<li>Literatura + dónde se queda corta</li>
+<li>Tu argumento (sin citas)</li>
+<li>Caso y por qué es el correcto</li>
+<li>Datos y métodos</li>
+<li>Hallazgos centrales</li>
+<li>Contribuciones (2–3 párrafos)</li>
+</ol>
+<div class="nota">
+<p>Sin párrafo “roadmap”. En 4–5 páginas ya cerraste la intro.</p>
+</div>
+</div>
+<div>
+<p><strong>Un mismo proyecto, tres audiencias</strong></p>
+<p>Las <span class="hld">citas de la intro eligen a tus revisores</span>. Enmarca el mismo estudio según el journal:</p>
+<ul>
+<li><span class="hl">Identificación causal limpia</span> → revista metodológica</li>
+<li><span class="hl">Teoría de rango medio</span> + mecanismos → revista teórica</li>
+<li><span class="hl">Desigualdad y estructura</span> → revista de estratificación</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="estación-7-revisión-de-texto-tres-niveles-tres-regímenes" class="slide level2">
+<h2>Estación 7 — Revisión de texto: tres niveles, tres regímenes</h2>
+<p>“Usar IA para escribir” agrupa tres operaciones con riesgos muy distintos.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Nivel</th>
+<th style="text-align: left;">Qué es</th>
+<th style="text-align: left;">Régimen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="hld">Superficie</span></td>
+<td style="text-align: left;">Gramática, preposiciones, inglés como L2</td>
+<td style="text-align: left;">Delegación libre</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="hlr">Estilo</span></td>
+<td style="text-align: left;">Concisión, voz activa, nominalizaciones</td>
+<td style="text-align: left;">Frase a frase, con <em>diff</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="hlx">Argumento</span></td>
+<td style="text-align: left;">Qué se afirma y con cuánta fuerza</td>
+<td style="text-align: left;">Reescribo yo encima</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El principio operativo</span> Prefiere herramientas que produzcan <span class="hlr">diffs</span> sobre las que produzcan <span class="hlr">reemplazos</span>. Con control de cambios (<code>Refine Ink</code>, track changes) ves y aceptas cada corrección: la autoría queda trazable y <strong>aprendes tus errores recurrentes</strong>.</p>
+</div>
+<div class="franja">
+<div class="d">
+<p><strong>Delego</strong> Corrección de superficie; propuestas de concisión frase a frase.</p>
+</div>
+<div class="nd">
+<p><strong>No delego</strong> El primer borrador de la intro y la discusión: ahí está el argumento.</p>
+</div>
+<div class="v">
+<p><strong>Cómo verifico</strong> Reviso el diff completo. Si acepté un cambio que no puedo explicar, lo revierto.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="estación-7-la-trampa-que-becker-anticipó-en-1986" class="slide level2">
+<h2>Estación 7 — La trampa que Becker anticipó en 1986</h2>
+<p>Becker diagnosticó una prosa: sus estudiantes escribían mal porque intentaban <span class="hl">sonar</span> como académicos. Esa prosa es, hoy, la salida por defecto de un modelo de lenguaje.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="hlx">Lo que sale por defecto</span></th>
+<th style="text-align: left;"><span class="hld">Lo que queremos</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">“Es importante destacar que los resultados podrían sugerir una posible asociación positiva entre <em>X</em> e <em>Y</em>”</td>
+<td style="text-align: left;">“<em>X</em> aumenta con <em>Y</em>”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“La implementación de la política tuvo como resultado una reducción de la informalidad”</td>
+<td style="text-align: left;">“La política redujo la informalidad”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“Se procedió a la realización de un análisis de sensibilidad”</td>
+<td style="text-align: left;">“Hicimos un análisis de sensibilidad”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“No se trata de una cuestión metodológica, sino de un problema teórico”</td>
+<td style="text-align: left;">“Es un problema teórico”</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Tres tics que delatan un texto asistido</span> <span class="hlr">1.</span> La contraposición vacía: <em>“no se trata de X, sino de Y”</em>. <span class="hlr">2.</span> El <em>“no sólo… sino también…”</em>. <span class="hlr">3.</span> La tríada decorativa. Regla de bolsillo: si al borrar la primera mitad de la frase no se pierde información, borra la primera mitad.</p>
+</div>
+</div>
+</section>
+<section id="estación-7-y-la-tesis-complementaria-de-becker" class="slide level2">
+<h2>Estación 7 — Y la tesis complementaria de Becker</h2>
+<div class="bloque">
+<p><span class="t">El borrador malo es donde se piensa</span> Becker sostiene que el primer borrador existe para descubrir qué queremos decir, y que la claridad llega al reescribir. Cuando la IA se hace cargo del primer borrador, se lleva también el pensamiento que ese borrador producía.</p>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p><strong>La regla que sale de ahí</strong></p>
+<p>El primer borrador de las secciones donde está el argumento (intro, discusión) lo escribo yo.</p>
+<p>El primer borrador de lo que sólo se reporta (datos, muestra, medidas, robustez) se puede delegar.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="nota">
+<p>La diferencia entre las dos mitades es exactamente la misma que la de la franja: en la primera, la única verificación disponible es leerlo y decidir; en la segunda, el texto se contrasta contra el output y el PAP.</p>
+</div>
+</div>
+</section>
+<section id="transversal-ciencia-abierta-y-reproducible" class="slide level2">
+<h2>Transversal — Ciencia abierta y reproducible</h2>
+<p>Dos piezas atraviesan <span class="hl">todo</span> el flujo.</p>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Open Science Framework (OSF)</span> Da la <span class="hl">estructura de carpetas</span> y aloja materiales, PAP y datos. Es el hogar del proyecto reproducible.</p>
+</div>
+<div class="bloque">
+<p><span class="t">GitHub</span> <span class="hl">Control de versiones</span> del código y colaboración. Historial de cambios y respaldo del pipeline.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Por qué esto se volvió infraestructura crítica</span> Un pipeline reproducible hace que la verificación sea <span class="hl">barata y automática</span>. Y como veremos en el Acto IV, la verificación barata es la condición que habilita delegar.</p>
+</div>
+<div class="nota">
+<p>La meta de fondo: que un tercero (o tú, en seis meses) tome el repositorio y reproduzca cada tabla y figura del paper.</p>
+</div>
+</div>
+</section></section>
+<section>
+<section id="acto-iv-los-límites" class="title-slide slide level1 divisoria center">
+<h1>Acto IV — Los límites</h1>
+<div class="bajada">
+<p>Cómo falla esto, dónde caben los agentes, y qué pasa en equipo</p>
+</div>
+</section>
+<section id="modo-de-falla-1-el-sesgo-de-recuperación" class="slide level2">
+<h2>Modo de falla 1 — El sesgo de recuperación</h2>
+<p>Los motores devuelven lo que está en su índice. Y el índice tiene una forma.</p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 300" role="img" aria-label="Sesgo de recuperación del índice">
+  <defs>
+    <marker id="f2" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+    <marker id="f3" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#E08C81"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="40" y="18" width="260" height="78" rx="6" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="170" y="64" font-size="23" font-weight="600" fill="#E8E3D9">Tu pregunta</text>
+
+    <rect x="400" y="18" width="340" height="78" rx="6" fill="#132A44" stroke="#4E7FB0" stroke-width="1.8"></rect>
+    <text x="570" y="52" font-size="23" font-weight="600" fill="#BFD8F0">Índice del motor</text>
+    <text x="570" y="78" font-size="17" fill="#8FA9C4">Semantic Scholar / OpenAlex</text>
+
+    <rect x="840" y="18" width="260" height="78" rx="6" fill="#2A2416" stroke="#C9A84C" stroke-width="1.8"></rect>
+    <text x="970" y="64" font-size="23" font-weight="600" fill="#F0D588">Resultados</text>
+
+    <rect x="170" y="190" width="860" height="92" rx="6" fill="#2A1614" stroke="#E08C81" stroke-width="1.8"></rect>
+    <text x="600" y="222" font-size="22" font-weight="700" fill="#E08C81">Lo que el índice sub-representa</text>
+    <text x="600" y="252" font-size="17" fill="#EBB3AC">libros y capítulos · SciELO y Redalyc · publicación en español y portugués</text>
+    <text x="600" y="272" font-size="17" fill="#EBB3AC">revistas regionales · literatura anterior a 2000 · trabajos poco citados</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.2" marker-end="url(#f2)">
+    <line x1="300" y1="57" x2="386" y2="57"></line>
+    <line x1="740" y1="57" x2="826" y2="57"></line>
+  </g>
+  <line x1="570" y1="100" x2="570" y2="184" stroke="#E08C81" stroke-width="2.2" stroke-dasharray="7 6" marker-end="url(#f3)"></line>
+</svg>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">Por qué a nosotros nos golpea más fuerte</span> Trabajando Chile o América Latina, el motor ofrece una <span class="hlx">literatura anglosajona sobre nuestro propio caso</span>, y la discusión regional queda fuera del mapa. Es un error sustantivo sobre el estado del arte del tema.</p>
+</div>
+<div class="nota">
+<p>Contramedida: el campo <code>sesgo_detectado</code> del registro de búsqueda, y una pasada por SciELO, Redalyc y las revistas del área antes de cerrar el corpus.</p>
+</div>
+</div>
+</section>
+<section id="modo-de-falla-2-tres-formas-de-texto-correcto-y-trabajo-vacío" class="slide level2">
+<h2>Modo de falla 2 — Tres formas de texto correcto y trabajo vacío</h2>
+<div class="cols3">
+<div class="falla">
+<p><span class="t">Fichas plausibles</span> Resúmenes correctos, sin fricción y sin juicio.</p>
+<p><strong>Señal:</strong> no puedes reconstruir por qué guardaste el paper.</p>
+</div>
+<div class="falla">
+<p><span class="t">Homogeneización</span> La asistencia empuja a todos hacia el mismo encuadre y vocabulario.</p>
+<p><strong>Señal:</strong> tu intro se parece a las otras cinco del panel.</p>
+</div>
+<div class="falla">
+<p><span class="t">Sobre-alabanza</span> Como evaluador, el modelo tiende a elogiar y a penalizar lo crítico.</p>
+<p><strong>Señal:</strong> pediste feedback y todo te pareció razonable.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="bloque">
+<p><span class="t">La regla que los cubre a los tres</span> Los tres producen algo <span class="hl">plausible</span> en el lugar donde correspondía <span class="hl">fricción</span>. Cuando una interacción con IA termina sin ninguna objeción, sin ninguna duda y sin trabajo extra, conviene sospechar del resultado antes de darlo por bueno.</p>
+</div>
+</div>
+</section>
+<section id="agentes-una-propiedad-de-la-tarea-no-una-etapa-del-flujo" class="slide level2">
+<h2>Agentes — Una propiedad de la tarea, no una etapa del flujo</h2>
+<p>Un <span class="hl">agente</span> es un sistema que itera solo, usa herramientas y reintenta hasta terminar una tarea. La pregunta que decide su uso es: <span class="hld">¿esta tarea tiene un verificador barato?</span></p>
+<div class="diagrama">
+<svg viewbox="0 0 1200 170" role="img" aria-label="Los tres criterios para usar un agente">
+  <defs>
+    <marker id="fl9" markerwidth="9" markerheight="9" refx="8" refy="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#8FA3C0"></path>
+    </marker>
+  </defs>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <rect x="20" y="25" width="320" height="105" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="180" y="70" font-size="22" font-weight="600" fill="#E8E3D9">1. Iterativa</text>
+    <text x="180" y="99" font-size="22" font-weight="600" fill="#E8E3D9">y con estado</text>
+
+    <rect x="425" y="25" width="350" height="105" rx="7" fill="#2A2416" stroke="#C9A84C" stroke-width="2"></rect>
+    <text x="600" y="63" font-size="22" font-weight="600" fill="#F0D588">2. Verificador barato</text>
+    <text x="600" y="92" font-size="22" font-weight="600" fill="#F0D588">e independiente</text>
+    <text x="600" y="117" font-size="17" fill="#D9BC66">del agente</text>
+
+    <rect x="860" y="25" width="320" height="105" rx="7" fill="#17243C" stroke="#3E5578" stroke-width="1.5"></rect>
+    <text x="1020" y="70" font-size="22" font-weight="600" fill="#E8E3D9">3. Error acotado</text>
+    <text x="1020" y="99" font-size="22" font-weight="600" fill="#E8E3D9">y reversible</text>
+  </g>
+  <g stroke="#8FA3C0" stroke-width="2.2" marker-end="url(#fl9)">
+    <line x1="340" y1="77" x2="413" y2="77"></line>
+    <line x1="775" y1="77" x2="848" y2="77"></line>
+  </g>
+  <text x="377" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#D9BC66">Y</text>
+  <text x="812" y="62" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#D9BC66">Y</text>
+</svg>
+</div>
+<div class="fragment">
+<div class="cols2">
+<div class="ejemplo">
+<p><span class="t">Se cumplen las tres</span> Agente. La verificación sale más barata que hacer la tarea a mano.</p>
+</div>
+<div class="alerta">
+<p><span class="t">Falla alguna</span> Conversación con diffs, bajo tu mano. Un agente aquí traslada el trabajo a la <span class="hlr">revisión</span>, que resulta más lenta.</p>
+</div>
+</div>
+<div class="nota">
+<p>Cuando el único verificador disponible es “leerlo y que suene bien”, lo que hay es una impresión. Y “poner un humano en el loop” funciona en la medida en que se especifique <em>qué</em> mira ese humano.</p>
+</div>
+</div>
+</section>
+<section id="agentes-dónde-caben-exactamente-en-este-flujo" class="slide level2">
+<h2>Agentes — Dónde caben exactamente en este flujo</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Estación</th>
+<th style="text-align: left;">Tarea</th>
+<th style="text-align: left;">Verificador</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="hld">6. Código</span><br><em>sí: el lugar natural</em></td>
+<td style="text-align: left;">Recodificar, testear que <code>00_</code> produce el <em>N</em> y las variables esperadas, regenerar tablas y figuras, escribir el README</td>
+<td style="text-align: left;"><strong>La prueba de fuego.</strong> Automática, barata, independiente</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="hld">2–3. Corpus</span><br><em>sí, acotado</em></td>
+<td style="text-align: left;">Resolver DOIs, bajar PDFs, normalizar BibTeX, detectar duplicados, listar papers citados por el núcleo que faltan en el vault</td>
+<td style="text-align: left;">El archivo existe; el DOI resuelve; el campo está lleno</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="hlx">3. Fichado</span><br><em>no</em></td>
+<td style="text-align: left;">“Lee y ficha por mí”</td>
+<td style="text-align: left;">Sólo verificación de juicio, cara. El error pasa en silencio</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="hlx">5 y 7. PAP, escritura</span><br><em>no</em></td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Verificación de juicio: se conversa y se revisan diffs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="hlr">Transversal</span><br><em>el más subestimado</em></td>
+<td style="text-align: left;"><strong>Agente adversario</strong>: correrlo contra mi propio PAP con rol de <em>referee 2</em> — el confusor no declarado, la especificación no reportada, lo que contradice H2</td>
+<td style="text-align: left;">Yo. Y el costo de un error es <strong>cero</strong>: una objeción falsa se descarta</td>
+</tr>
+</tbody>
+</table>
+<div class="nota">
+<p>Al agente adversario hay que forzarle el rol y exigirle objeciones específicas y verificables: por defecto el modelo elogia.</p>
+</div>
+</section>
+<section id="agentes-y-por-qué-todavía-no-están-en-mi-flujo" class="slide level2">
+<h2>Agentes — Y por qué todavía no están en mi flujo</h2>
+<div class="bloque">
+<p><span class="t">La respuesta honesta</span> Porque el criterio que acabo de darles <span class="hl">me alcanza a mí también</span>. Un agente sobre mi código funciona en la medida en que la verificación sea automática. Mientras la prueba de fuego sea algo que corro a mano de vez en cuando, todavía me falta el verificador que la habilita.</p>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p><span class="grande">El pipeline reproducible es la <strong>precondición</strong> del uso de agentes.</span></p>
+</div>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">Lo que estoy construyendo primero, en este orden</span></p>
+<ol type="1">
+<li>Tests del pipeline: que <code>00_</code> falle ruidosamente si el <em>N</em> o las variables cambian</li>
+<li>Entorno congelado y semillas fijas en todos los proyectos</li>
+<li>Recién entonces: agente sobre el repositorio</li>
+</ol>
+</div>
+<div class="nota">
+<p>Les cuento esto porque la parte más difícil del oficio es saber qué todavía no sabes hacer. Adoptar una herramienta antes de tener con qué verificarla acumula errores que nadie va a encontrar.</p>
+</div>
+</div>
+</section>
+<section id="equipo-lo-que-cambia-al-pasar-de-1-a-n" class="slide level2">
+<h2>Equipo — Lo que cambia al pasar de 1 a N</h2>
+<p>El oficio individual es tácito, y un equipo necesita que sea explícito. Tres niveles distintos:</p>
+<div class="cols3">
+<div class="bloque">
+<p><span class="t">1. Corpus compartido</span> Papers y fichas. Requiere un contrato versionado: esquema de tags, plantilla obligatoria y <span class="hld">un dueño del esquema</span>.</p>
+<p>Con esquemas distintos, dos personas fichando producen dos vaults.</p>
+</div>
+<div class="bloque">
+<p><span class="t">2. Conocimiento procedimental</span> “Cómo se ficha aquí”, “cómo se nombra un script”, “qué se declara”. Es el <code>CLAUDE.md</code> y el <code>README.md</code>, versionados en el repo.</p>
+<p>Es la pieza que casi nadie escribe, y la que después cuesta meses.</p>
+</div>
+<div class="bloque">
+<p><span class="t">3. Estado del proyecto</span> Qué se decidió y por qué. <span class="hld">El PAP ya cumple esta función.</span></p>
+<p>Convierte una decisión tácita en una auditable por otro. Es nuestro mejor activo para escalar.</p>
+</div>
+</div>
+<div class="fragment">
+<div class="alerta">
+<p><span class="t">El error clásico</span> Comprar licencias antes de escribir el contrato. Una herramienta compartida sin estándar compartido genera <span class="hlr">más ruido, más rápido</span>.</p>
+</div>
+</div>
+</section>
+<section id="equipo-una-consecuencia-incómoda-que-conviene-decir-en-voz-alta" class="slide level2">
+<h2>Equipo — Una consecuencia incómoda que conviene decir en voz alta</h2>
+<div class="alerta">
+<p><span class="t">La tensión de este taller</span> Les estoy enseñando a automatizar <span class="hlr">precisamente las tareas</span> por las que tradicionalmente se evaluaba a un ayudante.</p>
+</div>
+<div class="fragment">
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Antes</span> El producto del ayudante <span class="hl">era</span> la evidencia de su comprensión: una ficha bien hecha probaba que había leído.</p>
+</div>
+<div class="bloque">
+<p><span class="t">Ahora</span> El producto informa sobre otra cosa: una ficha impecable es compatible con no haber leído nada.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="ejemplo">
+<p><span class="t">La supervisión se mueve del producto al proceso</span></p>
+<ul>
+<li>En vez del resumen: <span class="hl">«¿cuál es tu objeción a este paper?»</span></li>
+<li>En vez del conteo de fichas: <span class="hl">«¿qué ficha cambió el argumento del proyecto?»</span></li>
+<li>En vez del corpus final: <span class="hl">el registro de búsqueda</span> — qué descartaste y por qué</li>
+</ul>
+<p>El trabajo cambió de lugar. Lo que ahora demuestra oficio es el juicio, y el juicio hay que pedirlo explícitamente.</p>
+</div>
+</div>
+</section>
+<section id="lo-mínimo-no-negociable-declaración-y-confidencialidad" class="slide level2">
+<h2>Lo mínimo no negociable: declaración y confidencialidad</h2>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">Qué se declara</span></p>
+<ul>
+<li>En el paper: una nota de uso de IA (qué herramienta, para qué). Cada vez más journals lo exigen</li>
+<li>En entregables internos: una línea al pie con herramienta y función</li>
+<li>Un modelo <span class="hl">no es autor</span>: la responsabilidad por el contenido recae en quien firma</li>
+</ul>
+</div>
+<div class="alerta">
+<p><span class="t">Qué se queda fuera de las herramientas comerciales</span></p>
+<ul>
+<li>Datos individuales no publicados o bajo confidencialidad</li>
+<li>Manuscritos ajenos en revisión: el peer review es confidencial</li>
+<li>Datos de encuestados o entrevistados sin anonimizar</li>
+<li>Instrumentos y bases bajo convenio institucional</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p>La responsabilidad se queda con el autor. Si sale publicado con tu nombre, <strong>cada frase es tuya</strong> — la haya tecleado quien la haya tecleado.</p>
+</div>
+</div>
+</section>
+<section id="la-respuesta-a-la-pregunta-del-principio" class="slide level2">
+<h2>La respuesta a la pregunta del principio</h2>
+<p>Abrimos preguntando qué queda del investigador. Esta es la lista, y es corta:</p>
+<div class="cols2">
+<div class="bloque">
+<p><span class="t">En el descubrimiento</span></p>
+<ul>
+<li>Qué me da curiosidad</li>
+<li>Qué paper merece lectura completa</li>
+<li>La <strong>idea central</strong> de cada ficha</li>
+<li>La <strong>objeción</strong>: qué no me convence</li>
+</ul>
+</div>
+<div class="bloque">
+<p><span class="t">En la decisión y la producción</span></p>
+<ul>
+<li>Si la idea flota, y en qué gasto mis semanas</li>
+<li>Qué confunde mi caso (el DAG)</li>
+<li>El primer borrador del argumento</li>
+<li>Lo que finalmente <strong>afirmo</strong></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="destacado">
+<p><span class="grande">Todo lo demás es andamio.</span></p>
+<p>El andamio importa: construirlo mal cuesta caro. El edificio es el juicio, y ese sigue siendo un oficio que se aprende haciéndolo.</p>
+</div>
+</div>
+</section>
+<section id="para-llevarse" class="slide level2 sintesis">
+<h2>Para llevarse</h2>
+<ul>
+<li>Delego lo que puedo verificar. La tercera columna manda</li>
+<li>El segundo cerebro convierte lecturas sueltas en una red de ideas reusable, cuando la idea central, la conexión y la objeción son tuyas</li>
+<li>El contrato del vault se escribe una vez y rinde todos los días</li>
+<li>El PAP es la brújula, y es lo que hace auditable una decisión</li>
+<li>Se escribe para un journal concreto: gap, argumento y contribución al frente</li>
+<li>Estas herramientas fallan produciendo trabajo plausible. Si no hubo fricción, sospechen</li>
+<li>Un flujo es una herramienta. Cuando el mapa estorba, se dobla y se guarda</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2 cierre">
+<h2></h2>
+<div class="regla-gruesa">
+
+</div>
+<div class="titulo">
+<p>Manos a la obra<span class="cursor"></span></p>
+</div>
+<div class="bajada">
+<p>Elijan un tema y hagan flotar la primera idea</p>
+</div>
+<div class="regla-fina">
+
+</div>
+<div class="pie">
+<p>Alejandro Plaza Reveco · Instituto MIDE UC<br>
+Pontificia Universidad Católica de Chile</p>
+</div>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="artesania_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="artesania_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="artesania_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="artesania_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'fast',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.5e-2,
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
